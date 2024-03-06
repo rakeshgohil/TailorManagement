@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailorManagementAPI", "TailorManagementAPI\TailorManagementAPI.csproj", "{C450FBD3-C23C-491C-90CA-ECA52901C78B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailorManagementDB", "TailorManagementDB\TailorManagementDB.csproj", "{03FAA8D1-0707-4B35-8635-0DE78260F5B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailorManagementModels", "TailorManagementModels\TailorManagementModels.csproj", "{7256D6BF-C52D-45F9-A267-8BC466BEB34E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C450FBD3-C23C-491C-90CA-ECA52901C78B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C450FBD3-C23C-491C-90CA-ECA52901C78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C450FBD3-C23C-491C-90CA-ECA52901C78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C450FBD3-C23C-491C-90CA-ECA52901C78B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FAA8D1-0707-4B35-8635-0DE78260F5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FAA8D1-0707-4B35-8635-0DE78260F5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FAA8D1-0707-4B35-8635-0DE78260F5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FAA8D1-0707-4B35-8635-0DE78260F5B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7256D6BF-C52D-45F9-A267-8BC466BEB34E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7256D6BF-C52D-45F9-A267-8BC466BEB34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7256D6BF-C52D-45F9-A267-8BC466BEB34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7256D6BF-C52D-45F9-A267-8BC466BEB34E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF0B42EF-D979-4C8D-ACA9-83657A45CAF4}
+	EndGlobalSection
+EndGlobal
