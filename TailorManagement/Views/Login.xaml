@@ -40,7 +40,7 @@
             </StackPanel>
         </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,65">
-            <Button Width="100" Content="Login" Margin="0,0,10,0" Command="{Binding OpenDashboardCommand}"/>
+            <Button Width="100" Content="Login" Margin="0,0,10,0" Command="{Binding OpenMainViewCommand}"/>
             <Button Width="100" Content="Close" Command="{Binding CloseApplicationCommand}"/>
         </StackPanel>
         <Image Source="Assets/home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>

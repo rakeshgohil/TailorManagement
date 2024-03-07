@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TailorManagement.ViewModels
 {
-    public class DashboardViewModel
+    public class ShirtViewModel
     {
     }
 }

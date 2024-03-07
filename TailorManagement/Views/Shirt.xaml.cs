@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace TailorManagement.Views
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for Shirt.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class Shirt : Window
     {
-        public Main()
+        public Shirt()
         {
             InitializeComponent();
         }

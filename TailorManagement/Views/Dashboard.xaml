@@ -1,12 +1,12 @@
-﻿<Window x:Class="TailorManagement.Views.Dashboard"
+﻿<Window x:Class="TailorManagement.Views.Main"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TailorManagement.Views"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        xmlns:viewmodels="clr-namespace:TailorManagement.ViewModels"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         WindowState="Maximized"
-        mc:Ignorable="d" Title="Dashboard" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  WindowStyle="None">
+        mc:Ignorable="d" Title="Main" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  WindowStyle="None">
         
     <Window.Resources>
         <ResourceDictionary>
@@ -87,8 +87,9 @@
             </Style>
         </ResourceDictionary>
     </Window.Resources>
-
-
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -109,26 +110,14 @@
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
             </Grid.Effect>
 
-            <Grid Background="#FFA46FE4">
-                <TextBlock Text="DASHBOARD" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="WS Simple Gallifreyan" Foreground="#FFBC96EA" FontSize="16"/>
-            </Grid>
-
-            <StackPanel Grid.Row="1">
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="DASHBOARD" FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
-
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+            <StackPanel>
+                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Command="{Binding OpenShirtViewCommand}">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="SHIRT" FontFamily="Champagne &amp; Limousines"/>

@@ -1,9 +1,10 @@
 -- Drop the database if it exists
---IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'TailorManagement') DROP DATABASE TailorManagement;
-CREATE DATABASE TailorManagement;
+IF NOT EXISTS (SELECT 1 FROM sys.databases WHERE name = 'TailorManagementDB') 
+CREATE DATABASE TailorManagementDB;
+GO
 
--- Use the TailorManagement database
-USE TailorManagement
+-- Use the TailorManagementDB database
+USE TailorManagementDB
 GO
 
 -- Drop the tbShirt table if it exists

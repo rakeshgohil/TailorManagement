@@ -10,7 +10,7 @@ namespace TailorManagement.Services
     public class NavigationService : INavigationService
     {
         private readonly Dictionary<Type, Window> _viewTypeToWindowMap = new Dictionary<Type, Window>();
-
+        private static NavigationService navigationService;
         public void NavigateTo(Type viewType)
         {
             if (!_viewTypeToWindowMap.TryGetValue(viewType, out var window))
@@ -21,6 +21,15 @@ namespace TailorManagement.Services
             }
 
             window.Show();
+        }
+
+        public static NavigationService GetNavigationService()
+        {
+            if(navigationService == null)
+            {
+                navigationService = new NavigationService();
+            }
+            return navigationService;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using TailorManagement.Commands;
 using TailorManagement.Services;
 using TailorManagement.Utilities;
@@ -7,23 +6,20 @@ using TailorManagement.Views;
 
 namespace TailorManagement.ViewModels
 {
-    public class LoginViewModel
+    public class MainViewModel
     {
         private readonly INavigationService _navigationService;
         public ICommand CloseApplicationCommand { get; }
-        public ICommand OpenMainViewCommand { get; }
-
-        public LoginViewModel()
+        public ICommand OpenShirtViewCommand { get; }
+        public MainViewModel()
         {
             _navigationService = NavigationService.GetNavigationService();
             CloseApplicationCommand = new RelayCommand(CommonApplication.CloseApplication);
-            OpenMainViewCommand = new RelayCommand(OpenMainView);
+            OpenShirtViewCommand = new RelayCommand(OpenShirtView);
         }
-
-        private void OpenMainView()
+        private void OpenShirtView()
         {
-            _navigationService.NavigateTo(typeof(Main));
-            Application.Current.MainWindow.Close();
+            _navigationService.NavigateTo(typeof(Shirt));
         }
     }
 }
