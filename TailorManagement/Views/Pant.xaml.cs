@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TailorManagement.Views
 {
     /// <summary>
-    /// Interaction logic for Shirt.xaml
+    /// Interaction logic for Pant.xaml
     /// </summary>
-    public partial class Shirt : UserControl
+    public partial class Pant : UserControl
     {
-        public Shirt()
+        public Pant()
         {
             InitializeComponent();
         }

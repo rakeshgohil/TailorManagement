@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="TailorManagement.Views.Pant"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TailorManagement.Views"
+             xmlns:viewmodels="clr-namespace:TailorManagement.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             mc:Ignorable="d" 
+             Background="#FFDADADA">
+
+    <UserControl.DataContext>
+        <viewmodels:PantViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Border Margin="15" Background="White" VerticalAlignment="Center" Padding="30" CornerRadius="10" MaxWidth="800">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Pant" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>                
+                <TextBox Text="{Binding Pant.Length, Mode=TwoWay}" materialDesign:HintAssist.Hint="Length" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox Text="{Binding Pant.Waist, Mode=TwoWay}" materialDesign:HintAssist.Hint="Waist" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox Text="{Binding Pant.Seat, Mode=TwoWay}" materialDesign:HintAssist.Hint="Seat" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox Text="{Binding Pant.Thigh, Mode=TwoWay}" materialDesign:HintAssist.Hint="Thigh" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox Text="{Binding Pant.Knee, Mode=TwoWay}" materialDesign:HintAssist.Hint="Knee" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox Text="{Binding Pant.Jolo, Mode=TwoWay}" materialDesign:HintAssist.Hint="Jolo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <TextBox Text="{Binding Pant.Radish, Mode=TwoWay}" materialDesign:HintAssist.Hint="Radish" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 5"/>
+                <!--<Button Content="Save" Margin="0 20" Command="{Binding SavePantCommand}"/>-->
+            </StackPanel>
+        </Border>
+    </Grid>
+
+</UserControl>

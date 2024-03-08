@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.9.34622.214
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailorManagement", "TailorManagement\TailorManagement.csproj", "{8927619B-8A87-4050-B874-E0B0B8C2ADF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailorManagementModels", "TailorManagementModels\TailorManagementModels.csproj", "{7256D6BF-C52D-45F9-A267-8BC466BEB34E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailorManagement1", "TailorManagement1\TailorManagement1.csproj", "{252E440F-3141-4A1F-9C88-689EAA6C4DC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7256D6BF-C52D-45F9-A267-8BC466BEB34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7256D6BF-C52D-45F9-A267-8BC466BEB34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7256D6BF-C52D-45F9-A267-8BC466BEB34E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{252E440F-3141-4A1F-9C88-689EAA6C4DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{252E440F-3141-4A1F-9C88-689EAA6C4DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{252E440F-3141-4A1F-9C88-689EAA6C4DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{252E440F-3141-4A1F-9C88-689EAA6C4DC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

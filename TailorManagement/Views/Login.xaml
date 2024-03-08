@@ -10,8 +10,7 @@
         Title="Login" Height="500" Width="350" 
         ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen" 
-        WindowStyle="None" 
-        FontFamily="Segoe UI Emoji">
+        WindowStyle="None">
     <Window.DataContext>
         <viewmodels:LoginViewModel/>
     </Window.DataContext>
@@ -43,6 +42,6 @@
             <Button Width="100" Content="Login" Margin="0,0,10,0" Command="{Binding OpenMainViewCommand}"/>
             <Button Width="100" Content="Close" Command="{Binding CloseApplicationCommand}"/>
         </StackPanel>
-        <Image Source="Assets/home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>
+        <Image Source="home.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>
     </Grid>
 </Window>
