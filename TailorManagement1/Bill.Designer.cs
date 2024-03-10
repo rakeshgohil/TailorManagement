@@ -35,51 +35,51 @@ namespace TailorManagement1
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
@@ -137,12 +137,10 @@ namespace TailorManagement1
             this.label24 = new System.Windows.Forms.Label();
             this.textBox73 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox74 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.textBox75 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.textBox76 = new System.Windows.Forms.TextBox();
-            this.textBox77 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox78 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -150,6 +148,8 @@ namespace TailorManagement1
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -245,115 +245,223 @@ namespace TailorManagement1
             this.panel1.TabIndex = 17;
             this.panel1.Tag = "";
             // 
-            // label3
+            // richTextBox2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Pant";
+            this.richTextBox2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Location = new System.Drawing.Point(87, 578);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(299, 102);
+            this.richTextBox2.TabIndex = 60;
+            this.richTextBox2.Text = "";
             // 
-            // textBox2
+            // checkedListBox1
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(87, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(55, 28);
-            this.textBox2.TabIndex = 18;
+            this.checkedListBox1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(87, 291);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(299, 280);
+            this.checkedListBox1.TabIndex = 59;
             // 
-            // label4
+            // textBox32
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Lambai";
+            this.textBox32.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox32.Location = new System.Drawing.Point(331, 247);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(55, 28);
+            this.textBox32.TabIndex = 58;
             // 
-            // textBox3
+            // textBox33
             // 
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(148, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(55, 28);
-            this.textBox3.TabIndex = 19;
+            this.textBox33.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox33.Location = new System.Drawing.Point(270, 247);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Size = new System.Drawing.Size(55, 28);
+            this.textBox33.TabIndex = 57;
             // 
-            // textBox4
+            // textBox34
             // 
-            this.textBox4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(209, 43);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(55, 28);
-            this.textBox4.TabIndex = 20;
+            this.textBox34.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox34.Location = new System.Drawing.Point(209, 247);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Size = new System.Drawing.Size(55, 28);
+            this.textBox34.TabIndex = 56;
             // 
-            // textBox5
+            // textBox35
             // 
-            this.textBox5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(270, 43);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(55, 28);
-            this.textBox5.TabIndex = 21;
+            this.textBox35.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox35.Location = new System.Drawing.Point(148, 247);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.Size = new System.Drawing.Size(55, 28);
+            this.textBox35.TabIndex = 55;
             // 
-            // textBox6
+            // textBox36
             // 
-            this.textBox6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(331, 43);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(55, 28);
-            this.textBox6.TabIndex = 22;
+            this.textBox36.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox36.Location = new System.Drawing.Point(87, 247);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.Size = new System.Drawing.Size(55, 28);
+            this.textBox36.TabIndex = 54;
             // 
-            // textBox7
+            // label10
             // 
-            this.textBox7.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(331, 77);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(55, 28);
-            this.textBox7.TabIndex = 28;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 250);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 20);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "Moli";
             // 
-            // textBox8
+            // textBox27
             // 
-            this.textBox8.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(270, 77);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(55, 28);
-            this.textBox8.TabIndex = 27;
+            this.textBox27.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox27.Location = new System.Drawing.Point(331, 213);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(55, 28);
+            this.textBox27.TabIndex = 52;
             // 
-            // textBox9
+            // textBox28
             // 
-            this.textBox9.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(209, 77);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(55, 28);
-            this.textBox9.TabIndex = 26;
+            this.textBox28.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox28.Location = new System.Drawing.Point(270, 213);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(55, 28);
+            this.textBox28.TabIndex = 51;
             // 
-            // textBox10
+            // textBox29
             // 
-            this.textBox10.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(148, 77);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(55, 28);
-            this.textBox10.TabIndex = 25;
+            this.textBox29.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox29.Location = new System.Drawing.Point(209, 213);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(55, 28);
+            this.textBox29.TabIndex = 50;
             // 
-            // textBox11
+            // textBox30
             // 
-            this.textBox11.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(87, 77);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(55, 28);
-            this.textBox11.TabIndex = 24;
+            this.textBox30.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox30.Location = new System.Drawing.Point(148, 213);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(55, 28);
+            this.textBox30.TabIndex = 49;
             // 
-            // label5
+            // textBox31
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Kamar";
+            this.textBox31.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox31.Location = new System.Drawing.Point(87, 213);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(55, 28);
+            this.textBox31.TabIndex = 48;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 216);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(48, 20);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "Jolo";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox22.Location = new System.Drawing.Point(331, 179);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(55, 28);
+            this.textBox22.TabIndex = 46;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox23.Location = new System.Drawing.Point(270, 179);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(55, 28);
+            this.textBox23.TabIndex = 45;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox24.Location = new System.Drawing.Point(209, 179);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(55, 28);
+            this.textBox24.TabIndex = 44;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.Location = new System.Drawing.Point(148, 179);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(55, 28);
+            this.textBox25.TabIndex = 43;
+            // 
+            // textBox26
+            // 
+            this.textBox26.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox26.Location = new System.Drawing.Point(87, 179);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(55, 28);
+            this.textBox26.TabIndex = 42;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 182);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 20);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Gothan";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.Location = new System.Drawing.Point(331, 145);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(55, 28);
+            this.textBox17.TabIndex = 40;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.Location = new System.Drawing.Point(270, 145);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(55, 28);
+            this.textBox18.TabIndex = 39;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox19.Location = new System.Drawing.Point(209, 145);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(55, 28);
+            this.textBox19.TabIndex = 38;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox20.Location = new System.Drawing.Point(148, 145);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(55, 28);
+            this.textBox20.TabIndex = 37;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox21.Location = new System.Drawing.Point(87, 145);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(55, 28);
+            this.textBox21.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 148);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 20);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Jangh";
             // 
             // textBox12
             // 
@@ -406,223 +514,115 @@ namespace TailorManagement1
             this.label6.Text = "Seat";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // textBox17
+            // textBox7
             // 
-            this.textBox17.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(331, 145);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(55, 28);
-            this.textBox17.TabIndex = 40;
+            this.textBox7.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(331, 77);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(55, 28);
+            this.textBox7.TabIndex = 28;
             // 
-            // textBox18
+            // textBox8
             // 
-            this.textBox18.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(270, 145);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(55, 28);
-            this.textBox18.TabIndex = 39;
+            this.textBox8.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(270, 77);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(55, 28);
+            this.textBox8.TabIndex = 27;
             // 
-            // textBox19
+            // textBox9
             // 
-            this.textBox19.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(209, 145);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(55, 28);
-            this.textBox19.TabIndex = 38;
+            this.textBox9.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(209, 77);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(55, 28);
+            this.textBox9.TabIndex = 26;
             // 
-            // textBox20
+            // textBox10
             // 
-            this.textBox20.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(148, 145);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(55, 28);
-            this.textBox20.TabIndex = 37;
+            this.textBox10.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(148, 77);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(55, 28);
+            this.textBox10.TabIndex = 25;
             // 
-            // textBox21
+            // textBox11
             // 
-            this.textBox21.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(87, 145);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(55, 28);
-            this.textBox21.TabIndex = 36;
+            this.textBox11.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(87, 77);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(55, 28);
+            this.textBox11.TabIndex = 24;
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 148);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Jangh";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Kamar";
             // 
-            // textBox22
+            // textBox6
             // 
-            this.textBox22.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(331, 179);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(55, 28);
-            this.textBox22.TabIndex = 46;
+            this.textBox6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(331, 43);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(55, 28);
+            this.textBox6.TabIndex = 22;
             // 
-            // textBox23
+            // textBox5
             // 
-            this.textBox23.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(270, 179);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(55, 28);
-            this.textBox23.TabIndex = 45;
+            this.textBox5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(270, 43);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(55, 28);
+            this.textBox5.TabIndex = 21;
             // 
-            // textBox24
+            // textBox4
             // 
-            this.textBox24.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(209, 179);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(55, 28);
-            this.textBox24.TabIndex = 44;
+            this.textBox4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(209, 43);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(55, 28);
+            this.textBox4.TabIndex = 20;
             // 
-            // textBox25
+            // textBox3
             // 
-            this.textBox25.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(148, 179);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(55, 28);
-            this.textBox25.TabIndex = 43;
+            this.textBox3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(148, 43);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(55, 28);
+            this.textBox3.TabIndex = 19;
             // 
-            // textBox26
+            // textBox2
             // 
-            this.textBox26.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(87, 179);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(55, 28);
-            this.textBox26.TabIndex = 42;
+            this.textBox2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(87, 43);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(55, 28);
+            this.textBox2.TabIndex = 18;
             // 
-            // label8
+            // label4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 182);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 20);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Gothan";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Lambai";
             // 
-            // textBox27
+            // label3
             // 
-            this.textBox27.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox27.Location = new System.Drawing.Point(331, 213);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(55, 28);
-            this.textBox27.TabIndex = 52;
-            // 
-            // textBox28
-            // 
-            this.textBox28.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(270, 213);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(55, 28);
-            this.textBox28.TabIndex = 51;
-            // 
-            // textBox29
-            // 
-            this.textBox29.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox29.Location = new System.Drawing.Point(209, 213);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(55, 28);
-            this.textBox29.TabIndex = 50;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox30.Location = new System.Drawing.Point(148, 213);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(55, 28);
-            this.textBox30.TabIndex = 49;
-            // 
-            // textBox31
-            // 
-            this.textBox31.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox31.Location = new System.Drawing.Point(87, 213);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(55, 28);
-            this.textBox31.TabIndex = 48;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 216);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 20);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Jolo";
-            // 
-            // textBox32
-            // 
-            this.textBox32.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox32.Location = new System.Drawing.Point(331, 247);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(55, 28);
-            this.textBox32.TabIndex = 58;
-            // 
-            // textBox33
-            // 
-            this.textBox33.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox33.Location = new System.Drawing.Point(270, 247);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(55, 28);
-            this.textBox33.TabIndex = 57;
-            // 
-            // textBox34
-            // 
-            this.textBox34.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox34.Location = new System.Drawing.Point(209, 247);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(55, 28);
-            this.textBox34.TabIndex = 56;
-            // 
-            // textBox35
-            // 
-            this.textBox35.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox35.Location = new System.Drawing.Point(148, 247);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(55, 28);
-            this.textBox35.TabIndex = 55;
-            // 
-            // textBox36
-            // 
-            this.textBox36.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox36.Location = new System.Drawing.Point(87, 247);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(55, 28);
-            this.textBox36.TabIndex = 54;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 250);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 20);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "Moli";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(87, 291);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(299, 280);
-            this.checkedListBox1.TabIndex = 59;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(87, 578);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(299, 102);
-            this.richTextBox2.TabIndex = 60;
-            this.richTextBox2.Text = "";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Pant";
             // 
             // panel2
             // 
@@ -1132,6 +1132,7 @@ namespace TailorManagement1
             this.textBox72.Size = new System.Drawing.Size(139, 28);
             this.textBox72.TabIndex = 71;
             this.textBox72.Text = "1";
+            this.textBox72.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label24
             // 
@@ -1151,6 +1152,7 @@ namespace TailorManagement1
             this.textBox73.Size = new System.Drawing.Size(139, 28);
             this.textBox73.TabIndex = 73;
             this.textBox73.Text = "1";
+            this.textBox73.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label25
             // 
@@ -1161,15 +1163,6 @@ namespace TailorManagement1
             this.label25.Size = new System.Drawing.Size(94, 20);
             this.label25.TabIndex = 72;
             this.label25.Text = "Shirt Qty";
-            // 
-            // textBox74
-            // 
-            this.textBox74.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox74.Location = new System.Drawing.Point(968, 270);
-            this.textBox74.Name = "textBox74";
-            this.textBox74.Size = new System.Drawing.Size(139, 28);
-            this.textBox74.TabIndex = 75;
-            this.textBox74.Text = "1";
             // 
             // label26
             // 
@@ -1189,7 +1182,8 @@ namespace TailorManagement1
             this.textBox75.ReadOnly = true;
             this.textBox75.Size = new System.Drawing.Size(139, 28);
             this.textBox75.TabIndex = 77;
-            this.textBox75.Text = "1";
+            this.textBox75.Text = "0.00";
+            this.textBox75.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label27
             // 
@@ -1209,16 +1203,6 @@ namespace TailorManagement1
             this.textBox76.ReadOnly = true;
             this.textBox76.Size = new System.Drawing.Size(139, 28);
             this.textBox76.TabIndex = 78;
-            this.textBox76.Text = "1";
-            // 
-            // textBox77
-            // 
-            this.textBox77.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox77.Location = new System.Drawing.Point(968, 338);
-            this.textBox77.Name = "textBox77";
-            this.textBox77.Size = new System.Drawing.Size(139, 28);
-            this.textBox77.TabIndex = 80;
-            this.textBox77.Text = "1";
             // 
             // label20
             // 
@@ -1238,7 +1222,8 @@ namespace TailorManagement1
             this.textBox78.ReadOnly = true;
             this.textBox78.Size = new System.Drawing.Size(139, 28);
             this.textBox78.TabIndex = 82;
-            this.textBox78.Text = "1";
+            this.textBox78.Text = "0.00";
+            this.textBox78.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label28
             // 
@@ -1290,23 +1275,45 @@ namespace TailorManagement1
             this.button3.Text = "Save and Print";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(968, 270);
+            this.maskedTextBox1.Mask = "0.00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(139, 28);
+            this.maskedTextBox1.TabIndex = 87;
+            this.maskedTextBox1.Text = "000";
+            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.Location = new System.Drawing.Point(968, 338);
+            this.maskedTextBox2.Mask = "0.00";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(139, 28);
+            this.maskedTextBox2.TabIndex = 88;
+            this.maskedTextBox2.Text = "000";
+            this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Bill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1431, 768);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.textBox78);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.textBox77);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.textBox76);
             this.Controls.Add(this.textBox75);
             this.Controls.Add(this.label27);
-            this.Controls.Add(this.textBox74);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.textBox73);
             this.Controls.Add(this.label25);
@@ -1450,12 +1457,10 @@ namespace TailorManagement1
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox73;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox74;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox75;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox76;
-        private System.Windows.Forms.TextBox textBox77;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox78;
         private System.Windows.Forms.Label label28;
@@ -1463,5 +1468,7 @@ namespace TailorManagement1
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
     }
 }

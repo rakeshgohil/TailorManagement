@@ -1,0 +1,26 @@
+USE TailorManagementDB
+GO
+
+IF OBJECT_ID('dbo.tbMenu', 'U') IS NULL 
+BEGIN
+	CREATE TABLE tbMenu (
+		Id INT IDENTITY(1,1) PRIMARY KEY,
+		[Name] NVARCHAR(100),
+		Price DECIMAL(18, 2)
+	)
+END
+GO
+
+CREATE OR ALTER PROCEDURE spSaveMenu
+	@Name NVARCHAR(100), 
+	@Price DECIMAL(18,2),
+    @Id INT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO tbMenu([Name], Price)
+		VALUES (@Name, @Price);
+
+    SET @Id = SCOPE_IDENTITY();
+END;
