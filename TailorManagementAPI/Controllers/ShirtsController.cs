@@ -18,13 +18,13 @@ namespace TailorManagementAPI.Controllers
             _shirtRepository = shirtRepository;
         }
 
-        // GET: api/Shirts
+        // GET: api/shirts
         public IEnumerable<Shirt> GetShirts()
         {
             return _shirtRepository.GetAll();
         }
 
-        // GET: api/Shirts/5
+        // GET: api/shirts/5
         [ResponseType(typeof(Shirt))]
         public IHttpActionResult GetShirt(int id)
         {
@@ -37,7 +37,7 @@ namespace TailorManagementAPI.Controllers
             return Ok(shirt);
         }
 
-        // PUT: api/Shirts/5
+        // PUT: api/shirts/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutShirt(int id, Shirt shirt)
         {
@@ -63,7 +63,7 @@ namespace TailorManagementAPI.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shirts
+        // POST: api/shirts
         [ResponseType(typeof(Shirt))]
         public IHttpActionResult PostShirt(Shirt shirt)
         {
@@ -76,7 +76,7 @@ namespace TailorManagementAPI.Controllers
             return CreatedAtRoute("DefaultApi", new { id = addedId }, shirt);
         }
 
-        // DELETE: api/Shirts/5
+        // DELETE: api/shirts/5
         [ResponseType(typeof(Shirt))]
         public IHttpActionResult DeleteShirt(int id)
         {

@@ -13,8 +13,12 @@ namespace TailorManagementAPI
             GlobalConfiguration.Configure(WebApiConfig.Register);
             var container = new UnityContainer();
 
-            // Register IRepository and ShirtRepository
             container.RegisterType<IRepository<Shirt>, ShirtRepository>();
+            container.RegisterType<IRepository<Product>, ProductRepository>();
+            container.RegisterType<IRepository<Customer>, CustomerRepository>();
+            container.RegisterType<IRepository<Pant>, PantRepository>();
+            container.RegisterType<IRepository<Bill>, BillRepository>();
+            //container.RegisterType<IRepository<BillDetail>, BillDetailsRepository>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

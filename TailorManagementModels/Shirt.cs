@@ -4,19 +4,10 @@
     public class Shirt
     {
         public int Id { get; set; }
-
-        public int CustomerId { get; set; }
-
-        
-        public string Length1 { get; set; }
-
-        
-        public string Length2 { get; set; }
-
-        
-        public string Length3 { get; set; }
-
-        
+        public Customer Customer { get; set; }        
+        public string Length1 { get; set; }        
+        public string Length2 { get; set; }        
+        public string Length3 { get; set; }        
         public string Length4 { get; set; }
 
         

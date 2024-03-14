@@ -15,6 +15,7 @@ namespace TailorManagementDB
         private const string spGetShirtById = "spGetShirtById";
         private const string spSaveShirt = "spSaveShirt";
         private const string spUpdateShirt = "spUpdateShirt";
+        private const string spDeleteShirtById = "spDeleteShirtById";
 
         public ShirtRepository()
         {
@@ -42,7 +43,12 @@ namespace TailorManagementDB
                             Shirt shirt = new Shirt
                             {
                                 Id = (int)reader["Id"],
-                                CustomerId = (int)reader["CustomerId"],
+                                Customer = new Customer()
+                                {
+                                    Id = (int)reader["CustomerId"],
+                                    Mobile = reader["Mobile"].ToString(),
+                                    Name = reader["Name"].ToString()
+                                },
                                 Length1 = reader["Length1"].ToString(),
                                 Length2 = reader["Length2"].ToString(),
                                 Length3 = reader["Length3"].ToString(),
@@ -96,6 +102,8 @@ namespace TailorManagementDB
                 using (var command = new SqlCommand(spGetShirtById, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
+
+                    command.CommandType = CommandType.StoredProcedure;
                     connection.Open();
                     using (var reader = command.ExecuteReader())
                     {
@@ -104,7 +112,12 @@ namespace TailorManagementDB
                              shirt = new Shirt
                             {
                                 Id = (int)reader["Id"],
-                                CustomerId = (int)reader["CustomerId"],
+                                Customer = new Customer()
+                                {
+                                    Id = (int)reader["CustomerId"],
+                                    Mobile = reader["Mobile"].ToString(),
+                                    Name = reader["Name"].ToString()
+                                },
                                 Length1 = reader["Length1"].ToString(),
                                 Length2 = reader["Length2"].ToString(),
                                 Length3 = reader["Length3"].ToString(),
@@ -155,7 +168,7 @@ namespace TailorManagementDB
             {
                 using (var command = new SqlCommand(spSaveShirt, connection))
                 {
-                    command.Parameters.AddWithValue("@CustomerId", shirt.CustomerId);                    
+                    command.Parameters.AddWithValue("@CustomerId", shirt.Customer.Id);                    
                     command.Parameters.AddWithValue($"@Length1", shirt.Length1);
                     command.Parameters.AddWithValue($"@Chati1", shirt.Chati1);
                     command.Parameters.AddWithValue($"@Solder1", shirt.Solder1);
@@ -194,6 +207,7 @@ namespace TailorManagementDB
                     command.Parameters.AddWithValue("@Notes", shirt.Notes);
                     command.Parameters.Add("@Id", SqlDbType.Int).Direction = ParameterDirection.Output;
 
+                    command.CommandType = CommandType.StoredProcedure;
                     connection.Open();
                     command.ExecuteNonQuery();
 
@@ -212,7 +226,7 @@ namespace TailorManagementDB
                 using (var command = new SqlCommand(spUpdateShirt, connection))
                 {
                     command.Parameters.AddWithValue("@Id", shirt.Id);
-                    command.Parameters.AddWithValue("@CustomerId", shirt.CustomerId);
+                    command.Parameters.AddWithValue("@CustomerId", shirt.Customer.Id);
                     command.Parameters.AddWithValue($"@Length1", shirt.Length1);
                     command.Parameters.AddWithValue($"@Chati1", shirt.Chati1);
                     command.Parameters.AddWithValue($"@Solder1", shirt.Solder1);
@@ -250,6 +264,7 @@ namespace TailorManagementDB
                     command.Parameters.AddWithValue($"@Cuff5", shirt.Cuff5);
                     command.Parameters.AddWithValue("@Notes", shirt.Notes);
 
+                    command.CommandType = CommandType.StoredProcedure;
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
@@ -260,10 +275,11 @@ namespace TailorManagementDB
         {
             using (var connection = GetSqlConnection())
             {
-                string query = "DELETE FROM tbShirt WHERE Id = @Id";
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new SqlCommand(spDeleteShirtById, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
+
+                    command.CommandType = CommandType.StoredProcedure; 
                     connection.Open();
                     command.ExecuteNonQuery();
                 }

@@ -26,10 +26,10 @@ namespace TailorManagement1
 
         private void billToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Bill bill = Application.OpenForms.OfType<Bill>().FirstOrDefault();
+            BillForm bill = Application.OpenForms.OfType<BillForm>().FirstOrDefault();
             if(bill == null)
             {
-                bill = new Bill();
+                bill = new BillForm();
                 bill.MdiParent = this;
             }
             if (!bill.Visible)

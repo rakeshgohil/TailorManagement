@@ -46,7 +46,7 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Pant.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Shirt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿namespace TailorManagementModels
 {
-    public class Menu
+    public class Product
     {
         public int Id { get; set; }
 
