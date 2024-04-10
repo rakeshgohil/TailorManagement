@@ -12,8 +12,6 @@ namespace TailorManagement1
 {
     public partial class MainForm : Form
     {
-        private int childFormNumber = 0;
-
         public MainForm()
         {
             InitializeComponent();
@@ -45,6 +43,44 @@ namespace TailorManagement1
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             CommonUtilities.ExitApplication();
+        }
+
+        private void shirtConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShirtConfigurationForm shirtConfigurationForm = Application.OpenForms.OfType<ShirtConfigurationForm>().FirstOrDefault();
+            if (shirtConfigurationForm == null)
+            {
+                shirtConfigurationForm = new ShirtConfigurationForm();
+                shirtConfigurationForm.MdiParent = this;
+            }
+            if (!shirtConfigurationForm.Visible)
+            {
+                shirtConfigurationForm.Show();
+            }
+            else
+            {
+                shirtConfigurationForm.BringToFront(); // Bring the form to the front if it's already visible
+            }
+
+        }
+
+        private void pantConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PantConfigurationForm pantConfigurationForm = Application.OpenForms.OfType<PantConfigurationForm>().FirstOrDefault();
+            if (pantConfigurationForm == null)
+            {
+                pantConfigurationForm = new PantConfigurationForm();
+                pantConfigurationForm.MdiParent = this;
+            }
+            if (!pantConfigurationForm.Visible)
+            {
+                pantConfigurationForm.Show();
+            }
+            else
+            {
+                pantConfigurationForm.BringToFront(); // Bring the form to the front if it's already visible
+            }
+
         }
     }
 }

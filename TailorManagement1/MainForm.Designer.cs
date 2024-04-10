@@ -34,6 +34,9 @@ namespace TailorManagement1
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.billToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shirtConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pantConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +46,8 @@ namespace TailorManagement1
             this.menuStrip1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.billToolStripMenuItem});
+            this.billToolStripMenuItem,
+            this.utilitiesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 2, 0, 2);
@@ -57,6 +61,29 @@ namespace TailorManagement1
             this.billToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
             this.billToolStripMenuItem.Text = "Bill";
             this.billToolStripMenuItem.Click += new System.EventHandler(this.billToolStripMenuItem_Click);
+            // 
+            // utilitiesToolStripMenuItem
+            // 
+            this.utilitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.shirtConfigurationToolStripMenuItem,
+            this.pantConfigurationToolStripMenuItem});
+            this.utilitiesToolStripMenuItem.Name = "utilitiesToolStripMenuItem";
+            this.utilitiesToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.utilitiesToolStripMenuItem.Text = "Utilities";
+            // 
+            // shirtConfigurationToolStripMenuItem
+            // 
+            this.shirtConfigurationToolStripMenuItem.Name = "shirtConfigurationToolStripMenuItem";
+            this.shirtConfigurationToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.shirtConfigurationToolStripMenuItem.Text = "Shirt Configuration";
+            this.shirtConfigurationToolStripMenuItem.Click += new System.EventHandler(this.shirtConfigurationToolStripMenuItem_Click);
+            // 
+            // pantConfigurationToolStripMenuItem
+            // 
+            this.pantConfigurationToolStripMenuItem.Name = "pantConfigurationToolStripMenuItem";
+            this.pantConfigurationToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.pantConfigurationToolStripMenuItem.Text = "Pant Configuration";
+            this.pantConfigurationToolStripMenuItem.Click += new System.EventHandler(this.pantConfigurationToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -95,6 +122,9 @@ namespace TailorManagement1
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem utilitiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shirtConfigurationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pantConfigurationToolStripMenuItem;
     }
 }
 

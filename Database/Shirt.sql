@@ -44,6 +44,20 @@ BEGIN
 END
 GO
 
+CREATE OR ALTER PROCEDURE spGetShirtByCustomerId
+	@CustomerId INT
+AS
+BEGIN
+	SELECT Id, CustomerId,
+		Length1, Length2, Length3, Length4, Length5, Chati1, Chati2, Chati3, Chati4, Chati5, 
+		Solder1, Solder2, Solder3, Solder4, Solder5, Bye1, Bye2, Bye3, Bye4, Bye5,
+		Front1, Front2, Front3, Front4, Front5, Kolor1, Kolor2, Kolor3, Kolor4, Kolor5,
+		Cuff1, Cuff2, Cuff3, Cuff4, Cuff5, Notes
+	FROM tbShirt
+	WHERE CustomerId = @CustomerId
+END
+GO
+
 CREATE OR ALTER PROCEDURE spSaveShirt
     @CustomerId INT,
 	@Length1 NVARCHAR(10), @Length2 NVARCHAR(10), @Length3 NVARCHAR(10), @Length4 NVARCHAR(10), @Length5 NVARCHAR(10),
@@ -92,7 +106,6 @@ BEGIN
 		END
 END
 GO
-
 
 CREATE OR ALTER PROCEDURE spUpdateShirt
     @CustomerId INT,

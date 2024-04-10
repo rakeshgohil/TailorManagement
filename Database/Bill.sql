@@ -1,16 +1,20 @@
 USE TailorManagementDB
 GO
 
+--DROP TABLE dbo.tbBillDetail
+--DROP TABLE dbo.tbBill
+
 IF OBJECT_ID('dbo.tbBill', 'U') IS NULL 
 BEGIN
 	CREATE TABLE tbBill (
 		Id INT IDENTITY(1,1) PRIMARY KEY,
 		[CustomerId] INT FOREIGN KEY  REFERENCES tbCustomer(Id),
-		BillNo INT,
+		BillNo INT UNIQUE,
 		BillDate DATETIME,
 		DeliveryDate DATETIME,
 		TrialDate DATETIME,		
 		ExtraCost DECIMAL(18,2),
+		Discount DECIMAL(18,2),
 		TotalAmount DECIMAL(18,2),
 		PaidAmount DECIMAL(18,2),
 		DueAmount AS (TotalAmount - PaidAmount)
@@ -23,7 +27,7 @@ BEGIN
 	CREATE TABLE tbBillDetail (
 		Id INT IDENTITY(1,1) PRIMARY KEY,
 		[BillId] INT FOREIGN KEY  REFERENCES tbBill(Id),
-		MenuId INT FOREIGN KEY  REFERENCES tbMenu(Id),
+		ProductId INT FOREIGN KEY  REFERENCES tbProduct(Id),
 		Qty DECIMAL(18,2),
 		Price DECIMAL(18,2),
 		Total AS (Qty * Price)
@@ -33,7 +37,7 @@ GO
 
 CREATE OR ALTER PROCEDURE spSaveBillDetail
 	@BillId INT,
-	@MenuId INT,
+	@ProductId INT,
 	@Qty DECIMAL(18,2),
 	@Price DECIMAL(18,2),
 	@Id INT OUTPUT
@@ -41,8 +45,8 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    INSERT INTO tbBillDetail (BillId, MenuId, Qty, Price)
-    VALUES (@BillId, @MenuId, @Qty, @Price);
+    INSERT INTO tbBillDetail (BillId, ProductId, Qty, Price)
+    VALUES (@BillId, @ProductId, @Qty, @Price);
 
     SET @Id = SCOPE_IDENTITY();
 END
@@ -53,19 +57,19 @@ CREATE OR ALTER PROCEDURE spSaveBill
 	@BillDate DATETIME,
 	@DeliveryDate DATETIME,
 	@TrialDate DATETIME,		
-	@ExtraCost DECIMAL(18,2),
+	@ExtraCost DECIMAL(18,2),		
+	@Discount DECIMAL(18,2),
 	@TotalAmount DECIMAL(18,2),
 	@PaidAmount DECIMAL(18,2),
-	@Id INT OUTPUT
+	@Id INT OUTPUT,
+	@BillNo INT OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
-	
-	DECLARE @NextBillNo INT;
-	
-	SELECT @NextBillNo = ISNULL(MAX(BillNo), 0) + 1 FROM tbBill
-	INSERT INTO tbBill(BillDate, BillNo, CustomerId, DeliveryDate, ExtraCost, PaidAmount, TotalAmount)
-    VALUES (@BillDate, @NextBillNo, @CustomerId, @DeliveryDate, @ExtraCost, @PaidAmount, @TotalAmount)
+		
+	SELECT @BillNo = ISNULL(MAX(BillNo), 0) + 1 FROM tbBill
+	INSERT INTO tbBill(BillDate, BillNo, CustomerId, DeliveryDate, ExtraCost, Discount, PaidAmount, TotalAmount, TrialDate)
+    VALUES (@BillDate, @BillNo, @CustomerId, @DeliveryDate, @ExtraCost, @Discount, @PaidAmount, @TotalAmount, @TrialDate)
 
     SET @Id = SCOPE_IDENTITY();
 END
@@ -96,9 +100,11 @@ CREATE OR ALTER PROCEDURE spSaveBillFromUI
 	@PantQty DECIMAL(18,2),
 	@ShirtQty DECIMAL(18,2),
 	@ExtraCost DECIMAL(18,2),
+	@Discount DECIMAL(18,2),
 	@PaidAmount DECIMAL(18,2),
 	@TotalAmount DECIMAL(18,2),
-	@BillId INT OUTPUT
+	@BillId INT OUTPUT,
+	@BillNo INT OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -106,10 +112,10 @@ BEGIN
 	DECLARE @CustomerId INT;
 	DECLARE @PantId INT;
 	DECLARE @ShirtId INT;	
-	DECLARE @ShirtMenuID INT;
+	DECLARE @ShirtProductID INT;
 	DECLARE @ShirtPrice DECIMAL(18,2);
 	DECLARE @BillDetailID INT;	
-	DECLARE @PantMenuID INT;
+	DECLARE @PantProductID INT;
 	DECLARE @PantPrice DECIMAL(18,2);
 
 	EXEC spSaveCustomer @Name, @Mobile, @CustomerId OUTPUT;
@@ -123,17 +129,17 @@ BEGIN
 		@Front1, @Front2, @Front3, @Front4, @Front5, @Kolor1, @Kolor2, @Kolor3, @Kolor4, @Kolor5,
 		@Cuff1, @Cuff2, @Cuff3, @Cuff4, @Cuff5, @ShirtNotes, @ShirtId OUTPUT;
 	
-	EXEC spSaveBill @CustomerId, @BillDate, @DeliveryDate, @TrialDate, @ExtraCost, @TotalAmount, @PaidAmount, @BillId OUTPUT;
+	EXEC spSaveBill @CustomerId, @BillDate, @DeliveryDate, @TrialDate, @ExtraCost, @Discount, @TotalAmount, @PaidAmount, @BillId OUTPUT, @BillNo OUTPUT;
 	
 	IF @ShirtQty > 0
 	BEGIN
-		SELECT @ShirtMenuID = ID, @ShirtPrice = Price FROM tbMenu WHERE [Name] = 'Shirt';
-		EXEC spSaveBillDetail @BillId, @ShirtMenuId, @ShirtQty, @ShirtPrice, @BillDetailID OUTPUT  	
+		SELECT @ShirtProductID = ID, @ShirtPrice = Price FROM tbProduct WHERE [Name] = 'Shirt';
+		EXEC spSaveBillDetail @BillId, @ShirtProductId, @ShirtQty, @ShirtPrice, @BillDetailID OUTPUT  	
 	END
 	
-	IF @ShirtQty > 0
+	IF @PantQty > 0
 	BEGIN
-		SELECT @PantMenuID = ID, @PantPrice = Price FROM tbMenu WHERE [Name] = 'Pant';
-		EXEC spSaveBillDetail @BillId, @PantMenuId, @PantQty, @PantPrice, @BillDetailID OUTPUT  	
+		SELECT @PantProductID = ID, @PantPrice = Price FROM tbProduct WHERE [Name] = 'Pant';
+		EXEC spSaveBillDetail @BillId, @PantProductId, @PantQty, @PantPrice, @BillDetailID OUTPUT  	
 	END
 END;

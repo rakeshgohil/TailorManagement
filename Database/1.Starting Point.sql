@@ -4,18 +4,24 @@ GO
 --SQL Script Execution Sequence, dont change the following order
 --CreateDB.sql
 --Customer.sql
---Menu.sql
+--Product.sql
 --Shirt.sql
 --Pant.sql
 --Bill.sql
+--ShirtConfiguration.sql
+--PantConfiguration.sql
+--InsertData.sql
 
---Below are some userful query 
-INSERT INTO tbProduct([Name], Price) VALUES ('Shirt', 300)
-INSERT INTO tbProduct([Name], Price) VALUES ('Pant', 300)
+DECLARE @BillNo AS INT = 11
+DECLARE @BillId AS INT
 
-select * from tbBill
-select * from tbBillDetail
-select * from tbCustomer
-select * from tbMenu
-select * from tbShirt
-select * from tbPant
+SELECT @BillId = a.Id FROM tbBill a WHERE BillNo = @BillNo 
+SELECT * FROM tbBill WHERE Id = @BillId
+SELECT * FROM tbBillDetail WHERE BillId = @BillId
+SELECT * FROM tbCustomer WHERE Id in (SELECT CustomerId from tbBill WHERE Id = @BillId)
+SELECT * FROM tbShirt WHERE Id in (SELECT ProductId from tbBillDetail WHERE BillId = @BillId)
+SELECT * FROM tbPant WHERE Id in (SELECT ProductId from tbBillDetail WHERE BillId = @BillId)
+
+SELECT * FROM tbProduct
+--SELECT * FROM tbShirtConfiguration
+--SELECT * FROM tbPantConfiguration

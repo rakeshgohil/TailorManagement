@@ -34,10 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.2.8\lib\net46\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +54,8 @@
   <ItemGroup>
     <Compile Include="BillRepository.cs" />
     <Compile Include="CustomerRepository.cs" />
+    <Compile Include="PantConfigurationRepository.cs" />
+    <Compile Include="ShirtConfigurationRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="PantRepository.cs" />
     <Compile Include="ShirtRepository.cs" />

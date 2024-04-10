@@ -14,9 +14,10 @@ namespace TailorManagementDB
         private readonly string _connectionString;
         private const string spGetBills = "spGetBills";
         private const string spGetBillById = "spGetBillById";
-        private const string spSaveBill = "spSaveBill";
+        //private const string spSaveBill = "spSaveBill";
         private const string spUpdateBill = "spUpdateBill";
         private const string spDeleteBillById = "spDeleteBillById";
+        private const string spSaveBillFromUI = "spSaveBillFromUI";
 
         public BillRepository()
         {
@@ -48,7 +49,8 @@ namespace TailorManagementDB
                                 BillNo = (int)reader["BillNo"],
                                 DeliveryDate = (DateTime)reader["DeliveryDate"],
                                 ExtraCost = (decimal)reader["ExtraCost"],
-                                PaidAmount =(decimal)reader["PaidAmount"],
+                                Discount = (decimal)reader["Discount"],
+                                PaidAmount = (decimal)reader["PaidAmount"],
                                 TotalAmount = (decimal)reader["TotalAmount"],
                                 TrialDate = (DateTime)reader["TrialDate"],
                                 Customer = new Customer()
@@ -180,6 +182,7 @@ namespace TailorManagementDB
                                 BillNo = (int)reader["BillNo"],
                                 DeliveryDate = (DateTime)reader["DeliveryDate"],
                                 ExtraCost = (decimal)reader["ExtraCost"],
+                                Discount = (decimal)reader["Discount"],
                                 PaidAmount = (decimal)reader["PaidAmount"],
                                 TotalAmount = (decimal)reader["TotalAmount"],
                                 TrialDate = (DateTime)reader["TrialDate"],
@@ -289,11 +292,11 @@ namespace TailorManagementDB
             return bill;
         }
 
-        public int InsertFromUI(Bill bill)
+        public Bill Insert(Bill bill)
         {
             using (var connection = GetSqlConnection())
             {
-                using (var command = new SqlCommand(spSaveBill, connection))
+                using (var command = new SqlCommand(spSaveBillFromUI, connection))
                 {
                     command.Parameters.AddWithValue("@Name", bill.Customer.Name);
                     command.Parameters.AddWithValue("@Mobile", bill.Customer.Mobile);
@@ -375,47 +378,52 @@ namespace TailorManagementDB
                     command.Parameters.AddWithValue("@PantQty", bill.BillDetails.Where(x => x.Product.Name.ToLower() == "pant").FirstOrDefault().Qty);
                     command.Parameters.AddWithValue("@ShirtQty", bill.BillDetails.Where(x => x.Product.Name.ToLower() == "shirt").FirstOrDefault().Qty);
                     command.Parameters.AddWithValue("@ExtraCost", bill.ExtraCost);
+                    command.Parameters.AddWithValue("@Discount", bill.Discount);
                     command.Parameters.AddWithValue("@PaidAmount", bill.PaidAmount);
                     command.Parameters.AddWithValue("@TotalAmount", bill.TotalAmount);
                     command.Parameters.Add("@BillId", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    command.Parameters.Add("@BillNo", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                     command.CommandType = CommandType.StoredProcedure;
                     connection.Open();
                     command.ExecuteNonQuery();
 
                     int insertedId = (int)command.Parameters["@BillId"].Value;
+                    int billNo = (int)command.Parameters["@BillNo"].Value;
                     bill.Id = insertedId;
+                    bill.BillNo = billNo;
                 }
             }
-            return bill.Id;
+            return bill;
         }
 
         //====Use below one later
-        public int Insert(Bill bill)
-        {
-            using (var connection = GetSqlConnection())
-            {
-                using (var command = new SqlCommand(spSaveBill, connection))
-                {
-                    command.Parameters.AddWithValue("@CustomerId", bill.Customer.Id);                    
-                    command.Parameters.AddWithValue("@BillDate", bill.BillDate);
-                    command.Parameters.AddWithValue("@DeliveryDate", bill.DeliveryDate);
-                    command.Parameters.AddWithValue("@TrialDate", bill.TrialDate);
-                    command.Parameters.AddWithValue("@ExtraCost", bill.ExtraCost);
-                    command.Parameters.AddWithValue("@TotalAmount", bill.TotalAmount);
-                    command.Parameters.AddWithValue("@PaidAmount", bill.PaidAmount);
-                    command.Parameters.Add("@Id", SqlDbType.Int).Direction = ParameterDirection.Output;
+        //public int Insert(Bill bill)
+        //{
+        //    using (var connection = GetSqlConnection())
+        //    {
+        //        using (var command = new SqlCommand(spSaveBill, connection))
+        //        {
+        //            command.Parameters.AddWithValue("@CustomerId", bill.Customer.Id);                    
+        //            command.Parameters.AddWithValue("@BillDate", bill.BillDate);
+        //            command.Parameters.AddWithValue("@DeliveryDate", bill.DeliveryDate);
+        //            command.Parameters.AddWithValue("@TrialDate", bill.TrialDate);
+        //            command.Parameters.AddWithValue("@ExtraCost", bill.ExtraCost);
+        //            command.Parameters.AddWithValue("@Discount", bill.Discount);
+        //            command.Parameters.AddWithValue("@TotalAmount", bill.TotalAmount);
+        //            command.Parameters.AddWithValue("@PaidAmount", bill.PaidAmount);
+        //            command.Parameters.Add("@Id", SqlDbType.Int).Direction = ParameterDirection.Output;
 
-                    command.CommandType = CommandType.StoredProcedure;
-                    connection.Open();
-                    command.ExecuteNonQuery();
+        //            command.CommandType = CommandType.StoredProcedure;
+        //            connection.Open();
+        //            command.ExecuteNonQuery();
 
-                    int insertedId = (int)command.Parameters["@Id"].Value;
-                    bill.Id = insertedId;
-                }
-            }
-            return bill.Id;
-        }
+        //            int insertedId = (int)command.Parameters["@Id"].Value;
+        //            bill.Id = insertedId;
+        //        }
+        //    }
+        //    return bill.Id;
+        //}
 
         //====To Do
         public void Update(Bill customer)

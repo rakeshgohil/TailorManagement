@@ -2,32 +2,32 @@
 
 namespace TailorManagementModels
 {
-    public class Customer
+    public class PantConfiguration
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        public string Description { get; set; }
 
-        public string Mobile { get; set; }
+        public string LocalDescription { get; set; }
         public bool isValid(out StringBuilder error)
         {
             error = new StringBuilder();
-                        
-            if (string.IsNullOrWhiteSpace(Mobile))
+            if (string.IsNullOrWhiteSpace(Description))
             {
-                error.AppendLine("Mobile cannot be blank.");
+                error.AppendLine("Description cannot be blank.");
             }
 
-            if (string.IsNullOrWhiteSpace(Name))
+            if (string.IsNullOrWhiteSpace(LocalDescription))
             {
-                error.AppendLine("Name cannot be blank.");
+                error.AppendLine("Local Description cannot be blank.");
             }
-            
+
             if (string.IsNullOrWhiteSpace(error.ToString()))
             {
                 return false;
             }
             return true;
         }
+
     }
 }

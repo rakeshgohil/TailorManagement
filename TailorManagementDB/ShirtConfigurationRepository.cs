@@ -7,16 +7,16 @@ using TailorManagementModels;
 namespace TailorManagementDB
 {
 
-    public class ProductRepository : IRepository<Product>
+    public class ShirtConfigurationRepository : IRepository<ShirtConfiguration>
     {
         private readonly string _connectionString;
-        private const string spGetProducts = "spGetProducts";
-        private const string spGetProductById = "spGetProductById";
-        private const string spSaveProduct = "spSaveProduct";
-        private const string spUpdateProduct = "spUpdateProduct";
-        private const string spDeleteProductById = "spDeleteProductById";
+        private const string spGetShirtConfigurations = "spGetShirtConfigurations";
+        private const string spGetShirtConfigurationById = "spGetShirtConfigurationById";
+        private const string spSaveShirtConfiguration = "spSaveShirtConfiguration";
+        private const string spUpdateShirtConfiguration = "spUpdateShirtConfiguration";
+        private const string spDeleteShirtConfigurationById = "spDeleteShirtConfigurationById";
 
-        public ProductRepository()
+        public ShirtConfigurationRepository()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["TailorManagementDB"].ConnectionString; ;
         }
@@ -26,12 +26,12 @@ namespace TailorManagementDB
             return new SqlConnection(_connectionString);
         }
 
-        public List<Product> GetAll()
+        public List<ShirtConfiguration> GetAll()
         {
-            List<Product> products = new List<Product>();
+            List<ShirtConfiguration> shirtConfigurations = new List<ShirtConfiguration>();
             using (var connection = GetSqlConnection())
             {
-                using (var command = new SqlCommand(spGetProducts, connection))
+                using (var command = new SqlCommand(spGetShirtConfigurations, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     connection.Open();
@@ -39,26 +39,26 @@ namespace TailorManagementDB
                     {
                         while (reader.Read())
                         {
-                            Product product = new Product
+                            ShirtConfiguration shirtConfiguration = new ShirtConfiguration
                             {
                                 Id = (int)reader["Id"],
-                                Price = (decimal)reader["Price"],
-                                Name = reader["Name"].ToString()
+                                Description = reader["Description"].ToString(),
+                                LocalDescription = reader["LocalDescription"].ToString()
                             };
-                            products.Add(product);
+                            shirtConfigurations.Add(shirtConfiguration);
                         }
                     }
                 }
             }
-            return products;
+            return shirtConfigurations;
         }
 
-        public Product GetById(int id)
+        public ShirtConfiguration GetById(int id)
         {
-            Product product = null;
+            ShirtConfiguration shirtConfiguration = null;
             using (var connection = GetSqlConnection())
             {
-                using (var command = new SqlCommand(spGetProductById, connection))
+                using (var command = new SqlCommand(spGetShirtConfigurationById, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@Id", id);
@@ -67,27 +67,27 @@ namespace TailorManagementDB
                     {
                         if (reader.Read())
                         {
-                            product = new Product
+                            shirtConfiguration = new ShirtConfiguration
                             {
                                 Id = (int)reader["Id"],
-                                Name = reader["Name"].ToString(),
-                                Price = (decimal)reader["Price"]
+                                Description = reader["Description"].ToString(),
+                                LocalDescription = reader["LocalDescription"].ToString()
                             };
                         }
                     }
                 }
             }
-            return product;
+            return shirtConfiguration;
         }
 
-        public Product Insert(Product product)
+        public ShirtConfiguration Insert(ShirtConfiguration shirtConfiguration)
         {
             using (var connection = GetSqlConnection())
             {
-                using (var command = new SqlCommand(spSaveProduct, connection))
+                using (var command = new SqlCommand(spSaveShirtConfiguration, connection))
                 {
-                    command.Parameters.AddWithValue("@Name", product.Name);                    
-                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Description", shirtConfiguration.Description);                    
+                    command.Parameters.AddWithValue("@LocalDescription", shirtConfiguration.LocalDescription);
                     command.Parameters.Add("@Id", SqlDbType.Int).Direction = ParameterDirection.Output;
 
                     command.CommandType = CommandType.StoredProcedure;
@@ -95,22 +95,22 @@ namespace TailorManagementDB
                     command.ExecuteNonQuery();
 
                     int insertedId = (int)command.Parameters["@Id"].Value;
-                    product.Id = insertedId;
+                    shirtConfiguration.Id = insertedId;
                 }
             }
-            return product;
+            return shirtConfiguration;
         }
 
-        public void Update(Product product)
+        public void Update(ShirtConfiguration shirtConfiguration)
         {
 
             using (var connection = GetSqlConnection())
             {
-                using (var command = new SqlCommand(spUpdateProduct, connection))
+                using (var command = new SqlCommand(spUpdateShirtConfiguration, connection))
                 {
-                    command.Parameters.AddWithValue("@Id", product.Id);
-                    command.Parameters.AddWithValue("@Name", product.Name);
-                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Id", shirtConfiguration.Id);
+                    command.Parameters.AddWithValue("@Description", shirtConfiguration.Description);
+                    command.Parameters.AddWithValue("@LocalDescription", shirtConfiguration.LocalDescription);
 
                     command.CommandType = CommandType.StoredProcedure;
                     connection.Open();
@@ -123,7 +123,7 @@ namespace TailorManagementDB
         {
             using (var connection = GetSqlConnection())
             {
-                using (var command = new SqlCommand(spDeleteProductById, connection))
+                using (var command = new SqlCommand(spDeleteShirtConfigurationById, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
 

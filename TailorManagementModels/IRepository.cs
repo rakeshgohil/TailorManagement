@@ -7,7 +7,7 @@ namespace TailorManagementModels
     {
         List<T> GetAll();
         T GetById(int id);
-        int Insert(T entity);
+        T Insert(T entity);
         void Update(T entity);
         void Delete(int id);
     }

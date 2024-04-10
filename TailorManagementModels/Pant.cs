@@ -1,4 +1,6 @@
-﻿namespace TailorManagementModels
+﻿using System.Text;
+
+namespace TailorManagementModels
 {
     public class Pant
     {
@@ -77,5 +79,50 @@
         public string Moli5 { get; set; }
 
         public string Notes { get; set; }
+        public bool isValid(out StringBuilder error)
+        {
+            error = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(Length1))
+            {
+                error.AppendLine("Pant Length cannot be blank.");
+            }
+
+            if (string.IsNullOrWhiteSpace(Kamar1))
+            {
+                error.AppendLine("Pant Kamar cannot be blank.");
+            }
+
+            if (string.IsNullOrWhiteSpace(Seat1))
+            {
+                error.AppendLine("Pant Seat cannot be blank.");
+            }
+
+            if (string.IsNullOrWhiteSpace(Jangh1))
+            {
+                error.AppendLine("Pant Jangh cannot be blank.");
+            }
+
+            if (string.IsNullOrWhiteSpace(Gothan1))
+            {
+                error.AppendLine("Pant Gothan cannot be blank.");
+            }
+
+            if (string.IsNullOrWhiteSpace(Jolo1))
+            {
+                error.AppendLine("Pant Jolo cannot be blank.");
+            }
+
+            if (string.IsNullOrWhiteSpace(Moli1))
+            {
+                error.AppendLine("Pant Moli cannot be blank.");
+            }
+
+            if (string.IsNullOrWhiteSpace(error.ToString()))
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }

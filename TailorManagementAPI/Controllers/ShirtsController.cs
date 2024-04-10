@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TailorManagementDB;
 using TailorManagementModels;
 
 namespace TailorManagementAPI.Controllers
@@ -36,6 +37,21 @@ namespace TailorManagementAPI.Controllers
 
             return Ok(shirt);
         }
+
+        // GET: api/shirtbycustomerid/5
+        [ResponseType(typeof(Shirt))]
+        [Route("api/shirtbycustomerid/{customerId}")]
+        public IHttpActionResult GetShirtByCustomerId(int customerId)
+        {
+            var shirt = ((ShirtRepository)_shirtRepository).GetByCustomerId(customerId);
+            if (shirt == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(shirt);
+        }
+
 
         // PUT: api/shirts/5
         [ResponseType(typeof(void))]
@@ -72,8 +88,8 @@ namespace TailorManagementAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            int addedId = _shirtRepository.Insert(shirt);
-            return CreatedAtRoute("DefaultApi", new { id = addedId }, shirt);
+            Shirt addedShirt = _shirtRepository.Insert(shirt);
+            return CreatedAtRoute("DefaultApi", new { id = addedShirt.Id }, addedShirt);
         }
 
         // DELETE: api/shirts/5

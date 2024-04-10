@@ -146,12 +146,16 @@ namespace TailorManagement1
             this.label20 = new System.Windows.Forms.Label();
             this.txtDueAmount = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.btnSaveAndPreview = new System.Windows.Forms.Button();
             this.btnSaveAndPrint = new System.Windows.Forms.Button();
             this.mskExtraCost = new System.Windows.Forms.MaskedTextBox();
             this.mskPaidAmount = new System.Windows.Forms.MaskedTextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.rtError = new System.Windows.Forms.RichTextBox();
+            this.mskDiscount = new System.Windows.Forms.MaskedTextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnPreview = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -160,7 +164,7 @@ namespace TailorManagement1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Location = new System.Drawing.Point(423, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 5;
@@ -169,24 +173,27 @@ namespace TailorManagement1
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(104, 15);
+            this.txtName.Location = new System.Drawing.Point(507, 12);
+            this.txtName.MaxLength = 100;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(313, 28);
-            this.txtName.TabIndex = 11;
+            this.txtName.TabIndex = 2;
             // 
             // txtMobile
             // 
             this.txtMobile.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobile.Location = new System.Drawing.Point(519, 15);
+            this.txtMobile.Location = new System.Drawing.Point(100, 12);
+            this.txtMobile.MaxLength = 10;
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(301, 28);
-            this.txtMobile.TabIndex = 13;
+            this.txtMobile.TabIndex = 1;
+            this.txtMobile.Leave += new System.EventHandler(this.txtMobile_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(433, 18);
+            this.label2.Location = new System.Drawing.Point(16, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 20);
             this.label2.TabIndex = 12;
@@ -261,6 +268,7 @@ namespace TailorManagement1
             // 
             this.rtPantNotes.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtPantNotes.Location = new System.Drawing.Point(87, 578);
+            this.rtPantNotes.MaxLength = 4000;
             this.rtPantNotes.Name = "rtPantNotes";
             this.rtPantNotes.Size = new System.Drawing.Size(299, 102);
             this.rtPantNotes.TabIndex = 60;
@@ -274,11 +282,13 @@ namespace TailorManagement1
             this.chkListPant.Name = "chkListPant";
             this.chkListPant.Size = new System.Drawing.Size(299, 280);
             this.chkListPant.TabIndex = 59;
+            this.chkListPant.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListPant_ItemCheck);
             // 
             // txtMoli5
             // 
             this.txtMoli5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoli5.Location = new System.Drawing.Point(331, 247);
+            this.txtMoli5.MaxLength = 10;
             this.txtMoli5.Name = "txtMoli5";
             this.txtMoli5.Size = new System.Drawing.Size(55, 28);
             this.txtMoli5.TabIndex = 58;
@@ -287,6 +297,7 @@ namespace TailorManagement1
             // 
             this.txtMoli4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoli4.Location = new System.Drawing.Point(270, 247);
+            this.txtMoli4.MaxLength = 10;
             this.txtMoli4.Name = "txtMoli4";
             this.txtMoli4.Size = new System.Drawing.Size(55, 28);
             this.txtMoli4.TabIndex = 57;
@@ -295,6 +306,7 @@ namespace TailorManagement1
             // 
             this.txtMoli3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoli3.Location = new System.Drawing.Point(209, 247);
+            this.txtMoli3.MaxLength = 10;
             this.txtMoli3.Name = "txtMoli3";
             this.txtMoli3.Size = new System.Drawing.Size(55, 28);
             this.txtMoli3.TabIndex = 56;
@@ -303,6 +315,7 @@ namespace TailorManagement1
             // 
             this.txtMoli2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoli2.Location = new System.Drawing.Point(148, 247);
+            this.txtMoli2.MaxLength = 10;
             this.txtMoli2.Name = "txtMoli2";
             this.txtMoli2.Size = new System.Drawing.Size(55, 28);
             this.txtMoli2.TabIndex = 55;
@@ -311,6 +324,7 @@ namespace TailorManagement1
             // 
             this.txtMoli1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoli1.Location = new System.Drawing.Point(87, 247);
+            this.txtMoli1.MaxLength = 10;
             this.txtMoli1.Name = "txtMoli1";
             this.txtMoli1.Size = new System.Drawing.Size(55, 28);
             this.txtMoli1.TabIndex = 54;
@@ -329,6 +343,7 @@ namespace TailorManagement1
             // 
             this.txtJolo5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJolo5.Location = new System.Drawing.Point(331, 213);
+            this.txtJolo5.MaxLength = 10;
             this.txtJolo5.Name = "txtJolo5";
             this.txtJolo5.Size = new System.Drawing.Size(55, 28);
             this.txtJolo5.TabIndex = 52;
@@ -337,6 +352,7 @@ namespace TailorManagement1
             // 
             this.txtJolo4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJolo4.Location = new System.Drawing.Point(270, 213);
+            this.txtJolo4.MaxLength = 10;
             this.txtJolo4.Name = "txtJolo4";
             this.txtJolo4.Size = new System.Drawing.Size(55, 28);
             this.txtJolo4.TabIndex = 51;
@@ -345,6 +361,7 @@ namespace TailorManagement1
             // 
             this.txtJolo3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJolo3.Location = new System.Drawing.Point(209, 213);
+            this.txtJolo3.MaxLength = 10;
             this.txtJolo3.Name = "txtJolo3";
             this.txtJolo3.Size = new System.Drawing.Size(55, 28);
             this.txtJolo3.TabIndex = 50;
@@ -353,6 +370,7 @@ namespace TailorManagement1
             // 
             this.txtJolo2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJolo2.Location = new System.Drawing.Point(148, 213);
+            this.txtJolo2.MaxLength = 10;
             this.txtJolo2.Name = "txtJolo2";
             this.txtJolo2.Size = new System.Drawing.Size(55, 28);
             this.txtJolo2.TabIndex = 49;
@@ -361,6 +379,7 @@ namespace TailorManagement1
             // 
             this.txtJolo1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJolo1.Location = new System.Drawing.Point(87, 213);
+            this.txtJolo1.MaxLength = 10;
             this.txtJolo1.Name = "txtJolo1";
             this.txtJolo1.Size = new System.Drawing.Size(55, 28);
             this.txtJolo1.TabIndex = 48;
@@ -379,6 +398,7 @@ namespace TailorManagement1
             // 
             this.txtGothan5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGothan5.Location = new System.Drawing.Point(331, 179);
+            this.txtGothan5.MaxLength = 10;
             this.txtGothan5.Name = "txtGothan5";
             this.txtGothan5.Size = new System.Drawing.Size(55, 28);
             this.txtGothan5.TabIndex = 46;
@@ -387,6 +407,7 @@ namespace TailorManagement1
             // 
             this.txtGothan4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGothan4.Location = new System.Drawing.Point(270, 179);
+            this.txtGothan4.MaxLength = 10;
             this.txtGothan4.Name = "txtGothan4";
             this.txtGothan4.Size = new System.Drawing.Size(55, 28);
             this.txtGothan4.TabIndex = 45;
@@ -395,6 +416,7 @@ namespace TailorManagement1
             // 
             this.txtGothan3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGothan3.Location = new System.Drawing.Point(209, 179);
+            this.txtGothan3.MaxLength = 10;
             this.txtGothan3.Name = "txtGothan3";
             this.txtGothan3.Size = new System.Drawing.Size(55, 28);
             this.txtGothan3.TabIndex = 44;
@@ -403,6 +425,7 @@ namespace TailorManagement1
             // 
             this.txtGothan2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGothan2.Location = new System.Drawing.Point(148, 179);
+            this.txtGothan2.MaxLength = 10;
             this.txtGothan2.Name = "txtGothan2";
             this.txtGothan2.Size = new System.Drawing.Size(55, 28);
             this.txtGothan2.TabIndex = 43;
@@ -411,6 +434,7 @@ namespace TailorManagement1
             // 
             this.txtGothan1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGothan1.Location = new System.Drawing.Point(87, 179);
+            this.txtGothan1.MaxLength = 10;
             this.txtGothan1.Name = "txtGothan1";
             this.txtGothan1.Size = new System.Drawing.Size(55, 28);
             this.txtGothan1.TabIndex = 42;
@@ -429,6 +453,7 @@ namespace TailorManagement1
             // 
             this.txtJangh5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJangh5.Location = new System.Drawing.Point(331, 145);
+            this.txtJangh5.MaxLength = 10;
             this.txtJangh5.Name = "txtJangh5";
             this.txtJangh5.Size = new System.Drawing.Size(55, 28);
             this.txtJangh5.TabIndex = 40;
@@ -437,6 +462,7 @@ namespace TailorManagement1
             // 
             this.txtJangh4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJangh4.Location = new System.Drawing.Point(270, 145);
+            this.txtJangh4.MaxLength = 10;
             this.txtJangh4.Name = "txtJangh4";
             this.txtJangh4.Size = new System.Drawing.Size(55, 28);
             this.txtJangh4.TabIndex = 39;
@@ -445,6 +471,7 @@ namespace TailorManagement1
             // 
             this.txtJangh3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJangh3.Location = new System.Drawing.Point(209, 145);
+            this.txtJangh3.MaxLength = 10;
             this.txtJangh3.Name = "txtJangh3";
             this.txtJangh3.Size = new System.Drawing.Size(55, 28);
             this.txtJangh3.TabIndex = 38;
@@ -453,6 +480,7 @@ namespace TailorManagement1
             // 
             this.txtJangh2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJangh2.Location = new System.Drawing.Point(148, 145);
+            this.txtJangh2.MaxLength = 10;
             this.txtJangh2.Name = "txtJangh2";
             this.txtJangh2.Size = new System.Drawing.Size(55, 28);
             this.txtJangh2.TabIndex = 37;
@@ -461,6 +489,7 @@ namespace TailorManagement1
             // 
             this.txtJangh1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJangh1.Location = new System.Drawing.Point(87, 145);
+            this.txtJangh1.MaxLength = 10;
             this.txtJangh1.Name = "txtJangh1";
             this.txtJangh1.Size = new System.Drawing.Size(55, 28);
             this.txtJangh1.TabIndex = 36;
@@ -479,6 +508,7 @@ namespace TailorManagement1
             // 
             this.txtSeat5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeat5.Location = new System.Drawing.Point(331, 111);
+            this.txtSeat5.MaxLength = 10;
             this.txtSeat5.Name = "txtSeat5";
             this.txtSeat5.Size = new System.Drawing.Size(55, 28);
             this.txtSeat5.TabIndex = 34;
@@ -487,6 +517,7 @@ namespace TailorManagement1
             // 
             this.txtSeat4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeat4.Location = new System.Drawing.Point(270, 111);
+            this.txtSeat4.MaxLength = 10;
             this.txtSeat4.Name = "txtSeat4";
             this.txtSeat4.Size = new System.Drawing.Size(55, 28);
             this.txtSeat4.TabIndex = 33;
@@ -495,6 +526,7 @@ namespace TailorManagement1
             // 
             this.txtSeat3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeat3.Location = new System.Drawing.Point(209, 111);
+            this.txtSeat3.MaxLength = 10;
             this.txtSeat3.Name = "txtSeat3";
             this.txtSeat3.Size = new System.Drawing.Size(55, 28);
             this.txtSeat3.TabIndex = 32;
@@ -503,6 +535,7 @@ namespace TailorManagement1
             // 
             this.txtSeat2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeat2.Location = new System.Drawing.Point(148, 111);
+            this.txtSeat2.MaxLength = 10;
             this.txtSeat2.Name = "txtSeat2";
             this.txtSeat2.Size = new System.Drawing.Size(55, 28);
             this.txtSeat2.TabIndex = 31;
@@ -511,6 +544,7 @@ namespace TailorManagement1
             // 
             this.txtSeat1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeat1.Location = new System.Drawing.Point(87, 111);
+            this.txtSeat1.MaxLength = 10;
             this.txtSeat1.Name = "txtSeat1";
             this.txtSeat1.Size = new System.Drawing.Size(55, 28);
             this.txtSeat1.TabIndex = 30;
@@ -529,6 +563,7 @@ namespace TailorManagement1
             // 
             this.txtKamar5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKamar5.Location = new System.Drawing.Point(331, 77);
+            this.txtKamar5.MaxLength = 10;
             this.txtKamar5.Name = "txtKamar5";
             this.txtKamar5.Size = new System.Drawing.Size(55, 28);
             this.txtKamar5.TabIndex = 28;
@@ -537,6 +572,7 @@ namespace TailorManagement1
             // 
             this.txtKamar4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKamar4.Location = new System.Drawing.Point(270, 77);
+            this.txtKamar4.MaxLength = 10;
             this.txtKamar4.Name = "txtKamar4";
             this.txtKamar4.Size = new System.Drawing.Size(55, 28);
             this.txtKamar4.TabIndex = 27;
@@ -545,6 +581,7 @@ namespace TailorManagement1
             // 
             this.txtKamar3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKamar3.Location = new System.Drawing.Point(209, 77);
+            this.txtKamar3.MaxLength = 10;
             this.txtKamar3.Name = "txtKamar3";
             this.txtKamar3.Size = new System.Drawing.Size(55, 28);
             this.txtKamar3.TabIndex = 26;
@@ -553,6 +590,7 @@ namespace TailorManagement1
             // 
             this.txtKamar2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKamar2.Location = new System.Drawing.Point(148, 77);
+            this.txtKamar2.MaxLength = 10;
             this.txtKamar2.Name = "txtKamar2";
             this.txtKamar2.Size = new System.Drawing.Size(55, 28);
             this.txtKamar2.TabIndex = 25;
@@ -561,6 +599,7 @@ namespace TailorManagement1
             // 
             this.txtKamar1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKamar1.Location = new System.Drawing.Point(87, 77);
+            this.txtKamar1.MaxLength = 10;
             this.txtKamar1.Name = "txtKamar1";
             this.txtKamar1.Size = new System.Drawing.Size(55, 28);
             this.txtKamar1.TabIndex = 24;
@@ -579,6 +618,7 @@ namespace TailorManagement1
             // 
             this.txtPantLambai5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPantLambai5.Location = new System.Drawing.Point(331, 43);
+            this.txtPantLambai5.MaxLength = 10;
             this.txtPantLambai5.Name = "txtPantLambai5";
             this.txtPantLambai5.Size = new System.Drawing.Size(55, 28);
             this.txtPantLambai5.TabIndex = 22;
@@ -587,6 +627,7 @@ namespace TailorManagement1
             // 
             this.txtPantLambai4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPantLambai4.Location = new System.Drawing.Point(270, 43);
+            this.txtPantLambai4.MaxLength = 10;
             this.txtPantLambai4.Name = "txtPantLambai4";
             this.txtPantLambai4.Size = new System.Drawing.Size(55, 28);
             this.txtPantLambai4.TabIndex = 21;
@@ -595,6 +636,7 @@ namespace TailorManagement1
             // 
             this.txtPantLambai3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPantLambai3.Location = new System.Drawing.Point(209, 43);
+            this.txtPantLambai3.MaxLength = 10;
             this.txtPantLambai3.Name = "txtPantLambai3";
             this.txtPantLambai3.Size = new System.Drawing.Size(55, 28);
             this.txtPantLambai3.TabIndex = 20;
@@ -603,6 +645,7 @@ namespace TailorManagement1
             // 
             this.txtPantLambai2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPantLambai2.Location = new System.Drawing.Point(148, 43);
+            this.txtPantLambai2.MaxLength = 10;
             this.txtPantLambai2.Name = "txtPantLambai2";
             this.txtPantLambai2.Size = new System.Drawing.Size(55, 28);
             this.txtPantLambai2.TabIndex = 19;
@@ -611,6 +654,7 @@ namespace TailorManagement1
             // 
             this.txtPantLambai1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPantLambai1.Location = new System.Drawing.Point(87, 43);
+            this.txtPantLambai1.MaxLength = 10;
             this.txtPantLambai1.Name = "txtPantLambai1";
             this.txtPantLambai1.Size = new System.Drawing.Size(55, 28);
             this.txtPantLambai1.TabIndex = 18;
@@ -704,6 +748,7 @@ namespace TailorManagement1
             // 
             this.rtShirtNotes.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtShirtNotes.Location = new System.Drawing.Point(87, 578);
+            this.rtShirtNotes.MaxLength = 4000;
             this.rtShirtNotes.Name = "rtShirtNotes";
             this.rtShirtNotes.Size = new System.Drawing.Size(299, 102);
             this.rtShirtNotes.TabIndex = 60;
@@ -717,11 +762,13 @@ namespace TailorManagement1
             this.chkListShirt.Name = "chkListShirt";
             this.chkListShirt.Size = new System.Drawing.Size(299, 280);
             this.chkListShirt.TabIndex = 59;
+            this.chkListShirt.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListShirt_ItemCheck);
             // 
             // txtCuff5
             // 
             this.txtCuff5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCuff5.Location = new System.Drawing.Point(331, 247);
+            this.txtCuff5.MaxLength = 10;
             this.txtCuff5.Name = "txtCuff5";
             this.txtCuff5.Size = new System.Drawing.Size(55, 28);
             this.txtCuff5.TabIndex = 58;
@@ -730,6 +777,7 @@ namespace TailorManagement1
             // 
             this.txtCuff4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCuff4.Location = new System.Drawing.Point(270, 247);
+            this.txtCuff4.MaxLength = 10;
             this.txtCuff4.Name = "txtCuff4";
             this.txtCuff4.Size = new System.Drawing.Size(55, 28);
             this.txtCuff4.TabIndex = 57;
@@ -738,6 +786,7 @@ namespace TailorManagement1
             // 
             this.txtCuff3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCuff3.Location = new System.Drawing.Point(209, 247);
+            this.txtCuff3.MaxLength = 10;
             this.txtCuff3.Name = "txtCuff3";
             this.txtCuff3.Size = new System.Drawing.Size(55, 28);
             this.txtCuff3.TabIndex = 56;
@@ -746,6 +795,7 @@ namespace TailorManagement1
             // 
             this.txtCuff2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCuff2.Location = new System.Drawing.Point(148, 247);
+            this.txtCuff2.MaxLength = 10;
             this.txtCuff2.Name = "txtCuff2";
             this.txtCuff2.Size = new System.Drawing.Size(55, 28);
             this.txtCuff2.TabIndex = 55;
@@ -754,6 +804,7 @@ namespace TailorManagement1
             // 
             this.txtCuff1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCuff1.Location = new System.Drawing.Point(87, 247);
+            this.txtCuff1.MaxLength = 10;
             this.txtCuff1.Name = "txtCuff1";
             this.txtCuff1.Size = new System.Drawing.Size(55, 28);
             this.txtCuff1.TabIndex = 54;
@@ -772,6 +823,7 @@ namespace TailorManagement1
             // 
             this.txtKolor5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKolor5.Location = new System.Drawing.Point(331, 213);
+            this.txtKolor5.MaxLength = 10;
             this.txtKolor5.Name = "txtKolor5";
             this.txtKolor5.Size = new System.Drawing.Size(55, 28);
             this.txtKolor5.TabIndex = 52;
@@ -780,6 +832,7 @@ namespace TailorManagement1
             // 
             this.txtKolor4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKolor4.Location = new System.Drawing.Point(270, 213);
+            this.txtKolor4.MaxLength = 10;
             this.txtKolor4.Name = "txtKolor4";
             this.txtKolor4.Size = new System.Drawing.Size(55, 28);
             this.txtKolor4.TabIndex = 51;
@@ -788,6 +841,7 @@ namespace TailorManagement1
             // 
             this.txtKolor3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKolor3.Location = new System.Drawing.Point(209, 213);
+            this.txtKolor3.MaxLength = 10;
             this.txtKolor3.Name = "txtKolor3";
             this.txtKolor3.Size = new System.Drawing.Size(55, 28);
             this.txtKolor3.TabIndex = 50;
@@ -796,6 +850,7 @@ namespace TailorManagement1
             // 
             this.txtKolor2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKolor2.Location = new System.Drawing.Point(148, 213);
+            this.txtKolor2.MaxLength = 10;
             this.txtKolor2.Name = "txtKolor2";
             this.txtKolor2.Size = new System.Drawing.Size(55, 28);
             this.txtKolor2.TabIndex = 49;
@@ -804,6 +859,7 @@ namespace TailorManagement1
             // 
             this.txtKolor1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKolor1.Location = new System.Drawing.Point(87, 213);
+            this.txtKolor1.MaxLength = 10;
             this.txtKolor1.Name = "txtKolor1";
             this.txtKolor1.Size = new System.Drawing.Size(55, 28);
             this.txtKolor1.TabIndex = 48;
@@ -822,6 +878,7 @@ namespace TailorManagement1
             // 
             this.txtFront5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFront5.Location = new System.Drawing.Point(331, 179);
+            this.txtFront5.MaxLength = 10;
             this.txtFront5.Name = "txtFront5";
             this.txtFront5.Size = new System.Drawing.Size(55, 28);
             this.txtFront5.TabIndex = 46;
@@ -830,6 +887,7 @@ namespace TailorManagement1
             // 
             this.txtFront4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFront4.Location = new System.Drawing.Point(270, 179);
+            this.txtFront4.MaxLength = 10;
             this.txtFront4.Name = "txtFront4";
             this.txtFront4.Size = new System.Drawing.Size(55, 28);
             this.txtFront4.TabIndex = 45;
@@ -838,6 +896,7 @@ namespace TailorManagement1
             // 
             this.txtFront3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFront3.Location = new System.Drawing.Point(209, 179);
+            this.txtFront3.MaxLength = 10;
             this.txtFront3.Name = "txtFront3";
             this.txtFront3.Size = new System.Drawing.Size(55, 28);
             this.txtFront3.TabIndex = 44;
@@ -846,6 +905,7 @@ namespace TailorManagement1
             // 
             this.txtFront2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFront2.Location = new System.Drawing.Point(148, 179);
+            this.txtFront2.MaxLength = 10;
             this.txtFront2.Name = "txtFront2";
             this.txtFront2.Size = new System.Drawing.Size(55, 28);
             this.txtFront2.TabIndex = 43;
@@ -854,6 +914,7 @@ namespace TailorManagement1
             // 
             this.txtFront1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFront1.Location = new System.Drawing.Point(87, 179);
+            this.txtFront1.MaxLength = 10;
             this.txtFront1.Name = "txtFront1";
             this.txtFront1.Size = new System.Drawing.Size(55, 28);
             this.txtFront1.TabIndex = 42;
@@ -872,6 +933,7 @@ namespace TailorManagement1
             // 
             this.txtBye5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBye5.Location = new System.Drawing.Point(331, 145);
+            this.txtBye5.MaxLength = 10;
             this.txtBye5.Name = "txtBye5";
             this.txtBye5.Size = new System.Drawing.Size(55, 28);
             this.txtBye5.TabIndex = 40;
@@ -880,6 +942,7 @@ namespace TailorManagement1
             // 
             this.txtBye4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBye4.Location = new System.Drawing.Point(270, 145);
+            this.txtBye4.MaxLength = 10;
             this.txtBye4.Name = "txtBye4";
             this.txtBye4.Size = new System.Drawing.Size(55, 28);
             this.txtBye4.TabIndex = 39;
@@ -888,6 +951,7 @@ namespace TailorManagement1
             // 
             this.txtBye3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBye3.Location = new System.Drawing.Point(209, 145);
+            this.txtBye3.MaxLength = 10;
             this.txtBye3.Name = "txtBye3";
             this.txtBye3.Size = new System.Drawing.Size(55, 28);
             this.txtBye3.TabIndex = 38;
@@ -896,6 +960,7 @@ namespace TailorManagement1
             // 
             this.txtBye2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBye2.Location = new System.Drawing.Point(148, 145);
+            this.txtBye2.MaxLength = 10;
             this.txtBye2.Name = "txtBye2";
             this.txtBye2.Size = new System.Drawing.Size(55, 28);
             this.txtBye2.TabIndex = 37;
@@ -904,6 +969,7 @@ namespace TailorManagement1
             // 
             this.txtBye1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBye1.Location = new System.Drawing.Point(87, 145);
+            this.txtBye1.MaxLength = 10;
             this.txtBye1.Name = "txtBye1";
             this.txtBye1.Size = new System.Drawing.Size(55, 28);
             this.txtBye1.TabIndex = 36;
@@ -922,6 +988,7 @@ namespace TailorManagement1
             // 
             this.txtSolder5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSolder5.Location = new System.Drawing.Point(331, 111);
+            this.txtSolder5.MaxLength = 10;
             this.txtSolder5.Name = "txtSolder5";
             this.txtSolder5.Size = new System.Drawing.Size(55, 28);
             this.txtSolder5.TabIndex = 34;
@@ -930,6 +997,7 @@ namespace TailorManagement1
             // 
             this.txtSolder4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSolder4.Location = new System.Drawing.Point(270, 111);
+            this.txtSolder4.MaxLength = 10;
             this.txtSolder4.Name = "txtSolder4";
             this.txtSolder4.Size = new System.Drawing.Size(55, 28);
             this.txtSolder4.TabIndex = 33;
@@ -938,6 +1006,7 @@ namespace TailorManagement1
             // 
             this.txtSolder3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSolder3.Location = new System.Drawing.Point(209, 111);
+            this.txtSolder3.MaxLength = 10;
             this.txtSolder3.Name = "txtSolder3";
             this.txtSolder3.Size = new System.Drawing.Size(55, 28);
             this.txtSolder3.TabIndex = 32;
@@ -946,6 +1015,7 @@ namespace TailorManagement1
             // 
             this.txtSolder2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSolder2.Location = new System.Drawing.Point(148, 111);
+            this.txtSolder2.MaxLength = 10;
             this.txtSolder2.Name = "txtSolder2";
             this.txtSolder2.Size = new System.Drawing.Size(55, 28);
             this.txtSolder2.TabIndex = 31;
@@ -954,6 +1024,7 @@ namespace TailorManagement1
             // 
             this.txtSolder1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSolder1.Location = new System.Drawing.Point(87, 111);
+            this.txtSolder1.MaxLength = 10;
             this.txtSolder1.Name = "txtSolder1";
             this.txtSolder1.Size = new System.Drawing.Size(55, 28);
             this.txtSolder1.TabIndex = 30;
@@ -972,6 +1043,7 @@ namespace TailorManagement1
             // 
             this.txtChati5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChati5.Location = new System.Drawing.Point(331, 77);
+            this.txtChati5.MaxLength = 10;
             this.txtChati5.Name = "txtChati5";
             this.txtChati5.Size = new System.Drawing.Size(55, 28);
             this.txtChati5.TabIndex = 28;
@@ -980,6 +1052,7 @@ namespace TailorManagement1
             // 
             this.txtChati4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChati4.Location = new System.Drawing.Point(270, 77);
+            this.txtChati4.MaxLength = 10;
             this.txtChati4.Name = "txtChati4";
             this.txtChati4.Size = new System.Drawing.Size(55, 28);
             this.txtChati4.TabIndex = 27;
@@ -988,6 +1061,7 @@ namespace TailorManagement1
             // 
             this.txtChati3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChati3.Location = new System.Drawing.Point(209, 77);
+            this.txtChati3.MaxLength = 10;
             this.txtChati3.Name = "txtChati3";
             this.txtChati3.Size = new System.Drawing.Size(55, 28);
             this.txtChati3.TabIndex = 26;
@@ -996,6 +1070,7 @@ namespace TailorManagement1
             // 
             this.txtChati2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChati2.Location = new System.Drawing.Point(148, 77);
+            this.txtChati2.MaxLength = 10;
             this.txtChati2.Name = "txtChati2";
             this.txtChati2.Size = new System.Drawing.Size(55, 28);
             this.txtChati2.TabIndex = 25;
@@ -1004,6 +1079,7 @@ namespace TailorManagement1
             // 
             this.txtChati1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChati1.Location = new System.Drawing.Point(87, 77);
+            this.txtChati1.MaxLength = 10;
             this.txtChati1.Name = "txtChati1";
             this.txtChati1.Size = new System.Drawing.Size(55, 28);
             this.txtChati1.TabIndex = 24;
@@ -1022,6 +1098,7 @@ namespace TailorManagement1
             // 
             this.txtShirtLambai5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShirtLambai5.Location = new System.Drawing.Point(331, 43);
+            this.txtShirtLambai5.MaxLength = 10;
             this.txtShirtLambai5.Name = "txtShirtLambai5";
             this.txtShirtLambai5.Size = new System.Drawing.Size(55, 28);
             this.txtShirtLambai5.TabIndex = 22;
@@ -1030,6 +1107,7 @@ namespace TailorManagement1
             // 
             this.txtShirtLambai4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShirtLambai4.Location = new System.Drawing.Point(270, 43);
+            this.txtShirtLambai4.MaxLength = 10;
             this.txtShirtLambai4.Name = "txtShirtLambai4";
             this.txtShirtLambai4.Size = new System.Drawing.Size(55, 28);
             this.txtShirtLambai4.TabIndex = 21;
@@ -1038,6 +1116,7 @@ namespace TailorManagement1
             // 
             this.txtShirtLambai3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShirtLambai3.Location = new System.Drawing.Point(209, 43);
+            this.txtShirtLambai3.MaxLength = 10;
             this.txtShirtLambai3.Name = "txtShirtLambai3";
             this.txtShirtLambai3.Size = new System.Drawing.Size(55, 28);
             this.txtShirtLambai3.TabIndex = 20;
@@ -1046,6 +1125,7 @@ namespace TailorManagement1
             // 
             this.txtShirtLambai2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShirtLambai2.Location = new System.Drawing.Point(148, 43);
+            this.txtShirtLambai2.MaxLength = 10;
             this.txtShirtLambai2.Name = "txtShirtLambai2";
             this.txtShirtLambai2.Size = new System.Drawing.Size(55, 28);
             this.txtShirtLambai2.TabIndex = 19;
@@ -1054,6 +1134,7 @@ namespace TailorManagement1
             // 
             this.txtShirtLambai1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShirtLambai1.Location = new System.Drawing.Point(87, 43);
+            this.txtShirtLambai1.MaxLength = 10;
             this.txtShirtLambai1.Name = "txtShirtLambai1";
             this.txtShirtLambai1.Size = new System.Drawing.Size(55, 28);
             this.txtShirtLambai1.TabIndex = 18;
@@ -1149,11 +1230,13 @@ namespace TailorManagement1
             // 
             this.txtPantQty.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPantQty.Location = new System.Drawing.Point(968, 202);
+            this.txtPantQty.MaxLength = 6;
             this.txtPantQty.Name = "txtPantQty";
             this.txtPantQty.Size = new System.Drawing.Size(139, 28);
             this.txtPantQty.TabIndex = 71;
             this.txtPantQty.Text = "1";
             this.txtPantQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPantQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPantQty_KeyUp);
             // 
             // label24
             // 
@@ -1169,11 +1252,13 @@ namespace TailorManagement1
             // 
             this.txtShirtQty.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtShirtQty.Location = new System.Drawing.Point(968, 236);
+            this.txtShirtQty.MaxLength = 6;
             this.txtShirtQty.Name = "txtShirtQty";
             this.txtShirtQty.Size = new System.Drawing.Size(139, 28);
             this.txtShirtQty.TabIndex = 73;
             this.txtShirtQty.Text = "1";
             this.txtShirtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtShirtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtShirtQty_KeyUp);
             // 
             // label25
             // 
@@ -1198,7 +1283,7 @@ namespace TailorManagement1
             // txtTotalAmount
             // 
             this.txtTotalAmount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAmount.Location = new System.Drawing.Point(968, 304);
+            this.txtTotalAmount.Location = new System.Drawing.Point(968, 338);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.ReadOnly = true;
             this.txtTotalAmount.Size = new System.Drawing.Size(139, 28);
@@ -1210,7 +1295,7 @@ namespace TailorManagement1
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(822, 307);
+            this.label27.Location = new System.Drawing.Point(822, 341);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(139, 20);
             this.label27.TabIndex = 76;
@@ -1224,12 +1309,13 @@ namespace TailorManagement1
             this.txtBillNo.ReadOnly = true;
             this.txtBillNo.Size = new System.Drawing.Size(139, 28);
             this.txtBillNo.TabIndex = 78;
+            this.txtBillNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(822, 341);
+            this.label20.Location = new System.Drawing.Point(822, 375);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(131, 20);
             this.label20.TabIndex = 79;
@@ -1238,7 +1324,7 @@ namespace TailorManagement1
             // txtDueAmount
             // 
             this.txtDueAmount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDueAmount.Location = new System.Drawing.Point(968, 372);
+            this.txtDueAmount.Location = new System.Drawing.Point(968, 406);
             this.txtDueAmount.Name = "txtDueAmount";
             this.txtDueAmount.ReadOnly = true;
             this.txtDueAmount.Size = new System.Drawing.Size(139, 28);
@@ -1250,29 +1336,19 @@ namespace TailorManagement1
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(822, 375);
+            this.label28.Location = new System.Drawing.Point(822, 409);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(127, 20);
             this.label28.TabIndex = 81;
             this.label28.Text = "Due Amount";
             // 
-            // btnSaveAndPreview
-            // 
-            this.btnSaveAndPreview.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAndPreview.Location = new System.Drawing.Point(826, 478);
-            this.btnSaveAndPreview.Name = "btnSaveAndPreview";
-            this.btnSaveAndPreview.Size = new System.Drawing.Size(281, 39);
-            this.btnSaveAndPreview.TabIndex = 83;
-            this.btnSaveAndPreview.Text = "Save and Preview";
-            this.btnSaveAndPreview.UseVisualStyleBackColor = true;
-            // 
             // btnSaveAndPrint
             // 
             this.btnSaveAndPrint.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAndPrint.Location = new System.Drawing.Point(826, 433);
+            this.btnSaveAndPrint.Location = new System.Drawing.Point(826, 440);
             this.btnSaveAndPrint.Name = "btnSaveAndPrint";
             this.btnSaveAndPrint.Size = new System.Drawing.Size(281, 39);
-            this.btnSaveAndPrint.TabIndex = 86;
+            this.btnSaveAndPrint.TabIndex = 76;
             this.btnSaveAndPrint.Text = "Save and Print";
             this.btnSaveAndPrint.UseVisualStyleBackColor = true;
             // 
@@ -1283,54 +1359,114 @@ namespace TailorManagement1
             this.mskExtraCost.Mask = "0.00";
             this.mskExtraCost.Name = "mskExtraCost";
             this.mskExtraCost.Size = new System.Drawing.Size(139, 28);
-            this.mskExtraCost.TabIndex = 87;
+            this.mskExtraCost.TabIndex = 74;
             this.mskExtraCost.Text = "000";
             this.mskExtraCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mskExtraCost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskExtraCost_KeyUp);
             // 
             // mskPaidAmount
             // 
             this.mskPaidAmount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskPaidAmount.Location = new System.Drawing.Point(968, 338);
+            this.mskPaidAmount.Location = new System.Drawing.Point(968, 372);
             this.mskPaidAmount.Mask = "0.00";
             this.mskPaidAmount.Name = "mskPaidAmount";
             this.mskPaidAmount.Size = new System.Drawing.Size(139, 28);
-            this.mskPaidAmount.TabIndex = 88;
+            this.mskPaidAmount.TabIndex = 76;
             this.mskPaidAmount.Text = "000";
             this.mskPaidAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mskPaidAmount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskPaidAmount_KeyUp);
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(826, 523);
+            this.btnSave.Location = new System.Drawing.Point(826, 485);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(281, 39);
-            this.btnSave.TabIndex = 89;
-            this.btnSave.Text = "Save";
+            this.btnSave.Size = new System.Drawing.Size(132, 39);
+            this.btnSave.TabIndex = 78;
+            this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rtError
             // 
-            this.rtError.Enabled = false;
             this.rtError.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtError.Location = new System.Drawing.Point(826, 568);
+            this.rtError.ForeColor = System.Drawing.Color.Red;
+            this.rtError.Location = new System.Drawing.Point(826, 575);
             this.rtError.Name = "rtError";
             this.rtError.ReadOnly = true;
-            this.rtError.Size = new System.Drawing.Size(600, 188);
+            this.rtError.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.rtError.Size = new System.Drawing.Size(281, 181);
             this.rtError.TabIndex = 90;
             this.rtError.Text = "";
+            // 
+            // mskDiscount
+            // 
+            this.mskDiscount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskDiscount.Location = new System.Drawing.Point(968, 304);
+            this.mskDiscount.Mask = "0.00";
+            this.mskDiscount.Name = "mskDiscount";
+            this.mskDiscount.Size = new System.Drawing.Size(139, 28);
+            this.mskDiscount.TabIndex = 75;
+            this.mskDiscount.Text = "000";
+            this.mskDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mskDiscount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskDiscount_KeyUp);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(822, 307);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(93, 20);
+            this.label31.TabIndex = 92;
+            this.label31.Text = "Discount";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(972, 485);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(135, 39);
+            this.btnPrint.TabIndex = 93;
+            this.btnPrint.Text = "&Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(972, 530);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(135, 39);
+            this.btnNew.TabIndex = 94;
+            this.btnNew.Text = "&New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnPreview
+            // 
+            this.btnPreview.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreview.Location = new System.Drawing.Point(826, 530);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(135, 39);
+            this.btnPreview.TabIndex = 95;
+            this.btnPreview.Text = "Pre&view";
+            this.btnPreview.UseVisualStyleBackColor = true;
             // 
             // BillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1431, 768);
+            this.ClientSize = new System.Drawing.Size(1202, 768);
+            this.Controls.Add(this.btnPreview);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.mskDiscount);
+            this.Controls.Add(this.label31);
             this.Controls.Add(this.rtError);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.mskPaidAmount);
             this.Controls.Add(this.mskExtraCost);
             this.Controls.Add(this.btnSaveAndPrint);
-            this.Controls.Add(this.btnSaveAndPreview);
             this.Controls.Add(this.txtDueAmount);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label20);
@@ -1356,12 +1492,15 @@ namespace TailorManagement1
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BillForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Bill";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.BillForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BillForm_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1487,7 +1626,6 @@ namespace TailorManagement1
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtDueAmount;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Button btnSaveAndPreview;
         private System.Windows.Forms.Button btnSaveAndPrint;
         private System.Windows.Forms.MaskedTextBox mskExtraCost;
         private System.Windows.Forms.MaskedTextBox mskPaidAmount;
@@ -1495,5 +1633,10 @@ namespace TailorManagement1
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.RichTextBox rtError;
+        private System.Windows.Forms.MaskedTextBox mskDiscount;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnPreview;
     }
 }

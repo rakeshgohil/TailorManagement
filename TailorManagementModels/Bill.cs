@@ -15,6 +15,7 @@ namespace TailorManagementModels
         public DateTime TrialDate { get; set; }
 
         public decimal ExtraCost { get; set; }
+        public decimal Discount { get; set; }
 
         public decimal TotalAmount { get; set; }
 
@@ -29,9 +30,23 @@ namespace TailorManagementModels
         public bool isValid(out StringBuilder error)
         {
             error = new StringBuilder();
-            //todo add isValid in all model class
-            error.AppendLine();
-            if(string.IsNullOrWhiteSpace(error.ToString()))
+            
+            StringBuilder customerError;
+            Customer.isValid(out customerError);
+            error.Append(customerError.ToString());
+
+            StringBuilder pantError;
+            Pant.isValid(out pantError);
+            error.Append(pantError.ToString());
+
+            StringBuilder shirtError;
+            Shirt.isValid(out shirtError);
+            error.Append(shirtError.ToString());
+
+            //todo billdetails validation
+            //todo bill validation
+
+            if (string.IsNullOrWhiteSpace(error.ToString()))
             {
                 return false;
             }

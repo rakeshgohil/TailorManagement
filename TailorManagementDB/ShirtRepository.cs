@@ -16,6 +16,7 @@ namespace TailorManagementDB
         private const string spSaveShirt = "spSaveShirt";
         private const string spUpdateShirt = "spUpdateShirt";
         private const string spDeleteShirtById = "spDeleteShirtById";
+        private const string spGetShirtByCustomerId = "spGetShirtByCustomerId";
 
         public ShirtRepository()
         {
@@ -40,58 +41,63 @@ namespace TailorManagementDB
                     {
                         while (reader.Read())
                         {
-                            Shirt shirt = new Shirt
-                            {
-                                Id = (int)reader["Id"],
-                                Customer = new Customer()
-                                {
-                                    Id = (int)reader["CustomerId"],
-                                    Mobile = reader["Mobile"].ToString(),
-                                    Name = reader["Name"].ToString()
-                                },
-                                Length1 = reader["Length1"].ToString(),
-                                Length2 = reader["Length2"].ToString(),
-                                Length3 = reader["Length3"].ToString(),
-                                Length4 = reader["Length4"].ToString(),
-                                Length5 = reader["Length5"].ToString(),
-                                Chati1 = reader["Chati1"].ToString(),
-                                Chati2 = reader["Chati2"].ToString(),
-                                Chati3 = reader["Chati3"].ToString(),
-                                Chati4 = reader["Chati4"].ToString(),
-                                Chati5 = reader["Chati5"].ToString(),
-                                Solder1 = reader["Solder1"].ToString(),
-                                Solder2 = reader["Solder2"].ToString(),
-                                Solder3 = reader["Solder3"].ToString(),
-                                Solder4 = reader["Solder4"].ToString(),
-                                Solder5 = reader["Solder5"].ToString(),
-                                Bye1 = reader["Bye1"].ToString(),
-                                Bye2 = reader["Bye2"].ToString(),
-                                Bye3 = reader["Bye3"].ToString(),
-                                Bye4 = reader["Bye4"].ToString(),
-                                Bye5 = reader["Bye5"].ToString(),
-                                Front1 = reader["Front1"].ToString(),
-                                Front2 = reader["Front2"].ToString(),
-                                Front3 = reader["Front3"].ToString(),
-                                Front4 = reader["Front4"].ToString(),
-                                Front5 = reader["Front5"].ToString(),
-                                Kolor1 = reader["Kolor1"].ToString(),
-                                Kolor2 = reader["Kolor2"].ToString(),
-                                Kolor3 = reader["Kolor3"].ToString(),
-                                Kolor4 = reader["Kolor4"].ToString(),
-                                Kolor5 = reader["Kolor5"].ToString(),
-                                Cuff1 = reader["Cuff1"].ToString(),
-                                Cuff2 = reader["Cuff2"].ToString(),
-                                Cuff3 = reader["Cuff3"].ToString(),
-                                Cuff4 = reader["Cuff4"].ToString(),
-                                Cuff5 = reader["Cuff5"].ToString(),
-                                Notes = reader["Notes"].ToString()
-                            };
+                            Shirt shirt = GetShirtFromReader(reader);
                             shirts.Add(shirt);
                         }
                     }
                 }
             }
             return shirts;
+        }
+
+        private static Shirt GetShirtFromReader(SqlDataReader reader)
+        {
+            return new Shirt
+            {
+                Id = (int)reader["Id"],
+                Customer = new Customer()
+                {
+                    Id = (int)reader["CustomerId"],
+                    Mobile = reader["Mobile"].ToString(),
+                    Name = reader["Name"].ToString()
+                },
+                Length1 = reader["Length1"].ToString(),
+                Length2 = reader["Length2"].ToString(),
+                Length3 = reader["Length3"].ToString(),
+                Length4 = reader["Length4"].ToString(),
+                Length5 = reader["Length5"].ToString(),
+                Chati1 = reader["Chati1"].ToString(),
+                Chati2 = reader["Chati2"].ToString(),
+                Chati3 = reader["Chati3"].ToString(),
+                Chati4 = reader["Chati4"].ToString(),
+                Chati5 = reader["Chati5"].ToString(),
+                Solder1 = reader["Solder1"].ToString(),
+                Solder2 = reader["Solder2"].ToString(),
+                Solder3 = reader["Solder3"].ToString(),
+                Solder4 = reader["Solder4"].ToString(),
+                Solder5 = reader["Solder5"].ToString(),
+                Bye1 = reader["Bye1"].ToString(),
+                Bye2 = reader["Bye2"].ToString(),
+                Bye3 = reader["Bye3"].ToString(),
+                Bye4 = reader["Bye4"].ToString(),
+                Bye5 = reader["Bye5"].ToString(),
+                Front1 = reader["Front1"].ToString(),
+                Front2 = reader["Front2"].ToString(),
+                Front3 = reader["Front3"].ToString(),
+                Front4 = reader["Front4"].ToString(),
+                Front5 = reader["Front5"].ToString(),
+                Kolor1 = reader["Kolor1"].ToString(),
+                Kolor2 = reader["Kolor2"].ToString(),
+                Kolor3 = reader["Kolor3"].ToString(),
+                Kolor4 = reader["Kolor4"].ToString(),
+                Kolor5 = reader["Kolor5"].ToString(),
+                Cuff1 = reader["Cuff1"].ToString(),
+                Cuff2 = reader["Cuff2"].ToString(),
+                Cuff3 = reader["Cuff3"].ToString(),
+                Cuff4 = reader["Cuff4"].ToString(),
+                Cuff5 = reader["Cuff5"].ToString(),
+                Notes = reader["Notes"].ToString()
+            };
         }
 
         public Shirt GetById(int id)
@@ -109,52 +115,7 @@ namespace TailorManagementDB
                     {
                         if (reader.Read())
                         {
-                             shirt = new Shirt
-                            {
-                                Id = (int)reader["Id"],
-                                Customer = new Customer()
-                                {
-                                    Id = (int)reader["CustomerId"],
-                                    Mobile = reader["Mobile"].ToString(),
-                                    Name = reader["Name"].ToString()
-                                },
-                                Length1 = reader["Length1"].ToString(),
-                                Length2 = reader["Length2"].ToString(),
-                                Length3 = reader["Length3"].ToString(),
-                                Length4 = reader["Length4"].ToString(),
-                                Length5 = reader["Length5"].ToString(),
-                                Chati1 = reader["Chati1"].ToString(),
-                                Chati2 = reader["Chati2"].ToString(),
-                                Chati3 = reader["Chati3"].ToString(),
-                                Chati4 = reader["Chati4"].ToString(),
-                                Chati5 = reader["Chati5"].ToString(),
-                                Solder1 = reader["Solder1"].ToString(),
-                                Solder2 = reader["Solder2"].ToString(),
-                                Solder3 = reader["Solder3"].ToString(),
-                                Solder4 = reader["Solder4"].ToString(),
-                                Solder5 = reader["Solder5"].ToString(),
-                                Bye1 = reader["Bye1"].ToString(),
-                                Bye2 = reader["Bye2"].ToString(),
-                                Bye3 = reader["Bye3"].ToString(),
-                                Bye4 = reader["Bye4"].ToString(),
-                                Bye5 = reader["Bye5"].ToString(),
-                                Front1 = reader["Front1"].ToString(),
-                                Front2 = reader["Front2"].ToString(),
-                                Front3 = reader["Front3"].ToString(),
-                                Front4 = reader["Front4"].ToString(),
-                                Front5 = reader["Front5"].ToString(),
-                                Kolor1 = reader["Kolor1"].ToString(),
-                                Kolor2 = reader["Kolor2"].ToString(),
-                                Kolor3 = reader["Kolor3"].ToString(),
-                                Kolor4 = reader["Kolor4"].ToString(),
-                                Kolor5 = reader["Kolor5"].ToString(),
-                                Cuff1 = reader["Cuff1"].ToString(),
-                                Cuff2 = reader["Cuff2"].ToString(),
-                                Cuff3 = reader["Cuff3"].ToString(),
-                                Cuff4 = reader["Cuff4"].ToString(),
-                                Cuff5 = reader["Cuff5"].ToString(),
-                                Notes = reader["Notes"].ToString()
-                            };
+                            shirt = GetShirtFromReader(reader);
                         }
                     }
                 }
@@ -162,7 +123,30 @@ namespace TailorManagementDB
             return shirt;
         }
 
-        public int Insert(Shirt shirt)
+        public Shirt GetByCustomerId(int customerId)
+        {
+            Shirt shirt = null;
+            using (var connection = GetSqlConnection())
+            {
+                using (var command = new SqlCommand(spGetShirtByCustomerId, connection))
+                {
+                    command.Parameters.AddWithValue("@CustomerId", customerId);
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            shirt = GetShirtFromReader(reader);
+                        }
+                    }
+                }
+            }
+            return shirt;
+        }
+
+        public Shirt Insert(Shirt shirt)
         {
             using (var connection = GetSqlConnection())
             {
@@ -215,7 +199,7 @@ namespace TailorManagementDB
                     shirt.Id = insertedId;
                 }
             }
-            return shirt.Id;
+            return shirt;
         }
 
         public void Update(Shirt shirt)

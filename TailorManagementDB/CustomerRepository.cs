@@ -15,6 +15,7 @@ namespace TailorManagementDB
         private const string spSaveCustomer = "spSaveCustomer";
         private const string spUpdateCustomer = "spUpdateCustomer";
         private const string spDeleteCustomerById = "spDeleteCustomerById";
+        private const string spGetCustomerByMobile = "spGetCustomerByMobile";
 
         public CustomerRepository()
         {
@@ -80,7 +81,34 @@ namespace TailorManagementDB
             return customer;
         }
 
-        public int Insert(Customer customer)
+        public Customer GetByMobileNo(string mobile)
+        {
+            Customer customer = null;
+            using (var connection = GetSqlConnection())
+            {
+                using (var command = new SqlCommand(spGetCustomerByMobile, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Mobile", mobile);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            customer = new Customer
+                            {
+                                Id = (int)reader["Id"],
+                                Name = reader["Name"].ToString(),
+                                Mobile = reader["Mobile"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+            return customer;
+        }
+
+        public Customer Insert(Customer customer)
         {
             using (var connection = GetSqlConnection())
             {
@@ -98,7 +126,7 @@ namespace TailorManagementDB
                     customer.Id = insertedId;
                 }
             }
-            return customer.Id;
+            return customer;
         }
 
         public void Update(Customer customer)

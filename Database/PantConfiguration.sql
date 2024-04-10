@@ -11,6 +11,24 @@ BEGIN
 END
 GO
 
+CREATE OR ALTER PROCEDURE spGetPantConfigurations
+AS
+BEGIN
+	SELECT Id, [Description], LocalDescription
+	FROM tbPantConfiguration
+END
+GO
+
+CREATE OR ALTER PROCEDURE spGetPantConfigurationById
+	@Id INT
+AS
+BEGIN
+	SELECT Id, [Description], LocalDescription
+	FROM tbPantConfiguration
+	WHERE Id = @Id
+END
+GO
+
 CREATE OR ALTER PROCEDURE spSavePantConfiguration
 	@Description NVARCHAR(500), 
 	@LocalDescription NVARCHAR(500),
@@ -23,4 +41,32 @@ BEGIN
 		VALUES (@Description, @LocalDescription);
 
     SET @Id = SCOPE_IDENTITY();
-END;
+END
+GO
+
+CREATE OR ALTER PROCEDURE spUpdatePantConfiguration
+	@Description NVARCHAR(500), 
+	@LocalDescription NVARCHAR(500),
+	@Id INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+	UPDATE tbPantConfiguration
+	SET 
+		[Description] = @Description,
+		LocalDescription = @LocalDescription
+	WHERE Id = @Id;
+		
+END
+GO
+
+CREATE OR ALTER PROCEDURE spDeletePantConfigurationById
+	@Id INT
+AS
+BEGIN
+	DELETE
+	FROM tbPantConfiguration
+	WHERE Id = @Id
+END
+GO

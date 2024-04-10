@@ -5,7 +5,7 @@ IF OBJECT_ID('dbo.tbProduct', 'U') IS NULL
 BEGIN
 	CREATE TABLE tbProduct (
 		Id INT IDENTITY(1,1) PRIMARY KEY,
-		[Name] NVARCHAR(100),
+		[Name] NVARCHAR(100) UNIQUE,
 		Price DECIMAL(18, 2)
 	)
 END
@@ -54,7 +54,6 @@ BEGIN
 		END
 END
 GO
-
 
 CREATE OR ALTER PROCEDURE spUpdateProduct
 	@Name NVARCHAR(100), 

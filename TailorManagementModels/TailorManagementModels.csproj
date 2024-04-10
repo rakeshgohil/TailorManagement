@@ -46,6 +46,8 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Pant.cs" />
+    <Compile Include="PantConfiguration.cs" />
+    <Compile Include="ShirtConfiguration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Shirt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

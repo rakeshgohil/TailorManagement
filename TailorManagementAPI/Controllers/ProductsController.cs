@@ -72,8 +72,8 @@ namespace TailorManagementAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            int addedId = _productRepository.Insert(product);
-            return CreatedAtRoute("DefaultApi", new { id = addedId }, product);
+            Product addedProduct = _productRepository.Insert(product);
+            return CreatedAtRoute("DefaultApi", new { id = addedProduct.Id }, addedProduct);
         }
 
         // DELETE: api/products/5

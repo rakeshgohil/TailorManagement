@@ -1,14 +1,17 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TailorManagementDB;
 using TailorManagementModels;
 
 namespace TailorManagementAPI.Controllers
 {
     public class PantsController : ApiController
     {
+        private static readonly Logger logger = Utilities.LoggerUtilities.GetLogger();
         private readonly IRepository<Pant> _pantRepository;
         public PantsController()
         {
@@ -21,20 +24,59 @@ namespace TailorManagementAPI.Controllers
         // GET: api/pants
         public IEnumerable<Pant> GetPants()
         {
-            return _pantRepository.GetAll();
+            try
+            {
+                return _pantRepository.GetAll();
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"{ex}");
+                return null;
+            }
+            
         }
 
         // GET: api/pants/5
         [ResponseType(typeof(Pant))]
         public IHttpActionResult GetPant(int id)
         {
-            var pant = _pantRepository.GetById(id);
-            if (pant == null)
+            try
             {
-                return NotFound();
-            }
+                var pant = _pantRepository.GetById(id);
+                if (pant == null)
+                {
+                    return NotFound();
+                }
 
-            return Ok(pant);
+                return Ok(pant);
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"{ex}");
+                return BadRequest();
+            }
+        }
+
+        // GET: api/pantbycustomerid/5
+        [ResponseType(typeof(Pant))]
+        [Route("api/pantbycustomerid/{customerId}")]
+        public IHttpActionResult GetPantByCustomerId(int customerId)
+        {
+            try
+            {
+                var pant = ((PantRepository)_pantRepository).GetByCustomerId(customerId);
+                if (pant == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(pant);
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"{ex}");
+                return BadRequest();
+            }
         }
 
         // PUT: api/pants/5
@@ -55,8 +97,9 @@ namespace TailorManagementAPI.Controllers
             {
                 _pantRepository.Update(pant);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Error($"{ex}");
                 return BadRequest();
             }
 
@@ -67,21 +110,37 @@ namespace TailorManagementAPI.Controllers
         [ResponseType(typeof(Pant))]
         public IHttpActionResult PostPant(Pant pant)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-            int addedId = _pantRepository.Insert(pant);
-            return CreatedAtRoute("DefaultApi", new { id = addedId }, pant);
+                Pant addedPant = _pantRepository.Insert(pant);
+                return CreatedAtRoute("DefaultApi", new { id = addedPant.Id }, addedPant);
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"{ex}");
+                return BadRequest();
+            }
         }
 
         // DELETE: api/pants/5
         [ResponseType(typeof(Pant))]
         public IHttpActionResult DeletePant(int id)
-        {
-            _pantRepository.Delete(id);
-            return Ok();
+        {            
+            try
+            {
+                _pantRepository.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"{ex}");
+                return BadRequest();
+            }
         }
     }
 }

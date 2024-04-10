@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
+using TailorManagementDB;
 using TailorManagementModels;
 
 namespace TailorManagementAPI.Controllers
@@ -29,6 +30,20 @@ namespace TailorManagementAPI.Controllers
         public IHttpActionResult GetCustomer(int id)
         {
             var customer = _customerRepository.GetById(id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(customer);
+        }
+
+        // GET: api/customerbymobile/7698784947
+        [ResponseType(typeof(Customer))]
+        [Route("api/customerbymobile/{mobile}")]
+        public IHttpActionResult GetCustomerByMobile(string mobile)
+        {
+            var customer = ((CustomerRepository)_customerRepository).GetByMobileNo(mobile);
             if (customer == null)
             {
                 return NotFound();
@@ -72,8 +87,8 @@ namespace TailorManagementAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            int addedId = _customerRepository.Insert(customer);
-            return CreatedAtRoute("DefaultApi", new { id = addedId }, customer);
+            Customer addedCustomer = _customerRepository.Insert(customer);
+            return CreatedAtRoute("DefaultApi", new { id = addedCustomer.Id }, addedCustomer);
         }
 
         // DELETE: api/customers/5

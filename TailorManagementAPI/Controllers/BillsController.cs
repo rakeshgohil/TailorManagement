@@ -72,8 +72,8 @@ namespace TailorManagementAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            int addedId = _billRepository.Insert(bill);
-            return CreatedAtRoute("DefaultApi", new { id = addedId }, bill);
+            Bill addedBill = _billRepository.Insert(bill);
+            return CreatedAtRoute("DefaultApi", new { id = addedBill.Id }, addedBill);
         }
 
         // DELETE: api/bills/5

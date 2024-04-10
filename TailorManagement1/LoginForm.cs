@@ -26,10 +26,5 @@ namespace TailorManagement1
                 CommonUtilities.OpenMainForm();
             }
         }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

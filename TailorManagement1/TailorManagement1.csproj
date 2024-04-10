@@ -36,9 +36,13 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.2.8\lib\net46\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +55,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiClient.cs" />
+    <Compile Include="PantConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantConfigurationForm.Designer.cs">
+      <DependentUpon>PantConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShirtConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShirtConfigurationForm.Designer.cs">
+      <DependentUpon>ShirtConfigurationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BillForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +94,13 @@
     <Compile Include="SampleControls.Designer.cs">
       <DependentUpon>SampleControls.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\LoggerUtilities.cs" />
+    <EmbeddedResource Include="PantConfigurationForm.resx">
+      <DependentUpon>PantConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShirtConfigurationForm.resx">
+      <DependentUpon>ShirtConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BillForm.resx">
       <DependentUpon>BillForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +122,9 @@
     <EmbeddedResource Include="SampleControls.resx">
       <DependentUpon>SampleControls.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -111,7 +137,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TailorManagementModels\TailorManagementModels.csproj">
@@ -119,8 +147,6 @@
       <Name>TailorManagementModels</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utilities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

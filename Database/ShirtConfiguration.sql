@@ -11,6 +11,24 @@ BEGIN
 END
 GO
 
+CREATE OR ALTER PROCEDURE spGetShirtConfigurations
+AS
+BEGIN
+	SELECT Id, [Description], LocalDescription
+	FROM tbShirtConfiguration
+END
+GO
+
+CREATE OR ALTER PROCEDURE spGetShirtConfigurationById
+	@Id INT
+AS
+BEGIN
+	SELECT Id, [Description], LocalDescription
+	FROM tbShirtConfiguration
+	WHERE Id = @Id
+END
+GO
+
 CREATE OR ALTER PROCEDURE spSaveShirtConfiguration
 	@Description NVARCHAR(500), 
 	@LocalDescription NVARCHAR(500),
@@ -23,4 +41,32 @@ BEGIN
 		VALUES (@Description, @LocalDescription);
 
     SET @Id = SCOPE_IDENTITY();
-END;
+END
+GO
+
+CREATE OR ALTER PROCEDURE spUpdateShirtConfiguration
+	@Description NVARCHAR(500), 
+	@LocalDescription NVARCHAR(500),
+	@Id INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+	UPDATE tbShirtConfiguration
+	SET 
+		[Description] = @Description,
+		LocalDescription = @LocalDescription
+	WHERE Id = @Id;
+		
+END
+GO
+
+CREATE OR ALTER PROCEDURE spDeleteShirtConfigurationById
+	@Id INT
+AS
+BEGIN
+	DELETE
+	FROM tbShirtConfiguration
+	WHERE Id = @Id
+END
+GO
