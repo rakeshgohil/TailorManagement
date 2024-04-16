@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TailorManagement1.Utilities;
 using TailorManagementModels;
 
 namespace TailorManagement1
@@ -34,10 +35,10 @@ namespace TailorManagement1
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
+            LanguageUtilities.ChangeLanguage(this);
             FillDeliveryDueGrid();
             FillPaymentDueGrid();
         }
-
         private async void FillDeliveryDueGrid() 
         {
             dgvDeliveryDue.AutoGenerateColumns = false;

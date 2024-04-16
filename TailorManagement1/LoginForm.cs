@@ -26,5 +26,11 @@ namespace TailorManagement1
                 CommonUtilities.OpenMainForm();
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            Utilities.LanguageUtilities.ChangeLanguage(this);
+        }
+
     }
 }

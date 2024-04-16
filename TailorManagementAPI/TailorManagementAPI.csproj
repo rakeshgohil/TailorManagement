@@ -117,6 +117,7 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\PantConfigurationsController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\CompanyConfigurationsController.cs" />
     <Compile Include="Controllers\ShirtConfigurationsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\PantsController.cs" />

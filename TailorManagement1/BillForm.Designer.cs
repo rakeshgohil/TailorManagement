@@ -30,12 +30,12 @@ namespace TailorManagement1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblname = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblmobile = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lblPantNotes = new System.Windows.Forms.Label();
             this.rtPantNotes = new System.Windows.Forms.RichTextBox();
             this.chkListPant = new System.Windows.Forms.CheckedListBox();
             this.txtMoli5 = new System.Windows.Forms.TextBox();
@@ -43,46 +43,46 @@ namespace TailorManagement1
             this.txtMoli3 = new System.Windows.Forms.TextBox();
             this.txtMoli2 = new System.Windows.Forms.TextBox();
             this.txtMoli1 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblMoli = new System.Windows.Forms.Label();
             this.txtJolo5 = new System.Windows.Forms.TextBox();
             this.txtJolo4 = new System.Windows.Forms.TextBox();
             this.txtJolo3 = new System.Windows.Forms.TextBox();
             this.txtJolo2 = new System.Windows.Forms.TextBox();
             this.txtJolo1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblJolo = new System.Windows.Forms.Label();
             this.txtGothan5 = new System.Windows.Forms.TextBox();
             this.txtGothan4 = new System.Windows.Forms.TextBox();
             this.txtGothan3 = new System.Windows.Forms.TextBox();
             this.txtGothan2 = new System.Windows.Forms.TextBox();
             this.txtGothan1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblGothan = new System.Windows.Forms.Label();
             this.txtJangh5 = new System.Windows.Forms.TextBox();
             this.txtJangh4 = new System.Windows.Forms.TextBox();
             this.txtJangh3 = new System.Windows.Forms.TextBox();
             this.txtJangh2 = new System.Windows.Forms.TextBox();
             this.txtJangh1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblJangh = new System.Windows.Forms.Label();
             this.txtSeat5 = new System.Windows.Forms.TextBox();
             this.txtSeat4 = new System.Windows.Forms.TextBox();
             this.txtSeat3 = new System.Windows.Forms.TextBox();
             this.txtSeat2 = new System.Windows.Forms.TextBox();
             this.txtSeat1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblSeat = new System.Windows.Forms.Label();
             this.txtKamar5 = new System.Windows.Forms.TextBox();
             this.txtKamar4 = new System.Windows.Forms.TextBox();
             this.txtKamar3 = new System.Windows.Forms.TextBox();
             this.txtKamar2 = new System.Windows.Forms.TextBox();
             this.txtKamar1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblKamar = new System.Windows.Forms.Label();
             this.txtPantLambai5 = new System.Windows.Forms.TextBox();
             this.txtPantLambai4 = new System.Windows.Forms.TextBox();
             this.txtPantLambai3 = new System.Windows.Forms.TextBox();
             this.txtPantLambai2 = new System.Windows.Forms.TextBox();
             this.txtPantLambai1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPantLambai = new System.Windows.Forms.Label();
+            this.lblpant = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lblshirtnotes = new System.Windows.Forms.Label();
             this.rtShirtNotes = new System.Windows.Forms.RichTextBox();
             this.chkListShirt = new System.Windows.Forms.CheckedListBox();
             this.txtCuff5 = new System.Windows.Forms.TextBox();
@@ -90,69 +90,69 @@ namespace TailorManagement1
             this.txtCuff3 = new System.Windows.Forms.TextBox();
             this.txtCuff2 = new System.Windows.Forms.TextBox();
             this.txtCuff1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblcuff = new System.Windows.Forms.Label();
             this.txtKolor5 = new System.Windows.Forms.TextBox();
             this.txtKolor4 = new System.Windows.Forms.TextBox();
             this.txtKolor3 = new System.Windows.Forms.TextBox();
             this.txtKolor2 = new System.Windows.Forms.TextBox();
             this.txtKolor1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblKolor = new System.Windows.Forms.Label();
             this.txtFront5 = new System.Windows.Forms.TextBox();
             this.txtFront4 = new System.Windows.Forms.TextBox();
             this.txtFront3 = new System.Windows.Forms.TextBox();
             this.txtFront2 = new System.Windows.Forms.TextBox();
             this.txtFront1 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblfront = new System.Windows.Forms.Label();
             this.txtBye5 = new System.Windows.Forms.TextBox();
             this.txtBye4 = new System.Windows.Forms.TextBox();
             this.txtBye3 = new System.Windows.Forms.TextBox();
             this.txtBye2 = new System.Windows.Forms.TextBox();
             this.txtBye1 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblbye = new System.Windows.Forms.Label();
             this.txtSolder5 = new System.Windows.Forms.TextBox();
             this.txtSolder4 = new System.Windows.Forms.TextBox();
             this.txtSolder3 = new System.Windows.Forms.TextBox();
             this.txtSolder2 = new System.Windows.Forms.TextBox();
             this.txtSolder1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblsolder = new System.Windows.Forms.Label();
             this.txtChati5 = new System.Windows.Forms.TextBox();
             this.txtChati4 = new System.Windows.Forms.TextBox();
             this.txtChati3 = new System.Windows.Forms.TextBox();
             this.txtChati2 = new System.Windows.Forms.TextBox();
             this.txtChati1 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblchati = new System.Windows.Forms.Label();
             this.txtShirtLambai5 = new System.Windows.Forms.TextBox();
             this.txtShirtLambai4 = new System.Windows.Forms.TextBox();
             this.txtShirtLambai3 = new System.Windows.Forms.TextBox();
             this.txtShirtLambai2 = new System.Windows.Forms.TextBox();
             this.txtShirtLambai1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblshirtlambai = new System.Windows.Forms.Label();
+            this.lblshirt = new System.Windows.Forms.Label();
             this.dtBillDate = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblbillno = new System.Windows.Forms.Label();
+            this.lblbilldate = new System.Windows.Forms.Label();
+            this.lbldeliverydate = new System.Windows.Forms.Label();
             this.dtDeliveryDate = new System.Windows.Forms.DateTimePicker();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lbltrialdate = new System.Windows.Forms.Label();
             this.dtTrailDate = new System.Windows.Forms.DateTimePicker();
             this.txtPantQty = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lblpantqty = new System.Windows.Forms.Label();
             this.txtShirtQty = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblshirtqty = new System.Windows.Forms.Label();
+            this.lblextracost = new System.Windows.Forms.Label();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
+            this.lbltotalamount = new System.Windows.Forms.Label();
             this.txtBillNo = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblpaidamount = new System.Windows.Forms.Label();
             this.txtDueAmount = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lbldueamount = new System.Windows.Forms.Label();
             this.btnSaveAndPrint = new System.Windows.Forms.Button();
             this.mskExtraCost = new System.Windows.Forms.MaskedTextBox();
             this.mskPaidAmount = new System.Windows.Forms.MaskedTextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.rtError = new System.Windows.Forms.RichTextBox();
             this.mskDiscount = new System.Windows.Forms.MaskedTextBox();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lbldiscount = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
@@ -160,15 +160,15 @@ namespace TailorManagement1
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblname
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(423, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Name";
+            this.lblname.AutoSize = true;
+            this.lblname.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblname.Location = new System.Drawing.Point(423, 16);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(63, 20);
+            this.lblname.TabIndex = 5;
+            this.lblname.Text = "Name";
             // 
             // txtName
             // 
@@ -189,20 +189,20 @@ namespace TailorManagement1
             this.txtMobile.TabIndex = 1;
             this.txtMobile.Leave += new System.EventHandler(this.txtMobile_Leave);
             // 
-            // label2
+            // lblmobile
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Mobile";
+            this.lblmobile.AutoSize = true;
+            this.lblmobile.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmobile.Location = new System.Drawing.Point(16, 16);
+            this.lblmobile.Name = "lblmobile";
+            this.lblmobile.Size = new System.Drawing.Size(72, 20);
+            this.lblmobile.TabIndex = 12;
+            this.lblmobile.Text = "Mobile";
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.lblPantNotes);
             this.panel1.Controls.Add(this.rtPantNotes);
             this.panel1.Controls.Add(this.chkListPant);
             this.panel1.Controls.Add(this.txtMoli5);
@@ -210,59 +210,59 @@ namespace TailorManagement1
             this.panel1.Controls.Add(this.txtMoli3);
             this.panel1.Controls.Add(this.txtMoli2);
             this.panel1.Controls.Add(this.txtMoli1);
-            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.lblMoli);
             this.panel1.Controls.Add(this.txtJolo5);
             this.panel1.Controls.Add(this.txtJolo4);
             this.panel1.Controls.Add(this.txtJolo3);
             this.panel1.Controls.Add(this.txtJolo2);
             this.panel1.Controls.Add(this.txtJolo1);
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.lblJolo);
             this.panel1.Controls.Add(this.txtGothan5);
             this.panel1.Controls.Add(this.txtGothan4);
             this.panel1.Controls.Add(this.txtGothan3);
             this.panel1.Controls.Add(this.txtGothan2);
             this.panel1.Controls.Add(this.txtGothan1);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblGothan);
             this.panel1.Controls.Add(this.txtJangh5);
             this.panel1.Controls.Add(this.txtJangh4);
             this.panel1.Controls.Add(this.txtJangh3);
             this.panel1.Controls.Add(this.txtJangh2);
             this.panel1.Controls.Add(this.txtJangh1);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.lblJangh);
             this.panel1.Controls.Add(this.txtSeat5);
             this.panel1.Controls.Add(this.txtSeat4);
             this.panel1.Controls.Add(this.txtSeat3);
             this.panel1.Controls.Add(this.txtSeat2);
             this.panel1.Controls.Add(this.txtSeat1);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lblSeat);
             this.panel1.Controls.Add(this.txtKamar5);
             this.panel1.Controls.Add(this.txtKamar4);
             this.panel1.Controls.Add(this.txtKamar3);
             this.panel1.Controls.Add(this.txtKamar2);
             this.panel1.Controls.Add(this.txtKamar1);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lblKamar);
             this.panel1.Controls.Add(this.txtPantLambai5);
             this.panel1.Controls.Add(this.txtPantLambai4);
             this.panel1.Controls.Add(this.txtPantLambai3);
             this.panel1.Controls.Add(this.txtPantLambai2);
             this.panel1.Controls.Add(this.txtPantLambai1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblPantLambai);
+            this.panel1.Controls.Add(this.lblpant);
             this.panel1.Location = new System.Drawing.Point(16, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(401, 695);
             this.panel1.TabIndex = 17;
             this.panel1.Tag = "";
             // 
-            // label29
+            // lblPantNotes
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(9, 611);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(64, 20);
-            this.label29.TabIndex = 61;
-            this.label29.Text = "Notes";
+            this.lblPantNotes.AutoSize = true;
+            this.lblPantNotes.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPantNotes.Location = new System.Drawing.Point(9, 611);
+            this.lblPantNotes.Name = "lblPantNotes";
+            this.lblPantNotes.Size = new System.Drawing.Size(64, 20);
+            this.lblPantNotes.TabIndex = 61;
+            this.lblPantNotes.Text = "Notes";
             // 
             // rtPantNotes
             // 
@@ -329,15 +329,15 @@ namespace TailorManagement1
             this.txtMoli1.Size = new System.Drawing.Size(55, 28);
             this.txtMoli1.TabIndex = 54;
             // 
-            // label10
+            // lblMoli
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 250);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 20);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "Moli";
+            this.lblMoli.AutoSize = true;
+            this.lblMoli.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoli.Location = new System.Drawing.Point(3, 250);
+            this.lblMoli.Name = "lblMoli";
+            this.lblMoli.Size = new System.Drawing.Size(49, 20);
+            this.lblMoli.TabIndex = 53;
+            this.lblMoli.Text = "Moli";
             // 
             // txtJolo5
             // 
@@ -384,15 +384,15 @@ namespace TailorManagement1
             this.txtJolo1.Size = new System.Drawing.Size(55, 28);
             this.txtJolo1.TabIndex = 48;
             // 
-            // label9
+            // lblJolo
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 216);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 20);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Jolo";
+            this.lblJolo.AutoSize = true;
+            this.lblJolo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJolo.Location = new System.Drawing.Point(3, 216);
+            this.lblJolo.Name = "lblJolo";
+            this.lblJolo.Size = new System.Drawing.Size(48, 20);
+            this.lblJolo.TabIndex = 47;
+            this.lblJolo.Text = "Jolo";
             // 
             // txtGothan5
             // 
@@ -439,15 +439,15 @@ namespace TailorManagement1
             this.txtGothan1.Size = new System.Drawing.Size(55, 28);
             this.txtGothan1.TabIndex = 42;
             // 
-            // label8
+            // lblGothan
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 182);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 20);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Gothan";
+            this.lblGothan.AutoSize = true;
+            this.lblGothan.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGothan.Location = new System.Drawing.Point(3, 182);
+            this.lblGothan.Name = "lblGothan";
+            this.lblGothan.Size = new System.Drawing.Size(78, 20);
+            this.lblGothan.TabIndex = 41;
+            this.lblGothan.Text = "Gothan";
             // 
             // txtJangh5
             // 
@@ -494,15 +494,15 @@ namespace TailorManagement1
             this.txtJangh1.Size = new System.Drawing.Size(55, 28);
             this.txtJangh1.TabIndex = 36;
             // 
-            // label7
+            // lblJangh
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 148);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Jangh";
+            this.lblJangh.AutoSize = true;
+            this.lblJangh.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJangh.Location = new System.Drawing.Point(3, 148);
+            this.lblJangh.Name = "lblJangh";
+            this.lblJangh.Size = new System.Drawing.Size(65, 20);
+            this.lblJangh.TabIndex = 35;
+            this.lblJangh.Text = "Jangh";
             // 
             // txtSeat5
             // 
@@ -549,15 +549,15 @@ namespace TailorManagement1
             this.txtSeat1.Size = new System.Drawing.Size(55, 28);
             this.txtSeat1.TabIndex = 30;
             // 
-            // label6
+            // lblSeat
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Seat";
+            this.lblSeat.AutoSize = true;
+            this.lblSeat.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeat.Location = new System.Drawing.Point(3, 114);
+            this.lblSeat.Name = "lblSeat";
+            this.lblSeat.Size = new System.Drawing.Size(51, 20);
+            this.lblSeat.TabIndex = 29;
+            this.lblSeat.Text = "Seat";
             // 
             // txtKamar5
             // 
@@ -604,15 +604,15 @@ namespace TailorManagement1
             this.txtKamar1.Size = new System.Drawing.Size(55, 28);
             this.txtKamar1.TabIndex = 24;
             // 
-            // label5
+            // lblKamar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Kamar";
+            this.lblKamar.AutoSize = true;
+            this.lblKamar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKamar.Location = new System.Drawing.Point(3, 80);
+            this.lblKamar.Name = "lblKamar";
+            this.lblKamar.Size = new System.Drawing.Size(70, 20);
+            this.lblKamar.TabIndex = 23;
+            this.lblKamar.Text = "Kamar";
             // 
             // txtPantLambai5
             // 
@@ -659,30 +659,30 @@ namespace TailorManagement1
             this.txtPantLambai1.Size = new System.Drawing.Size(55, 28);
             this.txtPantLambai1.TabIndex = 18;
             // 
-            // label4
+            // lblPantLambai
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Lambai";
+            this.lblPantLambai.AutoSize = true;
+            this.lblPantLambai.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPantLambai.Location = new System.Drawing.Point(3, 46);
+            this.lblPantLambai.Name = "lblPantLambai";
+            this.lblPantLambai.Size = new System.Drawing.Size(78, 20);
+            this.lblPantLambai.TabIndex = 17;
+            this.lblPantLambai.Text = "Lambai";
             // 
-            // label3
+            // lblpant
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Pant";
+            this.lblpant.AutoSize = true;
+            this.lblpant.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpant.Location = new System.Drawing.Point(3, 10);
+            this.lblpant.Name = "lblpant";
+            this.lblpant.Size = new System.Drawing.Size(52, 20);
+            this.lblpant.TabIndex = 15;
+            this.lblpant.Text = "Pant";
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label30);
+            this.panel2.Controls.Add(this.lblshirtnotes);
             this.panel2.Controls.Add(this.rtShirtNotes);
             this.panel2.Controls.Add(this.chkListShirt);
             this.panel2.Controls.Add(this.txtCuff5);
@@ -690,59 +690,59 @@ namespace TailorManagement1
             this.panel2.Controls.Add(this.txtCuff3);
             this.panel2.Controls.Add(this.txtCuff2);
             this.panel2.Controls.Add(this.txtCuff1);
-            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.lblcuff);
             this.panel2.Controls.Add(this.txtKolor5);
             this.panel2.Controls.Add(this.txtKolor4);
             this.panel2.Controls.Add(this.txtKolor3);
             this.panel2.Controls.Add(this.txtKolor2);
             this.panel2.Controls.Add(this.txtKolor1);
-            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.lblKolor);
             this.panel2.Controls.Add(this.txtFront5);
             this.panel2.Controls.Add(this.txtFront4);
             this.panel2.Controls.Add(this.txtFront3);
             this.panel2.Controls.Add(this.txtFront2);
             this.panel2.Controls.Add(this.txtFront1);
-            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.lblfront);
             this.panel2.Controls.Add(this.txtBye5);
             this.panel2.Controls.Add(this.txtBye4);
             this.panel2.Controls.Add(this.txtBye3);
             this.panel2.Controls.Add(this.txtBye2);
             this.panel2.Controls.Add(this.txtBye1);
-            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.lblbye);
             this.panel2.Controls.Add(this.txtSolder5);
             this.panel2.Controls.Add(this.txtSolder4);
             this.panel2.Controls.Add(this.txtSolder3);
             this.panel2.Controls.Add(this.txtSolder2);
             this.panel2.Controls.Add(this.txtSolder1);
-            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.lblsolder);
             this.panel2.Controls.Add(this.txtChati5);
             this.panel2.Controls.Add(this.txtChati4);
             this.panel2.Controls.Add(this.txtChati3);
             this.panel2.Controls.Add(this.txtChati2);
             this.panel2.Controls.Add(this.txtChati1);
-            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.lblchati);
             this.panel2.Controls.Add(this.txtShirtLambai5);
             this.panel2.Controls.Add(this.txtShirtLambai4);
             this.panel2.Controls.Add(this.txtShirtLambai3);
             this.panel2.Controls.Add(this.txtShirtLambai2);
             this.panel2.Controls.Add(this.txtShirtLambai1);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.label18);
+            this.panel2.Controls.Add(this.lblshirtlambai);
+            this.panel2.Controls.Add(this.lblshirt);
             this.panel2.Location = new System.Drawing.Point(423, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(397, 695);
             this.panel2.TabIndex = 61;
             this.panel2.Tag = "";
             // 
-            // label30
+            // lblshirtnotes
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(9, 611);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(64, 20);
-            this.label30.TabIndex = 62;
-            this.label30.Text = "Notes";
+            this.lblshirtnotes.AutoSize = true;
+            this.lblshirtnotes.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblshirtnotes.Location = new System.Drawing.Point(9, 611);
+            this.lblshirtnotes.Name = "lblshirtnotes";
+            this.lblshirtnotes.Size = new System.Drawing.Size(64, 20);
+            this.lblshirtnotes.TabIndex = 62;
+            this.lblshirtnotes.Text = "Notes";
             // 
             // rtShirtNotes
             // 
@@ -809,15 +809,15 @@ namespace TailorManagement1
             this.txtCuff1.Size = new System.Drawing.Size(55, 28);
             this.txtCuff1.TabIndex = 54;
             // 
-            // label11
+            // lblcuff
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 250);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 20);
-            this.label11.TabIndex = 53;
-            this.label11.Text = "Cuff";
+            this.lblcuff.AutoSize = true;
+            this.lblcuff.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcuff.Location = new System.Drawing.Point(3, 250);
+            this.lblcuff.Name = "lblcuff";
+            this.lblcuff.Size = new System.Drawing.Size(47, 20);
+            this.lblcuff.TabIndex = 53;
+            this.lblcuff.Text = "Cuff";
             // 
             // txtKolor5
             // 
@@ -864,15 +864,15 @@ namespace TailorManagement1
             this.txtKolor1.Size = new System.Drawing.Size(55, 28);
             this.txtKolor1.TabIndex = 48;
             // 
-            // label12
+            // lblKolor
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 216);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 20);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "Kolor";
+            this.lblKolor.AutoSize = true;
+            this.lblKolor.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKolor.Location = new System.Drawing.Point(3, 216);
+            this.lblKolor.Name = "lblKolor";
+            this.lblKolor.Size = new System.Drawing.Size(60, 20);
+            this.lblKolor.TabIndex = 47;
+            this.lblKolor.Text = "Kolor";
             // 
             // txtFront5
             // 
@@ -919,15 +919,15 @@ namespace TailorManagement1
             this.txtFront1.Size = new System.Drawing.Size(55, 28);
             this.txtFront1.TabIndex = 42;
             // 
-            // label13
+            // lblfront
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 182);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 20);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Front";
+            this.lblfront.AutoSize = true;
+            this.lblfront.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfront.Location = new System.Drawing.Point(3, 182);
+            this.lblfront.Name = "lblfront";
+            this.lblfront.Size = new System.Drawing.Size(60, 20);
+            this.lblfront.TabIndex = 41;
+            this.lblfront.Text = "Front";
             // 
             // txtBye5
             // 
@@ -974,15 +974,15 @@ namespace TailorManagement1
             this.txtBye1.Size = new System.Drawing.Size(55, 28);
             this.txtBye1.TabIndex = 36;
             // 
-            // label14
+            // lblbye
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 148);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 20);
-            this.label14.TabIndex = 35;
-            this.label14.Text = "Bye";
+            this.lblbye.AutoSize = true;
+            this.lblbye.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbye.Location = new System.Drawing.Point(3, 148);
+            this.lblbye.Name = "lblbye";
+            this.lblbye.Size = new System.Drawing.Size(44, 20);
+            this.lblbye.TabIndex = 35;
+            this.lblbye.Text = "Bye";
             // 
             // txtSolder5
             // 
@@ -1029,15 +1029,15 @@ namespace TailorManagement1
             this.txtSolder1.Size = new System.Drawing.Size(55, 28);
             this.txtSolder1.TabIndex = 30;
             // 
-            // label15
+            // lblsolder
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(3, 114);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 20);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "Solder";
+            this.lblsolder.AutoSize = true;
+            this.lblsolder.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsolder.Location = new System.Drawing.Point(3, 114);
+            this.lblsolder.Name = "lblsolder";
+            this.lblsolder.Size = new System.Drawing.Size(70, 20);
+            this.lblsolder.TabIndex = 29;
+            this.lblsolder.Text = "Solder";
             // 
             // txtChati5
             // 
@@ -1084,15 +1084,15 @@ namespace TailorManagement1
             this.txtChati1.Size = new System.Drawing.Size(55, 28);
             this.txtChati1.TabIndex = 24;
             // 
-            // label16
+            // lblchati
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(3, 80);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 20);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Chati";
+            this.lblchati.AutoSize = true;
+            this.lblchati.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblchati.Location = new System.Drawing.Point(3, 80);
+            this.lblchati.Name = "lblchati";
+            this.lblchati.Size = new System.Drawing.Size(58, 20);
+            this.lblchati.TabIndex = 23;
+            this.lblchati.Text = "Chati";
             // 
             // txtShirtLambai5
             // 
@@ -1139,25 +1139,25 @@ namespace TailorManagement1
             this.txtShirtLambai1.Size = new System.Drawing.Size(55, 28);
             this.txtShirtLambai1.TabIndex = 18;
             // 
-            // label17
+            // lblshirtlambai
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 46);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(78, 20);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Lambai";
+            this.lblshirtlambai.AutoSize = true;
+            this.lblshirtlambai.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblshirtlambai.Location = new System.Drawing.Point(3, 46);
+            this.lblshirtlambai.Name = "lblshirtlambai";
+            this.lblshirtlambai.Size = new System.Drawing.Size(78, 20);
+            this.lblshirtlambai.TabIndex = 17;
+            this.lblshirtlambai.Text = "Lambai";
             // 
-            // label18
+            // lblshirt
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 10);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(55, 20);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "Shirt";
+            this.lblshirt.AutoSize = true;
+            this.lblshirt.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblshirt.Location = new System.Drawing.Point(3, 10);
+            this.lblshirt.Name = "lblshirt";
+            this.lblshirt.Size = new System.Drawing.Size(55, 20);
+            this.lblshirt.TabIndex = 15;
+            this.lblshirt.Text = "Shirt";
             // 
             // dtBillDate
             // 
@@ -1168,35 +1168,35 @@ namespace TailorManagement1
             this.dtBillDate.Size = new System.Drawing.Size(139, 28);
             this.dtBillDate.TabIndex = 62;
             // 
-            // label19
+            // lblbillno
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(822, 66);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(66, 20);
-            this.label19.TabIndex = 63;
-            this.label19.Text = "BillNo";
+            this.lblbillno.AutoSize = true;
+            this.lblbillno.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbillno.Location = new System.Drawing.Point(822, 66);
+            this.lblbillno.Name = "lblbillno";
+            this.lblbillno.Size = new System.Drawing.Size(66, 20);
+            this.lblbillno.TabIndex = 63;
+            this.lblbillno.Text = "BillNo";
             // 
-            // label21
+            // lblbilldate
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(822, 106);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(90, 20);
-            this.label21.TabIndex = 65;
-            this.label21.Text = "Bill Date";
+            this.lblbilldate.AutoSize = true;
+            this.lblbilldate.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbilldate.Location = new System.Drawing.Point(822, 106);
+            this.lblbilldate.Name = "lblbilldate";
+            this.lblbilldate.Size = new System.Drawing.Size(90, 20);
+            this.lblbilldate.TabIndex = 65;
+            this.lblbilldate.Text = "Bill Date";
             // 
-            // label22
+            // lbldeliverydate
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(822, 140);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(137, 20);
-            this.label22.TabIndex = 67;
-            this.label22.Text = "Delivery Date";
+            this.lbldeliverydate.AutoSize = true;
+            this.lbldeliverydate.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldeliverydate.Location = new System.Drawing.Point(822, 140);
+            this.lbldeliverydate.Name = "lbldeliverydate";
+            this.lbldeliverydate.Size = new System.Drawing.Size(137, 20);
+            this.lbldeliverydate.TabIndex = 67;
+            this.lbldeliverydate.Text = "Delivery Date";
             // 
             // dtDeliveryDate
             // 
@@ -1207,15 +1207,15 @@ namespace TailorManagement1
             this.dtDeliveryDate.Size = new System.Drawing.Size(139, 28);
             this.dtDeliveryDate.TabIndex = 66;
             // 
-            // label23
+            // lbltrialdate
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(822, 174);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(102, 20);
-            this.label23.TabIndex = 69;
-            this.label23.Text = "Trial Date";
+            this.lbltrialdate.AutoSize = true;
+            this.lbltrialdate.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltrialdate.Location = new System.Drawing.Point(822, 174);
+            this.lbltrialdate.Name = "lbltrialdate";
+            this.lbltrialdate.Size = new System.Drawing.Size(102, 20);
+            this.lbltrialdate.TabIndex = 69;
+            this.lbltrialdate.Text = "Trial Date";
             // 
             // dtTrailDate
             // 
@@ -1238,15 +1238,15 @@ namespace TailorManagement1
             this.txtPantQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPantQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPantQty_KeyUp);
             // 
-            // label24
+            // lblpantqty
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(822, 205);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(91, 20);
-            this.label24.TabIndex = 70;
-            this.label24.Text = "Pant Qty";
+            this.lblpantqty.AutoSize = true;
+            this.lblpantqty.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpantqty.Location = new System.Drawing.Point(822, 205);
+            this.lblpantqty.Name = "lblpantqty";
+            this.lblpantqty.Size = new System.Drawing.Size(91, 20);
+            this.lblpantqty.TabIndex = 70;
+            this.lblpantqty.Text = "Pant Qty";
             // 
             // txtShirtQty
             // 
@@ -1260,25 +1260,25 @@ namespace TailorManagement1
             this.txtShirtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtShirtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtShirtQty_KeyUp);
             // 
-            // label25
+            // lblshirtqty
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(822, 239);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(94, 20);
-            this.label25.TabIndex = 72;
-            this.label25.Text = "Shirt Qty";
+            this.lblshirtqty.AutoSize = true;
+            this.lblshirtqty.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblshirtqty.Location = new System.Drawing.Point(822, 239);
+            this.lblshirtqty.Name = "lblshirtqty";
+            this.lblshirtqty.Size = new System.Drawing.Size(94, 20);
+            this.lblshirtqty.TabIndex = 72;
+            this.lblshirtqty.Text = "Shirt Qty";
             // 
-            // label26
+            // lblextracost
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(822, 273);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(107, 20);
-            this.label26.TabIndex = 74;
-            this.label26.Text = "Extra Cost";
+            this.lblextracost.AutoSize = true;
+            this.lblextracost.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblextracost.Location = new System.Drawing.Point(822, 273);
+            this.lblextracost.Name = "lblextracost";
+            this.lblextracost.Size = new System.Drawing.Size(107, 20);
+            this.lblextracost.TabIndex = 74;
+            this.lblextracost.Text = "Extra Cost";
             // 
             // txtTotalAmount
             // 
@@ -1291,15 +1291,15 @@ namespace TailorManagement1
             this.txtTotalAmount.Text = "0.00";
             this.txtTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label27
+            // lbltotalamount
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(822, 341);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(139, 20);
-            this.label27.TabIndex = 76;
-            this.label27.Text = "Total Amount";
+            this.lbltotalamount.AutoSize = true;
+            this.lbltotalamount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotalamount.Location = new System.Drawing.Point(822, 341);
+            this.lbltotalamount.Name = "lbltotalamount";
+            this.lbltotalamount.Size = new System.Drawing.Size(139, 20);
+            this.lbltotalamount.TabIndex = 76;
+            this.lbltotalamount.Text = "Total Amount";
             // 
             // txtBillNo
             // 
@@ -1311,15 +1311,15 @@ namespace TailorManagement1
             this.txtBillNo.TabIndex = 78;
             this.txtBillNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label20
+            // lblpaidamount
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(822, 375);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(131, 20);
-            this.label20.TabIndex = 79;
-            this.label20.Text = "Paid Amount";
+            this.lblpaidamount.AutoSize = true;
+            this.lblpaidamount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpaidamount.Location = new System.Drawing.Point(822, 375);
+            this.lblpaidamount.Name = "lblpaidamount";
+            this.lblpaidamount.Size = new System.Drawing.Size(131, 20);
+            this.lblpaidamount.TabIndex = 79;
+            this.lblpaidamount.Text = "Paid Amount";
             // 
             // txtDueAmount
             // 
@@ -1332,15 +1332,15 @@ namespace TailorManagement1
             this.txtDueAmount.Text = "0.00";
             this.txtDueAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label28
+            // lbldueamount
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(822, 409);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(127, 20);
-            this.label28.TabIndex = 81;
-            this.label28.Text = "Due Amount";
+            this.lbldueamount.AutoSize = true;
+            this.lbldueamount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldueamount.Location = new System.Drawing.Point(822, 409);
+            this.lbldueamount.Name = "lbldueamount";
+            this.lbldueamount.Size = new System.Drawing.Size(127, 20);
+            this.lbldueamount.TabIndex = 81;
+            this.lbldueamount.Text = "Due Amount";
             // 
             // btnSaveAndPrint
             // 
@@ -1412,15 +1412,15 @@ namespace TailorManagement1
             this.mskDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.mskDiscount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskDiscount_KeyUp);
             // 
-            // label31
+            // lbldiscount
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(822, 307);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(93, 20);
-            this.label31.TabIndex = 92;
-            this.label31.Text = "Discount";
+            this.lbldiscount.AutoSize = true;
+            this.lbldiscount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldiscount.Location = new System.Drawing.Point(822, 307);
+            this.lbldiscount.Name = "lbldiscount";
+            this.lbldiscount.Size = new System.Drawing.Size(93, 20);
+            this.lbldiscount.TabIndex = 92;
+            this.lbldiscount.Text = "Discount";
             // 
             // btnPrint
             // 
@@ -1464,36 +1464,36 @@ namespace TailorManagement1
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.mskDiscount);
-            this.Controls.Add(this.label31);
+            this.Controls.Add(this.lbldiscount);
             this.Controls.Add(this.rtError);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.mskPaidAmount);
             this.Controls.Add(this.mskExtraCost);
             this.Controls.Add(this.btnSaveAndPrint);
             this.Controls.Add(this.txtDueAmount);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.lbldueamount);
+            this.Controls.Add(this.lblpaidamount);
             this.Controls.Add(this.txtBillNo);
             this.Controls.Add(this.txtTotalAmount);
-            this.Controls.Add(this.label27);
-            this.Controls.Add(this.label26);
+            this.Controls.Add(this.lbltotalamount);
+            this.Controls.Add(this.lblextracost);
             this.Controls.Add(this.txtShirtQty);
-            this.Controls.Add(this.label25);
+            this.Controls.Add(this.lblshirtqty);
             this.Controls.Add(this.txtPantQty);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label23);
+            this.Controls.Add(this.lblpantqty);
+            this.Controls.Add(this.lbltrialdate);
             this.Controls.Add(this.dtTrailDate);
-            this.Controls.Add(this.label22);
+            this.Controls.Add(this.lbldeliverydate);
             this.Controls.Add(this.dtDeliveryDate);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label19);
+            this.Controls.Add(this.lblbilldate);
+            this.Controls.Add(this.lblbillno);
             this.Controls.Add(this.dtBillDate);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtMobile);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblmobile);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblname);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -1515,54 +1515,54 @@ namespace TailorManagement1
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblname;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtMobile;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblmobile;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtSeat5;
         private System.Windows.Forms.TextBox txtSeat4;
         private System.Windows.Forms.TextBox txtSeat3;
         private System.Windows.Forms.TextBox txtSeat2;
         private System.Windows.Forms.TextBox txtSeat1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSeat;
         private System.Windows.Forms.TextBox txtKamar5;
         private System.Windows.Forms.TextBox txtKamar4;
         private System.Windows.Forms.TextBox txtKamar3;
         private System.Windows.Forms.TextBox txtKamar2;
         private System.Windows.Forms.TextBox txtKamar1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblKamar;
         private System.Windows.Forms.TextBox txtPantLambai5;
         private System.Windows.Forms.TextBox txtPantLambai4;
         private System.Windows.Forms.TextBox txtPantLambai3;
         private System.Windows.Forms.TextBox txtPantLambai2;
         private System.Windows.Forms.TextBox txtPantLambai1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPantLambai;
+        private System.Windows.Forms.Label lblpant;
         private System.Windows.Forms.TextBox txtMoli5;
         private System.Windows.Forms.TextBox txtMoli4;
         private System.Windows.Forms.TextBox txtMoli3;
         private System.Windows.Forms.TextBox txtMoli2;
         private System.Windows.Forms.TextBox txtMoli1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblMoli;
         private System.Windows.Forms.TextBox txtJolo5;
         private System.Windows.Forms.TextBox txtJolo4;
         private System.Windows.Forms.TextBox txtJolo3;
         private System.Windows.Forms.TextBox txtJolo2;
         private System.Windows.Forms.TextBox txtJolo1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblJolo;
         private System.Windows.Forms.TextBox txtGothan5;
         private System.Windows.Forms.TextBox txtGothan4;
         private System.Windows.Forms.TextBox txtGothan3;
         private System.Windows.Forms.TextBox txtGothan2;
         private System.Windows.Forms.TextBox txtGothan1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblGothan;
         private System.Windows.Forms.TextBox txtJangh5;
         private System.Windows.Forms.TextBox txtJangh4;
         private System.Windows.Forms.TextBox txtJangh3;
         private System.Windows.Forms.TextBox txtJangh2;
         private System.Windows.Forms.TextBox txtJangh1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblJangh;
         private System.Windows.Forms.CheckedListBox chkListPant;
         private System.Windows.Forms.RichTextBox rtPantNotes;
         private System.Windows.Forms.Panel panel2;
@@ -1573,71 +1573,71 @@ namespace TailorManagement1
         private System.Windows.Forms.TextBox txtCuff3;
         private System.Windows.Forms.TextBox txtCuff2;
         private System.Windows.Forms.TextBox txtCuff1;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblcuff;
         private System.Windows.Forms.TextBox txtKolor5;
         private System.Windows.Forms.TextBox txtKolor4;
         private System.Windows.Forms.TextBox txtKolor3;
         private System.Windows.Forms.TextBox txtKolor2;
         private System.Windows.Forms.TextBox txtKolor1;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblKolor;
         private System.Windows.Forms.TextBox txtFront5;
         private System.Windows.Forms.TextBox txtFront4;
         private System.Windows.Forms.TextBox txtFront3;
         private System.Windows.Forms.TextBox txtFront2;
         private System.Windows.Forms.TextBox txtFront1;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblfront;
         private System.Windows.Forms.TextBox txtBye5;
         private System.Windows.Forms.TextBox txtBye4;
         private System.Windows.Forms.TextBox txtBye3;
         private System.Windows.Forms.TextBox txtBye2;
         private System.Windows.Forms.TextBox txtBye1;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblbye;
         private System.Windows.Forms.TextBox txtSolder5;
         private System.Windows.Forms.TextBox txtSolder4;
         private System.Windows.Forms.TextBox txtSolder3;
         private System.Windows.Forms.TextBox txtSolder2;
         private System.Windows.Forms.TextBox txtSolder1;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblsolder;
         private System.Windows.Forms.TextBox txtChati5;
         private System.Windows.Forms.TextBox txtChati4;
         private System.Windows.Forms.TextBox txtChati3;
         private System.Windows.Forms.TextBox txtChati2;
         private System.Windows.Forms.TextBox txtChati1;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblchati;
         private System.Windows.Forms.TextBox txtShirtLambai5;
         private System.Windows.Forms.TextBox txtShirtLambai4;
         private System.Windows.Forms.TextBox txtShirtLambai3;
         private System.Windows.Forms.TextBox txtShirtLambai2;
         private System.Windows.Forms.TextBox txtShirtLambai1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblshirtlambai;
+        private System.Windows.Forms.Label lblshirt;
         private System.Windows.Forms.DateTimePicker dtBillDate;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblbillno;
+        private System.Windows.Forms.Label lblbilldate;
+        private System.Windows.Forms.Label lbldeliverydate;
         private System.Windows.Forms.DateTimePicker dtDeliveryDate;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lbltrialdate;
         private System.Windows.Forms.DateTimePicker dtTrailDate;
         private System.Windows.Forms.TextBox txtPantQty;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lblpantqty;
         private System.Windows.Forms.TextBox txtShirtQty;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblshirtqty;
+        private System.Windows.Forms.Label lblextracost;
         private System.Windows.Forms.TextBox txtTotalAmount;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lbltotalamount;
         private System.Windows.Forms.TextBox txtBillNo;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblpaidamount;
         private System.Windows.Forms.TextBox txtDueAmount;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lbldueamount;
         private System.Windows.Forms.Button btnSaveAndPrint;
         private System.Windows.Forms.MaskedTextBox mskExtraCost;
         private System.Windows.Forms.MaskedTextBox mskPaidAmount;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblPantNotes;
+        private System.Windows.Forms.Label lblshirtnotes;
         private System.Windows.Forms.RichTextBox rtError;
         private System.Windows.Forms.MaskedTextBox mskDiscount;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lbldiscount;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnPreview;

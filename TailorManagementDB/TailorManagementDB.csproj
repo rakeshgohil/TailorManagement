@@ -57,6 +57,7 @@
     <Compile Include="DashboardRepository.cs" />
     <Compile Include="PantConfigurationRepository.cs" />
     <Compile Include="BillPaymentDetailRepository.cs" />
+    <Compile Include="CompanyConfiguration.cs" />
     <Compile Include="ShirtConfigurationRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="PantRepository.cs" />

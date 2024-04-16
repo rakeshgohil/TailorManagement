@@ -272,6 +272,7 @@ namespace TailorManagement1
         {
             try
             {
+                LanguageUtilities.ChangeLanguage(this);
                 NewBill();
                 GetAllProducts();
                 LoadAllShirtConfigurations();

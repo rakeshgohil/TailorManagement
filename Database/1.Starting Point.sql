@@ -12,6 +12,7 @@ GO
 --PantConfiguration.sql
 --InsertData.sql
 --BillPaymentDetail.sql
+--CompanyConfiguration.sql
 
 DECLARE @BillNo AS INT = 4
 DECLARE @BillId AS INT

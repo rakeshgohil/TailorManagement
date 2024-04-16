@@ -55,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiClient.cs" />
+    <Compile Include="CompanyConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyConfiguration.Designer.cs">
+      <DependentUpon>CompanyConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,18 @@
     </Compile>
     <Compile Include="PantConfigurationForm.Designer.cs">
       <DependentUpon>PantConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Resources.gu-IN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.gu-IN.resx</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="ShirtConfigurationForm.cs">
       <SubType>Form</SubType>
@@ -100,13 +118,29 @@
     <Compile Include="SampleControls.Designer.cs">
       <DependentUpon>SampleControls.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ConfigUtilities.cs" />
+    <Compile Include="Utilities\FormUtilities.cs" />
+    <Compile Include="Utilities\LanguageUtilities.cs" />
     <Compile Include="Utilities\LoggerUtilities.cs" />
     <Compile Include="Utilities\PrintUtilities.cs" />
+    <EmbeddedResource Include="CompanyConfiguration.resx">
+      <DependentUpon>CompanyConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantConfigurationForm.resx">
       <DependentUpon>PantConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.gu-IN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.gu-IN.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="ShirtConfigurationForm.resx">
       <DependentUpon>ShirtConfigurationForm.cs</DependentUpon>

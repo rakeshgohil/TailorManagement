@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             this.dgvDeliveryDue = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbldeliverydue = new System.Windows.Forms.Label();
+            this.lblpaymentdue = new System.Windows.Forms.Label();
             this.dgvPaymentDue = new System.Windows.Forms.DataGridView();
             this.btnReceiveAmount = new System.Windows.Forms.Button();
             this.rtError = new System.Windows.Forms.RichTextBox();
@@ -55,25 +55,25 @@
             this.dgvDeliveryDue.Size = new System.Drawing.Size(1074, 262);
             this.dgvDeliveryDue.TabIndex = 81;
             // 
-            // label1
+            // lbldeliverydue
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
-            this.label1.TabIndex = 82;
-            this.label1.Text = "Delivery Due";
+            this.lbldeliverydue.AutoSize = true;
+            this.lbldeliverydue.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldeliverydue.Location = new System.Drawing.Point(22, 9);
+            this.lbldeliverydue.Name = "lbldeliverydue";
+            this.lbldeliverydue.Size = new System.Drawing.Size(130, 20);
+            this.lbldeliverydue.TabIndex = 82;
+            this.lbldeliverydue.Text = "Delivery Due";
             // 
-            // label2
+            // lblpaymentdue
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 308);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 20);
-            this.label2.TabIndex = 84;
-            this.label2.Text = "Payment Due";
+            this.lblpaymentdue.AutoSize = true;
+            this.lblpaymentdue.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpaymentdue.Location = new System.Drawing.Point(22, 308);
+            this.lblpaymentdue.Name = "lblpaymentdue";
+            this.lblpaymentdue.Size = new System.Drawing.Size(135, 20);
+            this.lblpaymentdue.TabIndex = 84;
+            this.lblpaymentdue.Text = "Payment Due";
             // 
             // dgvPaymentDue
             // 
@@ -124,9 +124,9 @@
             this.ClientSize = new System.Drawing.Size(1137, 875);
             this.Controls.Add(this.rtError);
             this.Controls.Add(this.btnReceiveAmount);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblpaymentdue);
             this.Controls.Add(this.dgvPaymentDue);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbldeliverydue);
             this.Controls.Add(this.dgvDeliveryDue);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -146,8 +146,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDeliveryDue;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbldeliverydue;
+        private System.Windows.Forms.Label lblpaymentdue;
         private System.Windows.Forms.DataGridView dgvPaymentDue;
         private System.Windows.Forms.Button btnReceiveAmount;
         private System.Windows.Forms.RichTextBox rtError;

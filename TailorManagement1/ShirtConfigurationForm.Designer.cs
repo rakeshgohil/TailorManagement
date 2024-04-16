@@ -30,10 +30,10 @@ namespace TailorManagement1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShirtConfigurationForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbldescription = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtLocalDescription = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbllocaldescription = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvShirtConfiguration = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -42,15 +42,15 @@ namespace TailorManagement1
             ((System.ComponentModel.ISupportInitialize)(this.dgvShirtConfiguration)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbldescription
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Description";
+            this.lbldescription.AutoSize = true;
+            this.lbldescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldescription.Location = new System.Drawing.Point(18, 18);
+            this.lbldescription.Name = "lbldescription";
+            this.lbldescription.Size = new System.Drawing.Size(118, 20);
+            this.lbldescription.TabIndex = 5;
+            this.lbldescription.Text = "Description";
             // 
             // txtDescription
             // 
@@ -70,15 +70,15 @@ namespace TailorManagement1
             this.txtLocalDescription.Size = new System.Drawing.Size(292, 28);
             this.txtLocalDescription.TabIndex = 13;
             // 
-            // label2
+            // lbllocaldescription
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Local Description";
+            this.lbllocaldescription.AutoSize = true;
+            this.lbllocaldescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllocaldescription.Location = new System.Drawing.Point(18, 64);
+            this.lbllocaldescription.Name = "lbllocaldescription";
+            this.lbllocaldescription.Size = new System.Drawing.Size(174, 20);
+            this.lbllocaldescription.TabIndex = 12;
+            this.lbllocaldescription.Text = "Local Description";
             // 
             // btnSave
             // 
@@ -153,9 +153,9 @@ namespace TailorManagement1
             this.Controls.Add(this.dgvShirtConfiguration);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtLocalDescription);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbllocaldescription);
             this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbldescription);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -172,10 +172,10 @@ namespace TailorManagement1
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbldescription;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtLocalDescription;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbllocaldescription;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dgvShirtConfiguration;
         private System.Windows.Forms.Button btnCancel;
