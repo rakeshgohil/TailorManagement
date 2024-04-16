@@ -6,11 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TailorManagementModels;
+using System.Drawing.Printing;
+using System.Drawing;
+using TailorManagement1.Utilities;
 
 namespace TailorManagement1
 {
     public partial class BillForm : Form
     {
+        private PrintDocument printDocument = new PrintDocument();
+        private PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
         private string previousmobile = "";
         private static readonly Logger logger = Utilities.LoggerUtilities.GetLogger();
         private Bill bill = null;
@@ -22,16 +27,26 @@ namespace TailorManagement1
 
         public BillForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            printDocument.PrintPage += PrintDocument_PrintPage;
+            printPreviewDialog.Document = printDocument;
         }
+
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            PrintUtilities.PrintBill(bill, e.Graphics);
+            e.HasMorePages = false;
+        }
+
+
 
         private async void GetAllProducts()
         {
             try
             {
-                products = await ApiClient.GetApiClient().GetAsync<List<Product>>("api/Products");
                 if (products != null)
                 {
+                    products = await ApiClient.GetApiClient().GetAsync<List<Product>>("api/Products");
                     shirtProduct = products.Where(x => x.Name.ToLower() == "shirt").FirstOrDefault();
                     pantProduct = products.Where(x => x.Name.ToLower() == "pant").FirstOrDefault();
                 }
@@ -43,7 +58,7 @@ namespace TailorManagement1
             }
         }
 
-        private async void SaveBill()
+        private async void SaveBill(bool isPrint = false)
         {
             try
             {
@@ -70,7 +85,7 @@ namespace TailorManagement1
                 bill.Pant = GetPantDetails();
 
                 StringBuilder error;
-                if (bill.isValid(out error))
+                if (!bill.isValid(out error))
                 {
                     rtError.Text = error.ToString();
                     return;
@@ -84,9 +99,14 @@ namespace TailorManagement1
                     return;
                 }
                 bill.Id = addedBill.Id;
+                bill.BillNo = addedBill.BillNo;
                 txtBillNo.Text = addedBill.BillNo.ToString();
                 ResetButtons(false);
                 MessageBox.Show($"Bill {addedBill.BillNo} is created successfully.");
+                if (isPrint)
+                {
+                    PrintBill();
+                }
             }
             catch (Exception ex)
             {
@@ -234,9 +254,11 @@ namespace TailorManagement1
         {
             try
             {
-                List<BillDetail> billDetails = new List<BillDetail>();
-                billDetails.Add(new BillDetail() { Product = shirtProduct, Price = shirtProduct.Price, Qty = Convert.ToInt32(txtShirtQty.Text) });
-                billDetails.Add(new BillDetail() { Product = pantProduct, Price = pantProduct.Price, Qty = Convert.ToInt32(txtPantQty.Text) });
+                List<BillDetail> billDetails = new List<BillDetail>
+                {
+                    new BillDetail() { Product = shirtProduct, Price = shirtProduct.Price, Qty = Convert.ToInt32(txtShirtQty.Text) },
+                    new BillDetail() { Product = pantProduct, Price = pantProduct.Price, Qty = Convert.ToInt32(txtPantQty.Text) }
+                };
                 return billDetails;
             }
             catch (Exception ex)
@@ -251,6 +273,9 @@ namespace TailorManagement1
             try
             {
                 NewBill();
+                GetAllProducts();
+                LoadAllShirtConfigurations();
+                LoadAllPantConfigurations();
             }
             catch (Exception ex)
             {
@@ -269,11 +294,10 @@ namespace TailorManagement1
                     BillDetails = new List<BillDetail>()
                 };
 
-                FillSomeDummyData(); //remove this line along with method
-                GetAllProducts();
-                LoadAllShirtConfigurations();
-                LoadAllPantConfigurations();
+                ClearControls(this);
+                FillBillConfiguration();
                 ResetButtons(true);
+                previousmobile = "";
             }
             catch (Exception ex)
             {
@@ -297,92 +321,132 @@ namespace TailorManagement1
             }
         }
 
-        private void FillSomeDummyData()
+        private void FillBillConfiguration()
         {
             try
             {
-                txtBye1.Text = "B1";
-                txtBye2.Text = "B2";
-                txtBye3.Text = "B3";
-                txtBye4.Text = "B4";
-                txtBye5.Text = "B5";
-                txtChati1.Text = "C1";
-                txtChati2.Text = "C2";
-                txtChati3.Text = "C3";
-                txtChati4.Text = "C4";
-                txtChati5.Text = "C5";
-                txtCuff1.Text = "CF1";
-                txtCuff2.Text = "CF2";
-                txtCuff3.Text = "CF3";
-                txtCuff4.Text = "CF4";
-                txtCuff5.Text = "CF5";
-                txtFront1.Text = "F1";
-                txtFront2.Text = "F2";
-                txtFront3.Text = "F3";
-                txtFront4.Text = "F4";
-                txtFront5.Text = "F5";
-                txtGothan1.Text = "G1";
-                txtGothan2.Text = "G2";
-                txtGothan3.Text = "G3";
-                txtGothan4.Text = "G4";
-                txtGothan5.Text = "G5";
-                txtJangh1.Text = "J1";
-                txtJangh2.Text = "J2";
-                txtJangh3.Text = "J3";
-                txtJangh4.Text = "J4";
-                txtJangh5.Text = "J5";
-                txtJolo1.Text = "JL1";
-                txtJolo2.Text = "JL2";
-                txtJolo3.Text = "JL3";
-                txtJolo4.Text = "JL4";
-                txtJolo5.Text = "JL5";
-                txtKamar1.Text = "K1";
-                txtKamar2.Text = "K2";
-                txtKamar3.Text = "K3";
-                txtKamar4.Text = "K4";
-                txtKamar5.Text = "K5";
-                txtKolor1.Text = "KL1";
-                txtKolor2.Text = "KL2";
-                txtKolor3.Text = "KL3";
-                txtKolor4.Text = "KL4";
-                txtKolor5.Text = "KL5";
-                txtMobile.Text = "7698784947";
-                txtMoli1.Text = "M1";
-                txtMoli2.Text = "M2";
-                txtMoli3.Text = "M3";
-                txtMoli4.Text = "M4";
-                txtMoli5.Text = "M5";
-                txtName.Text = "RAKESH";
-                txtPantLambai1.Text = "PL1";
-                txtPantLambai2.Text = "PL2";
-                txtPantLambai3.Text = "PL3";
-                txtPantLambai4.Text = "PL4";
-                txtPantLambai5.Text = "PL5";
-                txtPantQty.Text = "2";
-                txtSeat1.Text = "S1";
-                txtSeat2.Text = "S2";
-                txtSeat3.Text = "S3";
-                txtSeat4.Text = "S4";
-                txtSeat5.Text = "S5";
-                txtShirtLambai1.Text = "SL1";
-                txtShirtLambai2.Text = "SL2";
-                txtShirtLambai3.Text = "SL3";
-                txtShirtLambai4.Text = "SL4";
-                txtShirtLambai5.Text = "SL5";
-                txtShirtQty.Text = "3";
-                txtSolder1.Text = "SO1";
-                txtSolder2.Text = "SO2";
-                txtSolder3.Text = "SO3";
-                txtSolder4.Text = "SO4";
-                txtSolder5.Text = "SO5";
-                rtPantNotes.Text = "Pant Notes";
-                rtShirtNotes.Text = "Shirt Notes";
+
+                txtShirtQty.Text = "1";
+                txtPantQty.Text = "1";
+                return;
+
+                //txtBye1.Text = "B1";
+                //txtBye2.Text = "B2";
+                //txtBye3.Text = "B3";
+                //txtBye4.Text = "B4";
+                //txtBye5.Text = "B5";
+                //txtChati1.Text = "C1";
+                //txtChati2.Text = "C2";
+                //txtChati3.Text = "C3";
+                //txtChati4.Text = "C4";
+                //txtChati5.Text = "C5";
+                //txtCuff1.Text = "CF1";
+                //txtCuff2.Text = "CF2";
+                //txtCuff3.Text = "CF3";
+                //txtCuff4.Text = "CF4";
+                //txtCuff5.Text = "CF5";
+                //txtFront1.Text = "F1";
+                //txtFront2.Text = "F2";
+                //txtFront3.Text = "F3";
+                //txtFront4.Text = "F4";
+                //txtFront5.Text = "F5";
+                //txtGothan1.Text = "G1";
+                //txtGothan2.Text = "G2";
+                //txtGothan3.Text = "G3";
+                //txtGothan4.Text = "G4";
+                //txtGothan5.Text = "G5";
+                //txtJangh1.Text = "J1";
+                //txtJangh2.Text = "J2";
+                //txtJangh3.Text = "J3";
+                //txtJangh4.Text = "J4";
+                //txtJangh5.Text = "J5";
+                //txtJolo1.Text = "JL1";
+                //txtJolo2.Text = "JL2";
+                //txtJolo3.Text = "JL3";
+                //txtJolo4.Text = "JL4";
+                //txtJolo5.Text = "JL5";
+                //txtKamar1.Text = "K1";
+                //txtKamar2.Text = "K2";
+                //txtKamar3.Text = "K3";
+                //txtKamar4.Text = "K4";
+                //txtKamar5.Text = "K5";
+                //txtKolor1.Text = "KL1";
+                //txtKolor2.Text = "KL2";
+                //txtKolor3.Text = "KL3";
+                //txtKolor4.Text = "KL4";
+                //txtKolor5.Text = "KL5";
+                //txtMobile.Text = "7698784947";
+                //txtMoli1.Text = "M1";
+                //txtMoli2.Text = "M2";
+                //txtMoli3.Text = "M3";
+                //txtMoli4.Text = "M4";
+                //txtMoli5.Text = "M5";
+                //txtName.Text = "RAKESH";
+                //txtPantLambai1.Text = "PL1";
+                //txtPantLambai2.Text = "PL2";
+                //txtPantLambai3.Text = "PL3";
+                //txtPantLambai4.Text = "PL4";
+                //txtPantLambai5.Text = "PL5";
+                //txtSeat1.Text = "S1";
+                //txtSeat2.Text = "S2";
+                //txtSeat3.Text = "S3";
+                //txtSeat4.Text = "S4";
+                //txtSeat5.Text = "S5";
+                //txtShirtLambai1.Text = "SL1";
+                //txtShirtLambai2.Text = "SL2";
+                //txtShirtLambai3.Text = "SL3";
+                //txtShirtLambai4.Text = "SL4";
+                //txtShirtLambai5.Text = "SL5";
+                //txtSolder1.Text = "SO1";
+                //txtSolder2.Text = "SO2";
+                //txtSolder3.Text = "SO3";
+                //txtSolder4.Text = "SO4";
+                //txtSolder5.Text = "SO5";
+                //rtPantNotes.Text = "Pant Notes";
+                //rtShirtNotes.Text = "Shirt Notes";
             }
             catch (Exception ex)
             {
                 logger.Error($"{ex}");
             }
         }
+
+        private void ClearControls(Control control)
+        {
+            try
+            {
+                foreach (Control subControl in control.Controls)
+                {
+                    if (subControl is TextBox)
+                    {
+                        TextBox textBox = (TextBox)subControl;
+                        textBox.Text = "";
+                    }
+                    else if (subControl is RichTextBox)
+                    {
+                        RichTextBox richTextBox = (RichTextBox)subControl;
+                        richTextBox.Text = "";
+                    }
+                    else if (subControl is CheckedListBox)
+                    {
+                        CheckedListBox checkedListBox = (CheckedListBox)subControl;
+                        for (int i = 0; i < checkedListBox.Items.Count; i++)
+                        {
+                            checkedListBox.SetItemChecked(i, false);
+                        }
+                    }
+                    else if (subControl is Panel)
+                    {
+                        this.ClearControls(subControl);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // Handle any exceptions here
+            }
+        }
+
 
         private void GetAmounts()
         {
@@ -804,6 +868,37 @@ namespace TailorManagement1
             try
             {
                 NewBill();
+                GetAmounts();
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"{ex}");
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            PrintBill();
+        }
+
+        private void PrintBill()
+        {
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument;
+            printDocument.Print();
+        }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog.WindowState = FormWindowState.Maximized;
+            printPreviewDialog.ShowDialog();
+        }
+
+        private void btnSaveAndPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveBill(true);                
             }
             catch (Exception ex)
             {

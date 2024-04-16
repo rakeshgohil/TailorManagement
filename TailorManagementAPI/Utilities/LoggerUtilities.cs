@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -10,7 +12,7 @@ namespace TailorManagementAPI.Utilities
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
         static LoggerUtilities()
         {
-            string appDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            string appDirectory = Directory.GetCurrentDirectory();
 
             // Combine the directory path with the "Logs" folder name
             string logsFolderPath = Path.Combine(appDirectory, "Logs");

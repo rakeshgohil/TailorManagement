@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bill.cs" />
+    <Compile Include="DashboardModel.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Pant.cs" />

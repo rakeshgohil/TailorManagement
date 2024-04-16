@@ -143,7 +143,7 @@ namespace TailorManagementModels
                 error.AppendLine("Shirt Cuff cannot be blank.");
             }
 
-            if (string.IsNullOrWhiteSpace(error.ToString()))
+            if (!string.IsNullOrWhiteSpace(error.ToString()))
             {
                 return false;
             }

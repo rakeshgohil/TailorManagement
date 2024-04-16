@@ -55,12 +55,6 @@ namespace TailorManagementDB
             return new Pant
             {
                 Id = (int)reader["Id"],
-                Customer = new Customer()
-                {
-                    Id = (int)reader["CustomerId"],
-                    Mobile = reader["Mobile"].ToString(),
-                    Name = reader["Name"].ToString()
-                },
                 Length1 = reader["Length1"].ToString(),
                 Length2 = reader["Length2"].ToString(),
                 Length3 = reader["Length3"].ToString(),

@@ -46,7 +46,7 @@ namespace TailorManagementModels
             //todo billdetails validation
             //todo bill validation
 
-            if (string.IsNullOrWhiteSpace(error.ToString()))
+            if (!string.IsNullOrWhiteSpace(error.ToString()))
             {
                 return false;
             }
@@ -66,6 +66,17 @@ namespace TailorManagementModels
         public decimal Qty { get; set; }
 
         public decimal Price { get; set; }
+    }
+
+    public class BillPaymentDetail
+    {
+        public int Id { get; set; }
+
+        public int BillId { get; set; }
+
+        public int BillNo { get; set; }
+
+        public decimal PaidAmount { get; set; }
     }
 
 }

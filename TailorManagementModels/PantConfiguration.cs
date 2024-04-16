@@ -22,7 +22,7 @@ namespace TailorManagementModels
                 error.AppendLine("Local Description cannot be blank.");
             }
 
-            if (string.IsNullOrWhiteSpace(error.ToString()))
+            if (!string.IsNullOrWhiteSpace(error.ToString()))
             {
                 return false;
             }

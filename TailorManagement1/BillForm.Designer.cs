@@ -1351,6 +1351,7 @@ namespace TailorManagement1
             this.btnSaveAndPrint.TabIndex = 76;
             this.btnSaveAndPrint.Text = "Save and Print";
             this.btnSaveAndPrint.UseVisualStyleBackColor = true;
+            this.btnSaveAndPrint.Click += new System.EventHandler(this.btnSaveAndPrint_Click);
             // 
             // mskExtraCost
             // 
@@ -1430,6 +1431,7 @@ namespace TailorManagement1
             this.btnPrint.TabIndex = 93;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnNew
             // 
@@ -1451,6 +1453,7 @@ namespace TailorManagement1
             this.btnPreview.TabIndex = 95;
             this.btnPreview.Text = "Pre&view";
             this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // BillForm
             // 

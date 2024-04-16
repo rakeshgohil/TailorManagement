@@ -60,7 +60,6 @@ CREATE OR ALTER PROCEDURE spSaveBill
 	@ExtraCost DECIMAL(18,2),		
 	@Discount DECIMAL(18,2),
 	@TotalAmount DECIMAL(18,2),
-	@PaidAmount DECIMAL(18,2),
 	@Id INT OUTPUT,
 	@BillNo INT OUTPUT
 AS
@@ -68,8 +67,8 @@ BEGIN
     SET NOCOUNT ON;
 		
 	SELECT @BillNo = ISNULL(MAX(BillNo), 0) + 1 FROM tbBill
-	INSERT INTO tbBill(BillDate, BillNo, CustomerId, DeliveryDate, ExtraCost, Discount, PaidAmount, TotalAmount, TrialDate)
-    VALUES (@BillDate, @BillNo, @CustomerId, @DeliveryDate, @ExtraCost, @Discount, @PaidAmount, @TotalAmount, @TrialDate)
+	INSERT INTO tbBill(BillDate, BillNo, CustomerId, DeliveryDate, ExtraCost, Discount, TotalAmount, TrialDate)
+    VALUES (@BillDate, @BillNo, @CustomerId, @DeliveryDate, @ExtraCost, @Discount, @TotalAmount, @TrialDate)
 
     SET @Id = SCOPE_IDENTITY();
 END
@@ -115,6 +114,7 @@ BEGIN
 	DECLARE @ShirtProductID INT;
 	DECLARE @ShirtPrice DECIMAL(18,2);
 	DECLARE @BillDetailID INT;	
+	DECLARE @BillPaymentDetailID INT;	
 	DECLARE @PantProductID INT;
 	DECLARE @PantPrice DECIMAL(18,2);
 
@@ -129,7 +129,7 @@ BEGIN
 		@Front1, @Front2, @Front3, @Front4, @Front5, @Kolor1, @Kolor2, @Kolor3, @Kolor4, @Kolor5,
 		@Cuff1, @Cuff2, @Cuff3, @Cuff4, @Cuff5, @ShirtNotes, @ShirtId OUTPUT;
 	
-	EXEC spSaveBill @CustomerId, @BillDate, @DeliveryDate, @TrialDate, @ExtraCost, @Discount, @TotalAmount, @PaidAmount, @BillId OUTPUT, @BillNo OUTPUT;
+	EXEC spSaveBill @CustomerId, @BillDate, @DeliveryDate, @TrialDate, @ExtraCost, @Discount, @TotalAmount, @BillId OUTPUT, @BillNo OUTPUT;
 	
 	IF @ShirtQty > 0
 	BEGIN
@@ -142,4 +142,10 @@ BEGIN
 		SELECT @PantProductID = ID, @PantPrice = Price FROM tbProduct WHERE [Name] = 'Pant';
 		EXEC spSaveBillDetail @BillId, @PantProductId, @PantQty, @PantPrice, @BillDetailID OUTPUT  	
 	END
+
+	IF @PaidAmount > 0
+	BEGIN
+		EXEC spSaveBillPaymentDetail @BillId, @PaidAmount, @BillPaymentDetailID OUTPUT 
+	END
 END;
+GO

@@ -82,5 +82,24 @@ namespace TailorManagement1
             }
 
         }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            DashboardForm dashboardForm = Application.OpenForms.OfType<DashboardForm>().FirstOrDefault();
+            if (dashboardForm == null)
+            {
+                dashboardForm = new DashboardForm();
+                dashboardForm.MdiParent = this;
+            }
+            if (!dashboardForm.Visible)
+            {
+                dashboardForm.Show();
+            }
+            else
+            {
+                dashboardForm.BringToFront(); // Bring the form to the front if it's already visible
+            }
+        }
     }
 }

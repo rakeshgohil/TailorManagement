@@ -11,15 +11,14 @@ using TailorManagementModels;
 
 namespace TailorManagement1
 {
-    internal enum EnumShirtConfiguration
-    {
-        Id,
-        Description,
-        LocalDescription
-    }
-
     public partial class ShirtConfigurationForm : Form
     {
+        private enum EnumShirtConfiguration
+        {
+            Id,
+            Description,
+            LocalDescription
+        }
 
         ShirtConfiguration shirtConfiguration = null;
         public ShirtConfigurationForm()
@@ -49,7 +48,7 @@ namespace TailorManagement1
             shirtConfiguration.LocalDescription = txtLocalDescription.Text.Trim();
 
             StringBuilder error;
-            if (shirtConfiguration.isValid(out error))
+            if (!shirtConfiguration.isValid(out error))
             {
                 rtError.Text = error.ToString();
                 return;

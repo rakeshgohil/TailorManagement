@@ -117,7 +117,7 @@ namespace TailorManagementModels
                 error.AppendLine("Pant Moli cannot be blank.");
             }
 
-            if (string.IsNullOrWhiteSpace(error.ToString()))
+            if (!string.IsNullOrWhiteSpace(error.ToString()))
             {
                 return false;
             }

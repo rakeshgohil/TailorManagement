@@ -11,15 +11,15 @@ using TailorManagementModels;
 
 namespace TailorManagement1
 {
-    internal enum EnumPantConfiguration
-    {
-        Id,
-        Description,
-        LocalDescription
-    }
 
     public partial class PantConfigurationForm : Form
     {
+        private enum EnumPantConfiguration
+        {
+            Id,
+            Description,
+            LocalDescription
+        }
 
         PantConfiguration pantConfiguration = null;
         public PantConfigurationForm()
@@ -49,7 +49,7 @@ namespace TailorManagement1
             pantConfiguration.LocalDescription = txtLocalDescription.Text.Trim();
 
             StringBuilder error;
-            if (pantConfiguration.isValid(out error))
+            if (!pantConfiguration.isValid(out error))
             {
                 rtError.Text = error.ToString();
                 return;
@@ -131,7 +131,7 @@ namespace TailorManagement1
 
                 pantConfiguration = new PantConfiguration()
                 {
-                    Id = (int) row.Cells[(int)EnumPantConfiguration.Id].Value,
+                    Id = (int)row.Cells[(int)EnumPantConfiguration.Id].Value,
                     Description = row.Cells[(int)EnumPantConfiguration.Description].Value.ToString(),
                     LocalDescription = row.Cells[(int)EnumPantConfiguration.LocalDescription].Value.ToString()
                 };
