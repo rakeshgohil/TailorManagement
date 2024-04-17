@@ -117,7 +117,190 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnExit" xml:space="preserve">
-    <value>બહાર નીકળો</value>
+  <data name="btncancel" xml:space="preserve">
+    <value>બહાર</value>
+  </data>
+  <data name="btndelete" xml:space="preserve">
+    <value>કાઢી નાખો</value>
+  </data>
+  <data name="btnexit" xml:space="preserve">
+    <value>બહાર</value>
+  </data>
+  <data name="btnlogin" xml:space="preserve">
+    <value>પ્રવેશ કરો</value>
+  </data>
+  <data name="btnnew" xml:space="preserve">
+    <value>નવી</value>
+  </data>
+  <data name="btnpreview" xml:space="preserve">
+    <value>પૂર્વાવલોકન</value>
+  </data>
+  <data name="btnprint" xml:space="preserve">
+    <value>છાપો</value>
+  </data>
+  <data name="btnreceiveamount" xml:space="preserve">
+    <value>રકમ મેળવો</value>
+  </data>
+  <data name="btnsave" xml:space="preserve">
+    <value>સાચવો</value>
+  </data>
+  <data name="btnsaveandprint" xml:space="preserve">
+    <value>સાચવો અને છાપો</value>
+  </data>
+  <data name="lbladvance" xml:space="preserve">
+    <value>એડવાન્સ</value>
+  </data>
+  <data name="lblbilldate" xml:space="preserve">
+    <value>બિલ તારીખ</value>
+  </data>
+  <data name="lblbillno" xml:space="preserve">
+    <value>બિલ નં</value>
+  </data>
+  <data name="lblbye" xml:space="preserve">
+    <value>બાય</value>
+  </data>
+  <data name="lblchati" xml:space="preserve">
+    <value>છાતી</value>
+  </data>
+  <data name="lblcompanyaddress" xml:space="preserve">
+    <value>કંપની સરનામું</value>
+  </data>
+  <data name="lblcompanymobile" xml:space="preserve">
+    <value>કંપની મોબાઈલ</value>
+  </data>
+  <data name="lblcompanyname" xml:space="preserve">
+    <value>કંપની નામ</value>
+  </data>
+  <data name="lblcuff" xml:space="preserve">
+    <value>કફ</value>
+  </data>
+  <data name="lbldeliverydate" xml:space="preserve">
+    <value>સોંપણી તારીખ</value>
+  </data>
+  <data name="lbldeliverydays" xml:space="preserve">
+    <value>ડિલિવરી દિવસ</value>
+  </data>
+  <data name="lbldeliverydue" xml:space="preserve">
+    <value>ડિલિવરી બાકી</value>
+  </data>
+  <data name="lbldescription" xml:space="preserve">
+    <value>વર્ણન</value>
+  </data>
+  <data name="lbldiscount" xml:space="preserve">
+    <value>ડિસ્કાઉન્ટ</value>
+  </data>
+  <data name="lbldue" xml:space="preserve">
+    <value>બાકી</value>
+  </data>
+  <data name="lbldueamount" xml:space="preserve">
+    <value>બાકી રકમ</value>
+  </data>
+  <data name="lblextracost" xml:space="preserve">
+    <value>વધારાની કિંમત</value>
+  </data>
+  <data name="lblfront" xml:space="preserve">
+    <value>ફન્ટ</value>
+  </data>
+  <data name="lblgothan" xml:space="preserve">
+    <value>ગોઠણ</value>
+  </data>
+  <data name="lbljangh" xml:space="preserve">
+    <value>જાંઘ</value>
+  </data>
+  <data name="lbljolo" xml:space="preserve">
+    <value>જોળો</value>
+  </data>
+  <data name="lblkamar" xml:space="preserve">
+    <value>કમર</value>
+  </data>
+  <data name="lblkolor" xml:space="preserve">
+    <value>કોલર</value>
+  </data>
+  <data name="lbllanguage" xml:space="preserve">
+    <value>ભાષા</value>
+  </data>
+  <data name="lbllocaldescription" xml:space="preserve">
+    <value>સ્થાનિક વર્ણન</value>
+  </data>
+  <data name="lblmobile" xml:space="preserve">
+    <value>મોબાઈલ</value>
+  </data>
+  <data name="lblmoli" xml:space="preserve">
+    <value>મોળી</value>
+  </data>
+  <data name="lblname" xml:space="preserve">
+    <value>નામ</value>
+  </data>
+  <data name="lblownername" xml:space="preserve">
+    <value>માલિક નામ</value>
+  </data>
+  <data name="lblpaidamount" xml:space="preserve">
+    <value>ચૂકવેલ રકમ</value>
+  </data>
+  <data name="lblpant" xml:space="preserve">
+    <value>પેન્ટ</value>
+  </data>
+  <data name="lblpantlambai" xml:space="preserve">
+    <value>લંબાઈ</value>
+  </data>
+  <data name="lblpantnotes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="lblpantprice" xml:space="preserve">
+    <value>પેન્ટ ભાવ</value>
+  </data>
+  <data name="lblpantqty" xml:space="preserve">
+    <value>પેન્ટ નંગ</value>
+  </data>
+  <data name="lblpassword" xml:space="preserve">
+    <value>પાસવર્ડ</value>
+  </data>
+  <data name="lblpaymentdue" xml:space="preserve">
+    <value>ચૂકવણી બાકી</value>
+  </data>
+  <data name="lblqty" xml:space="preserve">
+    <value>નંગ</value>
+  </data>
+  <data name="lblrate" xml:space="preserve">
+    <value>ભાવ</value>
+  </data>
+  <data name="lblseat" xml:space="preserve">
+    <value>સીટ</value>
+  </data>
+  <data name="lblshirt" xml:space="preserve">
+    <value>શર્ટ</value>
+  </data>
+  <data name="lblshirtlambai" xml:space="preserve">
+    <value>લંબાઈ</value>
+  </data>
+  <data name="lblshirtnotes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="lblshirtprice" xml:space="preserve">
+    <value>શર્ટ ભાવ</value>
+  </data>
+  <data name="lblshirtqty" xml:space="preserve">
+    <value>શર્ટ નંગ</value>
+  </data>
+  <data name="lblsolder" xml:space="preserve">
+    <value>સોલ્ડર</value>
+  </data>
+  <data name="lbltotal" xml:space="preserve">
+    <value>ટોટલ</value>
+  </data>
+  <data name="lbltotalamount" xml:space="preserve">
+    <value>ટોટલ</value>
+  </data>
+  <data name="lbltrialdate" xml:space="preserve">
+    <value>ટ્રાયલ તારીખ</value>
+  </data>
+  <data name="lbltrialdays" xml:space="preserve">
+    <value>ટ્રાયલ દિવસ</value>
+  </data>
+  <data name="lbluserid" xml:space="preserve">
+    <value>યુઝર આઈડી</value>
+  </data>
+  <data name="lblvigat" xml:space="preserve">
+    <value>વિગત</value>
   </data>
 </root>

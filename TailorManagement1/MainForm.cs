@@ -85,7 +85,6 @@ namespace TailorManagement1
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             DashboardForm dashboardForm = Application.OpenForms.OfType<DashboardForm>().FirstOrDefault();
             if (dashboardForm == null)
             {
@@ -99,6 +98,24 @@ namespace TailorManagement1
             else
             {
                 dashboardForm.BringToFront(); // Bring the form to the front if it's already visible
+            }
+        }
+
+        private void companyConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompanyConfigurationForm companyConfigurationForm = Application.OpenForms.OfType<CompanyConfigurationForm>().FirstOrDefault();
+            if (companyConfigurationForm == null)
+            {
+                companyConfigurationForm = new CompanyConfigurationForm();
+                companyConfigurationForm.MdiParent = this;
+            }
+            if (!companyConfigurationForm.Visible)
+            {
+                companyConfigurationForm.Show();
+            }
+            else
+            {
+                companyConfigurationForm.BringToFront(); // Bring the form to the front if it's already visible
             }
         }
     }

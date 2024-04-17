@@ -12,7 +12,7 @@ BEGIN
 	B.PaidAmount
 	FROM tbBill B
 	INNER JOIN tbCustomer C ON C.Id = B.CustomerId 
-	WHERE B.DeliveryDate >= DATEADD(day, -@DelDueDays, GETDATE())
+	WHERE B.DeliveryDate > DATEADD(day, -10, GETDATE()) AND B.DeliveryDate <= DATEADD(day, @DelDueDays, GETDATE())
 	ORDER BY B.DeliveryDate
 END
 GO

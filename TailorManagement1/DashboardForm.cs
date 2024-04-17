@@ -1,8 +1,10 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,12 @@ namespace TailorManagement1
 {
     public partial class DashboardForm : Form
     {
+        private PrintDocument printDocument = new PrintDocument();
+        private PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+        private int checkBoxColumn = (int)EnumDashBoard.DueAmount + 1;
+        private int btnPreviewColumn = (int)EnumDashBoard.DueAmount + 1;
+        private Bill bill;
+
         private enum EnumDashBoard
         {
             BillId,
@@ -24,18 +32,19 @@ namespace TailorManagement1
             DeliveryDate,
             TotalAmount,
             PaidAmount,
-            DueAmount,
-            CheckBox
+            DueAmount
         }
 
         public DashboardForm()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            printDocument.PrintPage += PrintDocument_PrintPage;
+            printPreviewDialog.Document = printDocument;
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
-            LanguageUtilities.ChangeLanguage(this);
+            LanguageUtilities.ChangeLanguage(this, ConfigUtilities.companyLanguageCode);
             FillDeliveryDueGrid();
             FillPaymentDueGrid();
         }
@@ -64,10 +73,16 @@ namespace TailorManagement1
             dgvDeliveryDue.Columns[(int)EnumDashBoard.DueAmount].Width = 150;
             dgvDeliveryDue.Columns[(int)EnumDashBoard.PaidAmount].Width = 150;
             dgvDeliveryDue.Columns[(int)EnumDashBoard.TotalAmount].Width = 150;
-
-            List<DashboardModel> deliveryDues = await ApiClient.GetApiClient().GetAsync<List<DashboardModel>>("api/DeliveryDues/1");
+            
+            int configDeliveryDays = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.DELIVERYDAYS, "15"));
+            List<DashboardModel> deliveryDues = await ApiClient.GetApiClient().GetAsync<List<DashboardModel>>($"api/DeliveryDues/{configDeliveryDays}");
             if (deliveryDues != null)
             {
+                DataGridViewButtonColumn btnColumn = new DataGridViewButtonColumn();
+                btnColumn.HeaderText = "Preview";
+                btnColumn.Width = 100;
+                dgvDeliveryDue.Columns.Add(btnColumn);
+
                 foreach (DashboardModel deliveryDue in deliveryDues)
                 {
                     int index = dgvDeliveryDue.Rows.Add();
@@ -80,6 +95,10 @@ namespace TailorManagement1
                     dgvDeliveryDue.Rows[index].Cells[(int)EnumDashBoard.PaidAmount].Value = deliveryDue.PaidAmount;
                     dgvDeliveryDue.Rows[index].Cells[(int)EnumDashBoard.TotalAmount].Value = deliveryDue.TotalAmount;
                     dgvDeliveryDue.Rows[index].Cells[(int)EnumDashBoard.DueAmount].Value = deliveryDue.DueAmount;
+
+                    DataGridViewButtonCell buttonCell = new DataGridViewButtonCell();
+                    buttonCell.Value = "Preview";
+                    dgvDeliveryDue.Rows[index].Cells[btnPreviewColumn] = buttonCell;
                 }
             }
         }
@@ -109,8 +128,9 @@ namespace TailorManagement1
             dgvPaymentDue.Columns[(int)EnumDashBoard.DueAmount].Width = 150;
             dgvPaymentDue.Columns[(int)EnumDashBoard.PaidAmount].Width = 150;
             dgvPaymentDue.Columns[(int)EnumDashBoard.TotalAmount].Width = 150;
-            
-            List<DashboardModel> paymentDues = await ApiClient.GetApiClient().GetAsync<List<DashboardModel>>("api/PaymentDues/1");
+
+            int configPaymentDays = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PAYMENTDAYS, "30"));
+            List<DashboardModel> paymentDues = await ApiClient.GetApiClient().GetAsync<List<DashboardModel>>($"api/PaymentDues/{configPaymentDays}");
             if (paymentDues != null)
             {
                 DataGridViewCheckBoxColumn chkColumn = new DataGridViewCheckBoxColumn();
@@ -118,26 +138,22 @@ namespace TailorManagement1
                 chkColumn.Width = 50;
                 dgvPaymentDue.Columns.Add(chkColumn);
 
-                foreach (DashboardModel deliveryDue in paymentDues)
+                foreach (DashboardModel paymentdue in paymentDues)
                 {
                     int index = dgvPaymentDue.Rows.Add();
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.BillId].Value = deliveryDue.BillId;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.CustomerName].Value = deliveryDue.CustomerName;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.BillDate].Value = deliveryDue.BillDate;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.BillNo].Value = deliveryDue.BillNo;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.CustomerMobile].Value = deliveryDue.CustomerMobile;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.DeliveryDate].Value = deliveryDue.DeliveryDate;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.PaidAmount].Value = deliveryDue.PaidAmount;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.TotalAmount].Value = deliveryDue.TotalAmount;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.DueAmount].Value = deliveryDue.DueAmount;
-                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.CheckBox].Value = false;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.BillId].Value = paymentdue.BillId;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.CustomerName].Value = paymentdue.CustomerName;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.BillDate].Value = paymentdue.BillDate;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.BillNo].Value = paymentdue.BillNo;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.CustomerMobile].Value = paymentdue.CustomerMobile;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.DeliveryDate].Value = paymentdue.DeliveryDate;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.PaidAmount].Value = paymentdue.PaidAmount;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.TotalAmount].Value = paymentdue.TotalAmount;
+                    dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.DueAmount].Value = paymentdue.DueAmount;
+                    dgvPaymentDue.Rows[index].Cells[checkBoxColumn].Value = false;
+
                 }
             }
-        }
-
-        private void dgvPaymentDue_KeyUp(object sender, KeyEventArgs e)
-        {
-            
         }
 
         private void dgvPaymentDue_DoubleClick(object sender, EventArgs e)
@@ -145,7 +161,7 @@ namespace TailorManagement1
             CheckPaymentCheckBox();
         }
 
-        private void dgvPaymentDue_KeyDown(object sender, KeyEventArgs e)
+        private void dgvPaymentDue_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -156,12 +172,12 @@ namespace TailorManagement1
         private void CheckPaymentCheckBox()
         {
             int index = dgvPaymentDue.SelectedRows[0].Index;
-
+            
             if (index >= 0)
             {
                 // Toggle the checkbox state
-                bool isChecked = Convert.ToBoolean(dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.CheckBox].Value);
-                dgvPaymentDue.Rows[index].Cells[(int)EnumDashBoard.CheckBox].Value = !isChecked;
+                bool isChecked = Convert.ToBoolean(dgvPaymentDue.Rows[index].Cells[checkBoxColumn].Value);
+                dgvPaymentDue.Rows[index].Cells[checkBoxColumn].Value = !isChecked;
             }
         }
 
@@ -176,7 +192,7 @@ namespace TailorManagement1
             foreach (DataGridViewRow row in dgvPaymentDue.Rows)
             {
                 // Ensure the row has a checkbox and it is checked
-                if (Convert.ToBoolean(row.Cells[(int)EnumDashBoard.CheckBox].Value) == true)
+                if (Convert.ToBoolean(row.Cells[checkBoxColumn].Value) == true)
                 {
                     BillPaymentDetail billPaymentDetail = new BillPaymentDetail();
                     billPaymentDetail.BillId = Convert.ToInt32(row.Cells[(int)EnumDashBoard.BillId].Value);
@@ -208,6 +224,31 @@ namespace TailorManagement1
                     MessageBox.Show("Payment Received Succesfully.");
                 }
                 FillPaymentDueGrid();
+            }
+        }
+
+        private async void dgvDeliveryDue_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == btnPreviewColumn && e.RowIndex >= 0)
+            {
+                int billId = Convert.ToInt32(dgvDeliveryDue.Rows[e.RowIndex].Cells[(int)EnumDashBoard.BillId].Value);
+                bill = await ApiClient.GetApiClient().GetAsync<Bill>($"api/bills/{billId}");
+                PrintBillPreview();
+            }
+        }
+
+        private void PrintBillPreview()
+        {
+            printPreviewDialog.WindowState = FormWindowState.Maximized;
+            printPreviewDialog.ShowDialog();            
+        }
+
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            if(bill != null)
+            {
+                PrintUtilities.PrintBill(bill, e.Graphics);
+                e.HasMorePages = false;
             }
         }
     }

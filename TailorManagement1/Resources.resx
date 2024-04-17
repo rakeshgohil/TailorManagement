@@ -147,6 +147,9 @@
   <data name="btnsaveandprint" xml:space="preserve">
     <value>Save and Print</value>
   </data>
+  <data name="lbladvance" xml:space="preserve">
+    <value>Advance</value>
+  </data>
   <data name="lblbilldate" xml:space="preserve">
     <value>Bill Date</value>
   </data>
@@ -159,11 +162,23 @@
   <data name="lblchati" xml:space="preserve">
     <value>Chati</value>
   </data>
+  <data name="lblcompanyaddress" xml:space="preserve">
+    <value>Company Address</value>
+  </data>
+  <data name="lblcompanymobile" xml:space="preserve">
+    <value>Company Mobile</value>
+  </data>
+  <data name="lblcompanyname" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
   <data name="lblcuff" xml:space="preserve">
     <value>Cuff 1111</value>
   </data>
   <data name="lbldeliverydate" xml:space="preserve">
     <value>Delivery Date</value>
+  </data>
+  <data name="lbldeliverydays" xml:space="preserve">
+    <value>Delivery Days</value>
   </data>
   <data name="lbldeliverydue" xml:space="preserve">
     <value>Delivery Due</value>
@@ -173,6 +188,9 @@
   </data>
   <data name="lbldiscount" xml:space="preserve">
     <value>Discount</value>
+  </data>
+  <data name="lbldue" xml:space="preserve">
+    <value>Due</value>
   </data>
   <data name="lbldueamount" xml:space="preserve">
     <value>Due Amount</value>
@@ -198,6 +216,9 @@
   <data name="lblkolor" xml:space="preserve">
     <value>Kolor</value>
   </data>
+  <data name="lbllanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
   <data name="lbllocaldescription" xml:space="preserve">
     <value>Local Description</value>
   </data>
@@ -209,6 +230,9 @@
   </data>
   <data name="lblname" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="lblownername" xml:space="preserve">
+    <value>Owner Name</value>
   </data>
   <data name="lblpaidamount" xml:space="preserve">
     <value>Paid Amount</value>
@@ -222,6 +246,9 @@
   <data name="lblpantnotes" xml:space="preserve">
     <value>Notes</value>
   </data>
+  <data name="lblpantprice" xml:space="preserve">
+    <value>Pant Price</value>
+  </data>
   <data name="lblpantqty" xml:space="preserve">
     <value>Pant Qty</value>
   </data>
@@ -230,6 +257,12 @@
   </data>
   <data name="lblpaymentdue" xml:space="preserve">
     <value>Payment Due</value>
+  </data>
+  <data name="lblqty" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="lblrate" xml:space="preserve">
+    <value>Rate</value>
   </data>
   <data name="lblseat" xml:space="preserve">
     <value>Seat</value>
@@ -243,11 +276,17 @@
   <data name="lblshirtnotes" xml:space="preserve">
     <value>Notes</value>
   </data>
+  <data name="lblshirtprice" xml:space="preserve">
+    <value>Shirt Price</value>
+  </data>
   <data name="lblshirtqty" xml:space="preserve">
     <value>Shirt Qty</value>
   </data>
   <data name="lblsolder" xml:space="preserve">
     <value>Solder</value>
+  </data>
+  <data name="lbltotal" xml:space="preserve">
+    <value>Total</value>
   </data>
   <data name="lbltotalamount" xml:space="preserve">
     <value>Total Amount</value>
@@ -255,7 +294,13 @@
   <data name="lbltrialdate" xml:space="preserve">
     <value>Trial Date</value>
   </data>
+  <data name="lbltrialdays" xml:space="preserve">
+    <value>Trial Days</value>
+  </data>
   <data name="lbluserid" xml:space="preserve">
     <value>User ID</value>
+  </data>
+  <data name="lblvigat" xml:space="preserve">
+    <value>Vigat</value>
   </data>
 </root>

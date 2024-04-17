@@ -67,8 +67,8 @@ BEGIN
     SET NOCOUNT ON;
 		
 	SELECT @BillNo = ISNULL(MAX(BillNo), 0) + 1 FROM tbBill
-	INSERT INTO tbBill(BillDate, BillNo, CustomerId, DeliveryDate, ExtraCost, Discount, TotalAmount, TrialDate)
-    VALUES (@BillDate, @BillNo, @CustomerId, @DeliveryDate, @ExtraCost, @Discount, @TotalAmount, @TrialDate)
+	INSERT INTO tbBill(BillDate, BillNo, CustomerId, DeliveryDate, ExtraCost, Discount, TotalAmount, PaidAmount, TrialDate)
+    VALUES (@BillDate, @BillNo, @CustomerId, @DeliveryDate, @ExtraCost, @Discount, @TotalAmount, 0, @TrialDate)
 
     SET @Id = SCOPE_IDENTITY();
 END
@@ -148,4 +148,37 @@ BEGIN
 		EXEC spSaveBillPaymentDetail @BillId, @PaidAmount, @BillPaymentDetailID OUTPUT 
 	END
 END;
+GO
+
+CREATE OR ALTER PROCEDURE spGetBillById
+	@Id INT
+AS
+BEGIN
+	SELECT B.Id, B.BillDate, B.BillNo, B.DeliveryDate, B.ExtraCost, B.Discount, B.PaidAmount,
+	B.TotalAmount, B.TrialDate, B.CustomerId, C.Mobile, C.[Name], P.Id PantId, 
+	P.Length1 PantLength1, P.Length2 PantLength2, P.Length3 PantLength3, P.Length4 PantLength4, P.Length5 PantLength5,
+	P.Gothan1, P.Gothan2, P.Gothan3, P.Gothan4, P.Gothan5, P.Jangh1, P.Jangh2, P.Jangh3, P.Jangh4, P.Jangh5,
+	P.Jolo1, P.Jolo2, P.Jolo3, P.Jolo4, P.Jolo5, P.Kamar1, P.Kamar2, P.Kamar3, P.Kamar4, P.Kamar5,
+	P.Moli1, P.Moli2, P.Moli3, P.Moli4, P.Moli5, P.Seat1, P.Seat2, P.Seat3, P.Seat4, P.Seat5, P.Notes PantNotes,
+	S.Id ShirtId, S.Length1 ShirtLength1, S.Length2 ShirtLength2, S.Length3 ShirtLength3, S.Length4 ShirtLength4, S.Length5 ShirtLength5,
+	S.Chati1, S.Chati2, S.Chati3, S.Chati4, S.Chati5, S.Solder1, S.Solder2, S.Solder3, S.Solder4, S.Solder5, 
+	S.Bye1, S.Bye2, S.Bye3, S.Bye4, S.Bye5, S.Front1, S.Front2, S.Front3, S.Front4, S.Front5, 
+	S.Kolor1, S.Kolor2, S.Kolor3, S.Kolor4, S.Kolor5, S.Cuff1, S.Cuff2, S.Cuff3, S.Cuff4, S.Cuff5, S.Notes ShirtNotes
+	FROM tbBill B
+	INNER JOIN tbCustomer C on C.Id = B.CustomerId
+	LEFT JOIN tbPant P ON P.CustomerId = B.CustomerId
+	LEFT JOIN tbShirt S ON S.CustomerId = B.CustomerId
+	WHERE B.Id = @Id
+END
+GO
+
+CREATE OR ALTER PROCEDURE spGetBillDetailsByBillId
+	@BillId INT
+AS
+BEGIN
+	SELECT BD.BillId, BD.Id, BD.Price, BD.Qty, P.Id ProductId, P.[Name] ProductName, P.Price ProductPrice
+	FROM tbBillDetail BD
+	INNER JOIN tbProduct P ON P.Id = BD.ProductId
+	WHERE BillId = @BillId
+END
 GO

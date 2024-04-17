@@ -147,15 +147,15 @@ namespace TailorManagement1
             this.txtDueAmount = new System.Windows.Forms.TextBox();
             this.lbldueamount = new System.Windows.Forms.Label();
             this.btnSaveAndPrint = new System.Windows.Forms.Button();
-            this.mskExtraCost = new System.Windows.Forms.MaskedTextBox();
-            this.mskPaidAmount = new System.Windows.Forms.MaskedTextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.rtError = new System.Windows.Forms.RichTextBox();
-            this.mskDiscount = new System.Windows.Forms.MaskedTextBox();
             this.lbldiscount = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
+            this.txtPaidAmount = new System.Windows.Forms.TextBox();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.txtExtraCost = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -1236,7 +1236,7 @@ namespace TailorManagement1
             this.txtPantQty.TabIndex = 71;
             this.txtPantQty.Text = "1";
             this.txtPantQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPantQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPantQty_KeyUp);
+            this.txtPantQty.Leave += new System.EventHandler(this.txtPantQty_Leave);
             // 
             // lblpantqty
             // 
@@ -1258,7 +1258,8 @@ namespace TailorManagement1
             this.txtShirtQty.TabIndex = 73;
             this.txtShirtQty.Text = "1";
             this.txtShirtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtShirtQty.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtShirtQty_KeyUp);
+            this.txtShirtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtShirtQty_KeyPress);
+            this.txtShirtQty.Leave += new System.EventHandler(this.txtShirtQty_Leave);
             // 
             // lblshirtqty
             // 
@@ -1348,34 +1349,10 @@ namespace TailorManagement1
             this.btnSaveAndPrint.Location = new System.Drawing.Point(826, 440);
             this.btnSaveAndPrint.Name = "btnSaveAndPrint";
             this.btnSaveAndPrint.Size = new System.Drawing.Size(281, 39);
-            this.btnSaveAndPrint.TabIndex = 76;
+            this.btnSaveAndPrint.TabIndex = 77;
             this.btnSaveAndPrint.Text = "Save and Print";
             this.btnSaveAndPrint.UseVisualStyleBackColor = true;
             this.btnSaveAndPrint.Click += new System.EventHandler(this.btnSaveAndPrint_Click);
-            // 
-            // mskExtraCost
-            // 
-            this.mskExtraCost.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskExtraCost.Location = new System.Drawing.Point(968, 270);
-            this.mskExtraCost.Mask = "0.00";
-            this.mskExtraCost.Name = "mskExtraCost";
-            this.mskExtraCost.Size = new System.Drawing.Size(139, 28);
-            this.mskExtraCost.TabIndex = 74;
-            this.mskExtraCost.Text = "000";
-            this.mskExtraCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.mskExtraCost.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskExtraCost_KeyUp);
-            // 
-            // mskPaidAmount
-            // 
-            this.mskPaidAmount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskPaidAmount.Location = new System.Drawing.Point(968, 372);
-            this.mskPaidAmount.Mask = "0.00";
-            this.mskPaidAmount.Name = "mskPaidAmount";
-            this.mskPaidAmount.Size = new System.Drawing.Size(139, 28);
-            this.mskPaidAmount.TabIndex = 76;
-            this.mskPaidAmount.Text = "000";
-            this.mskPaidAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.mskPaidAmount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskPaidAmount_KeyUp);
             // 
             // btnSave
             // 
@@ -1400,18 +1377,6 @@ namespace TailorManagement1
             this.rtError.TabIndex = 90;
             this.rtError.Text = "";
             // 
-            // mskDiscount
-            // 
-            this.mskDiscount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskDiscount.Location = new System.Drawing.Point(968, 304);
-            this.mskDiscount.Mask = "0.00";
-            this.mskDiscount.Name = "mskDiscount";
-            this.mskDiscount.Size = new System.Drawing.Size(139, 28);
-            this.mskDiscount.TabIndex = 75;
-            this.mskDiscount.Text = "000";
-            this.mskDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.mskDiscount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskDiscount_KeyUp);
-            // 
             // lbldiscount
             // 
             this.lbldiscount.AutoSize = true;
@@ -1428,7 +1393,7 @@ namespace TailorManagement1
             this.btnPrint.Location = new System.Drawing.Point(972, 485);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(135, 39);
-            this.btnPrint.TabIndex = 93;
+            this.btnPrint.TabIndex = 79;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -1439,7 +1404,7 @@ namespace TailorManagement1
             this.btnNew.Location = new System.Drawing.Point(972, 530);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(135, 39);
-            this.btnNew.TabIndex = 94;
+            this.btnNew.TabIndex = 81;
             this.btnNew.Text = "&New";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -1450,25 +1415,61 @@ namespace TailorManagement1
             this.btnPreview.Location = new System.Drawing.Point(826, 530);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(135, 39);
-            this.btnPreview.TabIndex = 95;
+            this.btnPreview.TabIndex = 80;
             this.btnPreview.Text = "Pre&view";
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
+            // 
+            // txtPaidAmount
+            // 
+            this.txtPaidAmount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaidAmount.Location = new System.Drawing.Point(968, 372);
+            this.txtPaidAmount.Name = "txtPaidAmount";
+            this.txtPaidAmount.Size = new System.Drawing.Size(139, 28);
+            this.txtPaidAmount.TabIndex = 76;
+            this.txtPaidAmount.Text = "0.00";
+            this.txtPaidAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPaidAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaidAmount_KeyPress);
+            this.txtPaidAmount.Leave += new System.EventHandler(this.txtPaidAmount_Leave);
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.Location = new System.Drawing.Point(968, 304);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(139, 28);
+            this.txtDiscount.TabIndex = 75;
+            this.txtDiscount.Text = "0.00";
+            this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtShirtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtShirtQty_KeyPress);
+            this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
+            // 
+            // txtExtraCost
+            // 
+            this.txtExtraCost.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExtraCost.Location = new System.Drawing.Point(968, 270);
+            this.txtExtraCost.Name = "txtExtraCost";
+            this.txtExtraCost.Size = new System.Drawing.Size(139, 28);
+            this.txtExtraCost.TabIndex = 74;
+            this.txtExtraCost.Text = "0.00";
+            this.txtExtraCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtExtraCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExtraCost_KeyPress);
+            this.txtExtraCost.Leave += new System.EventHandler(this.txtExtraCost_Leave);
             // 
             // BillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 768);
+            this.Controls.Add(this.txtExtraCost);
+            this.Controls.Add(this.txtDiscount);
+            this.Controls.Add(this.txtPaidAmount);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.mskDiscount);
             this.Controls.Add(this.lbldiscount);
             this.Controls.Add(this.rtError);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.mskPaidAmount);
-            this.Controls.Add(this.mskExtraCost);
             this.Controls.Add(this.btnSaveAndPrint);
             this.Controls.Add(this.txtDueAmount);
             this.Controls.Add(this.lbldueamount);
@@ -1503,7 +1504,7 @@ namespace TailorManagement1
             this.Text = "Bill";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BillForm_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BillForm_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BillForm_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1630,16 +1631,16 @@ namespace TailorManagement1
         private System.Windows.Forms.TextBox txtDueAmount;
         private System.Windows.Forms.Label lbldueamount;
         private System.Windows.Forms.Button btnSaveAndPrint;
-        private System.Windows.Forms.MaskedTextBox mskExtraCost;
-        private System.Windows.Forms.MaskedTextBox mskPaidAmount;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblPantNotes;
         private System.Windows.Forms.Label lblshirtnotes;
         private System.Windows.Forms.RichTextBox rtError;
-        private System.Windows.Forms.MaskedTextBox mskDiscount;
         private System.Windows.Forms.Label lbldiscount;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnPreview;
+        private System.Windows.Forms.TextBox txtPaidAmount;
+        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.TextBox txtExtraCost;
     }
 }

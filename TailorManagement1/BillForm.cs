@@ -9,6 +9,7 @@ using TailorManagementModels;
 using System.Drawing.Printing;
 using System.Drawing;
 using TailorManagement1.Utilities;
+using System.Threading;
 
 namespace TailorManagement1
 {
@@ -24,6 +25,12 @@ namespace TailorManagement1
         private Product pantProduct = null;
         private List<ShirtConfiguration> shirtConfigurations = null;
         private List<PantConfiguration> pantConfigurations = null;
+        private int configShirtQty = 1;
+        private int configPantQty = 1;
+        private decimal configShirtPrice = 300;
+        private decimal configPantPrice = 300;
+        private int configDeliveryDays = 15;
+        private int configTrialDays = 15;
 
         public BillForm()
         {
@@ -73,9 +80,9 @@ namespace TailorManagement1
                 bill.BillDate = dtBillDate.Value;
                 //bill.BillNo = Convert.ToInt32(txtBillNo.Text);
                 bill.DeliveryDate = dtDeliveryDate.Value;
-                bill.ExtraCost = Convert.ToDecimal(mskExtraCost.Text);
-                bill.Discount = Convert.ToDecimal(mskDiscount.Text);
-                bill.PaidAmount = Convert.ToDecimal(mskPaidAmount.Text);
+                bill.ExtraCost = Convert.ToDecimal(txtExtraCost.Text);
+                bill.Discount = Convert.ToDecimal(txtDiscount.Text);
+                bill.PaidAmount = Convert.ToDecimal(txtPaidAmount.Text);
                 bill.TotalAmount = Convert.ToDecimal(txtTotalAmount.Text);
                 bill.TrialDate = dtTrailDate.Value;
 
@@ -254,10 +261,16 @@ namespace TailorManagement1
         {
             try
             {
+                //Please confirm the following code while testing as it takes price from product table but I am going to change it from config file
+                //List<BillDetail> billDetails = new List<BillDetail>
+                //{
+                //    new BillDetail() { Product = shirtProduct, Price = shirtProduct.Price, Qty = Convert.ToInt32(txtShirtQty.Text) },
+                //    new BillDetail() { Product = pantProduct, Price = pantProduct.Price, Qty = Convert.ToInt32(txtPantQty.Text) }
+                //};
                 List<BillDetail> billDetails = new List<BillDetail>
                 {
-                    new BillDetail() { Product = shirtProduct, Price = shirtProduct.Price, Qty = Convert.ToInt32(txtShirtQty.Text) },
-                    new BillDetail() { Product = pantProduct, Price = pantProduct.Price, Qty = Convert.ToInt32(txtPantQty.Text) }
+                    new BillDetail() { Product = shirtProduct, Price = configShirtPrice, Qty = Convert.ToInt32(txtShirtQty.Text) },
+                    new BillDetail() { Product = pantProduct, Price = configPantPrice, Qty = Convert.ToInt32(txtPantQty.Text) }
                 };
                 return billDetails;
             }
@@ -272,16 +285,29 @@ namespace TailorManagement1
         {
             try
             {
-                LanguageUtilities.ChangeLanguage(this);
+                LanguageUtilities.ChangeLanguage(this, ConfigUtilities.companyLanguageCode);
+                LoadCompanyConfiguration();
                 NewBill();
                 GetAllProducts();
                 LoadAllShirtConfigurations();
                 LoadAllPantConfigurations();
+                Thread.Sleep(2000);
+                GetAmounts();
             }
             catch (Exception ex)
             {
                 logger.Error($"{ex}");
             }
+        }
+
+        private async void LoadCompanyConfiguration()
+        {
+            configPantQty = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTQTY, "1"));
+            configShirtQty = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTQTY, "1"));
+            configPantPrice = Convert.ToDecimal(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTPRICE, "300.00"));
+            configShirtPrice = Convert.ToDecimal(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTPRICE, "300.00"));
+            configDeliveryDays = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.DELIVERYDAYS, "15"));
+            configTrialDays = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.TRIALDAYS, "14"));
         }
 
         private void NewBill()
@@ -327,8 +353,13 @@ namespace TailorManagement1
             try
             {
 
-                txtShirtQty.Text = "1";
-                txtPantQty.Text = "1";
+                txtShirtQty.Text = configShirtQty.ToString();
+                txtPantQty.Text = configPantQty.ToString();
+                dtDeliveryDate.Value = DateTime.Now.AddDays(configDeliveryDays);
+                dtTrailDate.Value = DateTime.Now.AddDays(configTrialDays);
+                txtExtraCost.Text = "0.00";
+                txtDiscount.Text = "0.00";
+                txtPaidAmount.Text = "0.00";
                 return;
 
                 //txtBye1.Text = "B1";
@@ -453,17 +484,20 @@ namespace TailorManagement1
         {
             try
             {
-                decimal pantPrice = pantProduct.Price;
-                decimal shirtPrice = shirtProduct.Price;
+                //Please confirm the following code while testing as it takes price from product table but I am going to change it from config file
+                //decimal pantPrice = pantProduct.Price;
+                //decimal shirtPrice = shirtProduct.Price;
+                decimal pantPrice = configPantPrice;
+                decimal shirtPrice = configShirtPrice;
                 decimal pantQty = Convert.ToDecimal(txtPantQty.Text);
                 decimal shirtQty = Convert.ToDecimal(txtShirtQty.Text);
-                decimal extraCost = Convert.ToDecimal(mskExtraCost.Text);
-                decimal discount = Convert.ToDecimal(mskDiscount.Text);
+                decimal extraCost = Convert.ToDecimal(txtExtraCost.Text);
+                decimal discount = Convert.ToDecimal(txtDiscount.Text);
 
                 decimal totalAmount = (pantPrice * pantQty) + (shirtPrice * shirtQty) + extraCost - discount;
                 txtTotalAmount.Text = totalAmount.ToString("F2");
 
-                decimal paidAmount = Convert.ToDecimal(mskPaidAmount.Text);
+                decimal paidAmount = Convert.ToDecimal(txtPaidAmount.Text);
                 decimal dueAmount = totalAmount - paidAmount;
                 txtDueAmount.Text = dueAmount.ToString("F2");
             }
@@ -511,38 +545,9 @@ namespace TailorManagement1
             }
         }
 
-        private void BillForm_KeyDown(object sender, KeyEventArgs e)
+        private void BillForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
-            {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    if (this.ActiveControl is CheckedListBox)
-                    {
-                        CheckedListBox activeControl = (CheckedListBox)this.ActiveControl;
-                        SendKeys.Send(" ");
-
-                        if (activeControl.SelectedIndex == activeControl.Items.Count - 1)
-                        {
-                            if (activeControl.GetItemChecked(activeControl.SelectedIndex))
-                            {
-                                SendKeys.Send(" ");
-                                SendKeys.Send("{TAB}");
-                            }
-                        }
-                        e.SuppressKeyPress = true;
-                    }
-                    else if (this.ActiveControl is TextBox || this.ActiveControl is RichTextBox
-                        || this.ActiveControl is DateTimePicker || this.ActiveControl is MaskedTextBox)
-                    {
-                        SendKeys.Send("{TAB}");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error($"{ex}");
-            }
+            FormUtilities.FormKeyPress(sender, e);
         }
 
         private void chkListPant_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -583,26 +588,11 @@ namespace TailorManagement1
             }
         }
 
-        private void txtShirtQty_KeyUp(object sender, KeyEventArgs e)
+        private void txtShirtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
-                if (e.KeyCode != Keys.Enter)
-                {
-                    if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) &&
-                        !(e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) &&
-                        !(e.KeyCode >= Keys.Back) &&
-                        !(e.KeyCode >= Keys.Delete) &&
-                        !(e.KeyCode >= Keys.Left) &&
-                        !(e.KeyCode >= Keys.Right))
-                    {
-                        e.SuppressKeyPress = true;
-                    }
-                    else
-                    {
-                        GetAmounts();
-                    }
-                }
+                FormUtilities.NumericControlKeyPress(sender, e, true);
             }
             catch (Exception ex)
             {
@@ -610,117 +600,18 @@ namespace TailorManagement1
             }
         }
 
-        private void txtPantQty_KeyUp(object sender, KeyEventArgs e)
+        private void txtPantQty_KeyPress(object sender, KeyPressEventArgs e)
         {
             try
             {
-                if (e.KeyCode != Keys.Enter)
-                {
-                    if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) &&
-                        !(e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) &&
-                        !(e.KeyCode >= Keys.Back) &&
-                        !(e.KeyCode >= Keys.Delete) &&
-                        !(e.KeyCode >= Keys.Left) &&
-                        !(e.KeyCode >= Keys.Right))
-                    {
-                        e.SuppressKeyPress = true;
-                    }
-                    else
-                    {
-                        GetAmounts();
-                    }
-                }
+                FormUtilities.NumericControlKeyPress(sender, e, true);
             }
             catch (Exception ex)
             {
                 logger.Error($"{ex}");
             }
         }
-
-        private void mskExtraCost_KeyUp(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (e.KeyCode != Keys.Enter)
-                {
-                    if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) &&
-                        !(e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) &&
-                        !(e.KeyCode >= Keys.Decimal && e.KeyCode <= Keys.OemPeriod) &&
-                        !(e.KeyCode >= Keys.Back) &&
-                        !(e.KeyCode >= Keys.Delete) &&
-                        !(e.KeyCode >= Keys.Left) &&
-                        !(e.KeyCode >= Keys.Right))
-                    {
-                        e.SuppressKeyPress = true;
-                    }
-                    else
-                    {
-                        GetAmounts();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error($"{ex}");
-            }
-        }
-
-        private void mskDiscount_KeyUp(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (e.KeyCode != Keys.Enter)
-                {
-                    if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) &&
-                        !(e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) &&
-                        !(e.KeyCode >= Keys.Decimal && e.KeyCode <= Keys.OemPeriod) &&
-                        !(e.KeyCode >= Keys.Back) &&
-                        !(e.KeyCode >= Keys.Delete) &&
-                        !(e.KeyCode >= Keys.Left) &&
-                        !(e.KeyCode >= Keys.Right))
-                    {
-                        e.SuppressKeyPress = true;
-                    }
-                    else
-                    {
-                        GetAmounts();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error($"{ex}");
-            }
-        }
-
-        private void mskPaidAmount_KeyUp(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (e.KeyCode != Keys.Enter)
-                {
-                    if (!(e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) &&
-                        !(e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) &&
-                        !(e.KeyCode >= Keys.Decimal && e.KeyCode <= Keys.OemPeriod) &&
-                        !(e.KeyCode >= Keys.Back) &&
-                        !(e.KeyCode >= Keys.Delete) &&
-                        !(e.KeyCode >= Keys.Left) &&
-                        !(e.KeyCode >= Keys.Right))
-                    {
-                        e.SuppressKeyPress = true;
-                    }
-                    else
-                    {
-                        GetAmounts();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error($"{ex}");
-            }
-        }
-
+                
         private void txtMobile_Leave(object sender, EventArgs e)
         {
             try
@@ -905,6 +796,51 @@ namespace TailorManagement1
             {
                 logger.Error($"{ex}");
             }
+        }
+
+        private void txtPantQty_Leave(object sender, EventArgs e)
+        {
+            FormUtilities.NumericControlLeave(sender, e, true);
+            GetAmounts();
+        }
+
+        private void txtShirtQty_Leave(object sender, EventArgs e)
+        {
+            FormUtilities.NumericControlLeave(sender, e, true);
+            GetAmounts();
+        }
+
+        private void txtExtraCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormUtilities.NumericControlKeyPress(sender, e);
+        }
+
+        private void txtExtraCost_Leave(object sender, EventArgs e)
+        {
+            FormUtilities.NumericControlLeave(sender, e);
+            GetAmounts();
+        }
+
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormUtilities.NumericControlKeyPress(sender, e);
+        }
+
+        private void txtDiscount_Leave(object sender, EventArgs e)
+        {
+            FormUtilities.NumericControlLeave(sender, e);
+            GetAmounts();
+        }
+
+        private void txtPaidAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormUtilities.NumericControlKeyPress(sender, e);
+        }
+
+        private void txtPaidAmount_Leave(object sender, EventArgs e)
+        {
+            FormUtilities.NumericControlLeave(sender, e);
+            GetAmounts();
         }
     }
 }

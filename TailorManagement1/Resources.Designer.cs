@@ -151,6 +151,15 @@ namespace TailorManagement1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Advance.
+        /// </summary>
+        public static string lbladvance {
+            get {
+                return ResourceManager.GetString("lbladvance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bill Date.
         /// </summary>
         public static string lblbilldate {
@@ -187,6 +196,33 @@ namespace TailorManagement1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Company Address.
+        /// </summary>
+        public static string lblcompanyaddress {
+            get {
+                return ResourceManager.GetString("lblcompanyaddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company Mobile.
+        /// </summary>
+        public static string lblcompanymobile {
+            get {
+                return ResourceManager.GetString("lblcompanymobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company Name.
+        /// </summary>
+        public static string lblcompanyname {
+            get {
+                return ResourceManager.GetString("lblcompanyname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cuff 1111.
         /// </summary>
         public static string lblcuff {
@@ -201,6 +237,15 @@ namespace TailorManagement1 {
         public static string lbldeliverydate {
             get {
                 return ResourceManager.GetString("lbldeliverydate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delivery Days.
+        /// </summary>
+        public static string lbldeliverydays {
+            get {
+                return ResourceManager.GetString("lbldeliverydays", resourceCulture);
             }
         }
         
@@ -228,6 +273,15 @@ namespace TailorManagement1 {
         public static string lbldiscount {
             get {
                 return ResourceManager.GetString("lbldiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Due.
+        /// </summary>
+        public static string lbldue {
+            get {
+                return ResourceManager.GetString("lbldue", resourceCulture);
             }
         }
         
@@ -304,6 +358,15 @@ namespace TailorManagement1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string lbllanguage {
+            get {
+                return ResourceManager.GetString("lbllanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Local Description.
         /// </summary>
         public static string lbllocaldescription {
@@ -336,6 +399,15 @@ namespace TailorManagement1 {
         public static string lblname {
             get {
                 return ResourceManager.GetString("lblname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Owner Name.
+        /// </summary>
+        public static string lblownername {
+            get {
+                return ResourceManager.GetString("lblownername", resourceCulture);
             }
         }
         
@@ -376,6 +448,15 @@ namespace TailorManagement1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pant Price.
+        /// </summary>
+        public static string lblpantprice {
+            get {
+                return ResourceManager.GetString("lblpantprice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pant Qty.
         /// </summary>
         public static string lblpantqty {
@@ -399,6 +480,24 @@ namespace TailorManagement1 {
         public static string lblpaymentdue {
             get {
                 return ResourceManager.GetString("lblpaymentdue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qty.
+        /// </summary>
+        public static string lblqty {
+            get {
+                return ResourceManager.GetString("lblqty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate.
+        /// </summary>
+        public static string lblrate {
+            get {
+                return ResourceManager.GetString("lblrate", resourceCulture);
             }
         }
         
@@ -439,6 +538,15 @@ namespace TailorManagement1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shirt Price.
+        /// </summary>
+        public static string lblshirtprice {
+            get {
+                return ResourceManager.GetString("lblshirtprice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shirt Qty.
         /// </summary>
         public static string lblshirtqty {
@@ -453,6 +561,15 @@ namespace TailorManagement1 {
         public static string lblsolder {
             get {
                 return ResourceManager.GetString("lblsolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string lbltotal {
+            get {
+                return ResourceManager.GetString("lbltotal", resourceCulture);
             }
         }
         
@@ -475,11 +592,29 @@ namespace TailorManagement1 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trial Days.
+        /// </summary>
+        public static string lbltrialdays {
+            get {
+                return ResourceManager.GetString("lbltrialdays", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User ID.
         /// </summary>
         public static string lbluserid {
             get {
                 return ResourceManager.GetString("lbluserid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vigat.
+        /// </summary>
+        public static string lblvigat {
+            get {
+                return ResourceManager.GetString("lblvigat", resourceCulture);
             }
         }
     }

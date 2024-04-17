@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TailorManagement1.Utilities;
 
 namespace TailorManagement1
 {
@@ -29,7 +30,7 @@ namespace TailorManagement1
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            Utilities.LanguageUtilities.ChangeLanguage(this);
+            LanguageUtilities.ChangeLanguage(this, ConfigUtilities.companyLanguageCode);
         }
 
     }

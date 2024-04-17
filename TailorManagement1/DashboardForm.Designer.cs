@@ -54,6 +54,7 @@
             this.dgvDeliveryDue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDeliveryDue.Size = new System.Drawing.Size(1074, 262);
             this.dgvDeliveryDue.TabIndex = 81;
+            this.dgvDeliveryDue.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeliveryDue_CellContentClick);
             // 
             // lbldeliverydue
             // 
@@ -91,7 +92,6 @@
             this.dgvPaymentDue.Size = new System.Drawing.Size(1074, 262);
             this.dgvPaymentDue.TabIndex = 83;
             this.dgvPaymentDue.DoubleClick += new System.EventHandler(this.dgvPaymentDue_DoubleClick);
-            this.dgvPaymentDue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvPaymentDue_KeyDown);
             this.dgvPaymentDue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvPaymentDue_KeyUp);
             // 
             // btnReceiveAmount

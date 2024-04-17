@@ -28,7 +28,11 @@ SELECT * FROM tbPant WHERE CustomerId in (SELECT CustomerId from tbBill WHERE Id
 SELECT * FROM tbProduct
 --SELECT * FROM tbShirtConfiguration
 --SELECT * FROM tbPantConfiguration
-
+--SELECT * FROM tbCompanyConfiguration WHERE ConfigKey = 'OwnerName'
 --EXEC spGetPantByCustomerId 1
 --EXEC spGetShirtByCustomerId 1
+--EXEC spGetBillById 9
+--EXEC spGetDeliveryDues '1'
+
+
 

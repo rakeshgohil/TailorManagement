@@ -33,12 +33,13 @@ namespace TailorManagement1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shirtConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pantConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,13 @@ namespace TailorManagement1
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
             // billToolStripMenuItem
             // 
             this.billToolStripMenuItem.Name = "billToolStripMenuItem";
@@ -68,7 +76,8 @@ namespace TailorManagement1
             // 
             this.utilitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.shirtConfigurationToolStripMenuItem,
-            this.pantConfigurationToolStripMenuItem});
+            this.pantConfigurationToolStripMenuItem,
+            this.companyConfigurationToolStripMenuItem});
             this.utilitiesToolStripMenuItem.Name = "utilitiesToolStripMenuItem";
             this.utilitiesToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.utilitiesToolStripMenuItem.Text = "Utilities";
@@ -76,14 +85,14 @@ namespace TailorManagement1
             // shirtConfigurationToolStripMenuItem
             // 
             this.shirtConfigurationToolStripMenuItem.Name = "shirtConfigurationToolStripMenuItem";
-            this.shirtConfigurationToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.shirtConfigurationToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
             this.shirtConfigurationToolStripMenuItem.Text = "Shirt Configuration";
             this.shirtConfigurationToolStripMenuItem.Click += new System.EventHandler(this.shirtConfigurationToolStripMenuItem_Click);
             // 
             // pantConfigurationToolStripMenuItem
             // 
             this.pantConfigurationToolStripMenuItem.Name = "pantConfigurationToolStripMenuItem";
-            this.pantConfigurationToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.pantConfigurationToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
             this.pantConfigurationToolStripMenuItem.Text = "Pant Configuration";
             this.pantConfigurationToolStripMenuItem.Click += new System.EventHandler(this.pantConfigurationToolStripMenuItem_Click);
             // 
@@ -93,12 +102,12 @@ namespace TailorManagement1
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dashboardToolStripMenuItem
+            // companyConfigurationToolStripMenuItem
             // 
-            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
-            this.dashboardToolStripMenuItem.Text = "Dashboard";
-            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            this.companyConfigurationToolStripMenuItem.Name = "companyConfigurationToolStripMenuItem";
+            this.companyConfigurationToolStripMenuItem.Size = new System.Drawing.Size(316, 26);
+            this.companyConfigurationToolStripMenuItem.Text = "Company Configuration";
+            this.companyConfigurationToolStripMenuItem.Click += new System.EventHandler(this.companyConfigurationToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -135,6 +144,7 @@ namespace TailorManagement1
         private System.Windows.Forms.ToolStripMenuItem shirtConfigurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pantConfigurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem companyConfigurationToolStripMenuItem;
     }
 }
 

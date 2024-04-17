@@ -16,14 +16,7 @@ namespace TailorManagement1.Utilities
     {
         public static void ChangeLanguage(Control control, string languageCode = null)
         {
-            CultureInfo cultureInfo = CultureInfo.InvariantCulture;
-            if (languageCode != null && !string.IsNullOrWhiteSpace(languageCode)) 
-            {
-                cultureInfo = new CultureInfo(languageCode);
-            }
-            Thread.CurrentThread.CurrentCulture = cultureInfo;
-            Thread.CurrentThread.CurrentUICulture = cultureInfo;
-
+            CultureInfo cultureInfo = GetLocalCultureInfo(languageCode);
             ResourceManager resourceManager = new ResourceManager("TailorManagement1.Resources", Assembly.GetExecutingAssembly());
 
             foreach (Control c in control.Controls)
@@ -41,6 +34,19 @@ namespace TailorManagement1.Utilities
                     ChangeLanguage(c, languageCode);
                 }
             }
+        }
+
+        public static CultureInfo GetLocalCultureInfo(string languageCode = null)
+        {
+            CultureInfo cultureInfo = CultureInfo.InvariantCulture;
+            if (languageCode != null && !string.IsNullOrWhiteSpace(languageCode))
+            {
+                cultureInfo = new CultureInfo(languageCode);
+            }
+            Thread.CurrentThread.CurrentCulture = cultureInfo;
+            Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                        
+            return cultureInfo;
         }
     }
 }

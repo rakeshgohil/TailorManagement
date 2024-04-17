@@ -30,7 +30,7 @@ namespace TailorManagement1
 
         private void PantConfigurationForm_Load(object sender, EventArgs e)
         {
-            LanguageUtilities.ChangeLanguage(this); 
+            LanguageUtilities.ChangeLanguage(this, ConfigUtilities.companyLanguageCode);
             ClearControls();
             LoadAllPantConfigurations();
         }

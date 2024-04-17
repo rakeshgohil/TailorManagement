@@ -18,6 +18,7 @@ namespace TailorManagementDB
         private const string spUpdateBill = "spUpdateBill";
         private const string spDeleteBillById = "spDeleteBillById";
         private const string spSaveBillFromUI = "spSaveBillFromUI";
+        private const string spGetBillDetailsByBillId = "spGetBillDetailsByBillId";
 
         public BillRepository()
         {
@@ -285,11 +286,47 @@ namespace TailorManagementDB
                                     Notes = reader["ShirtNotes"].ToString()
                                 },
                             };
+                            bill.BillDetails = GetBillDetailsByBillId(id);
                         }
                     }
                 }
             }
             return bill;
+        }
+
+        private List<BillDetail> GetBillDetailsByBillId(int billId)
+        {
+            List<BillDetail> billDetails = new List<BillDetail>();
+            using (var connection = GetSqlConnection())
+            {
+                using (var command = new SqlCommand(spGetBillDetailsByBillId, connection))
+                {
+                    command.Parameters.AddWithValue("@BillId", billId);
+                    command.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            BillDetail billDetail = new BillDetail
+                            {
+                                Id = (int)reader["Id"],
+                                Price = Convert.ToDecimal(reader["Price"]),
+                                Product = new Product() 
+                                    { 
+                                        Id = (int) reader["ProductId"], 
+                                        Name = reader["ProductName"].ToString(),
+                                        Price = Convert.ToDecimal(reader["ProductPrice"])
+                                    },
+                                BillId = (int)reader["BillId"],
+                                Qty = Convert.ToDecimal(reader["Qty"])
+                            };
+                            billDetails.Add(billDetail);
+                        }
+                    }
+                }
+            }
+            return billDetails;
         }
 
         public Bill Insert(Bill bill)
