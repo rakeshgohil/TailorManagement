@@ -25,6 +25,7 @@ namespace TailorManagement1.Utilities
                 Pen blackPen = new Pen(Color.Black);
 
                 Font headerFont = new Font("Arial", 13, FontStyle.Regular);
+                Font smallFont = new Font("Arial", 10, FontStyle.Bold);
 
                 Brush redBrush = new SolidBrush(Color.Red);
                 Brush blackBrush = new SolidBrush(Color.Black);
@@ -249,13 +250,36 @@ namespace TailorManagement1.Utilities
 
                 topPos = pageTopPos + sqaureHeight + margin;
                 leftPos = pageLeftPos;
-                int imageWidth = 800 + 3 * margin;
-                int imageHeight = 150;
+                int imageWidth = 500 + 3 * margin;
+                int imageHeight = textHeight * 4;
 
-                Image image = Image.FromFile(@"C:\Rakesh\RajMenswearLogo.png");
-                graphics.DrawImage(image, new Rectangle(leftPos, topPos, imageWidth, imageHeight));
+                string billHeader1 = ConfigUtilities.GetConfigurationValue(ConfigUtilities.BILLHEADER1, "").Result;
+                graphics.DrawString(billHeader1, headerFont, redBrush, new PointF(leftPos + 50, topPos));
+                string billHeader2 = ConfigUtilities.GetConfigurationValue(ConfigUtilities.BILLHEADER2, "").Result;
+                graphics.DrawString(billHeader2, headerFont, redBrush, new PointF(leftPos + 350, topPos));
+                string billHeader3 = ConfigUtilities.GetConfigurationValue(ConfigUtilities.BILLHEADER3, "").Result;
+                graphics.DrawString(billHeader3, headerFont, redBrush, new PointF(leftPos + 650, topPos));
+                topPos = topPos + textHeight + margin;
 
-                topPos = topPos + imageHeight + margin;
+                Image image = Image.FromFile(@"C:\Rakesh\DummyProject\TailorManagementGithub\TailorManagement\TailorManagement1\CompanyLogo1.png");
+                graphics.DrawImage(image, new Rectangle(leftPos + 400, topPos, imageWidth, imageHeight));
+
+                string ownername = ConfigUtilities.GetConfigurationValue(ConfigUtilities.OWNERNAME, "").Result;
+                graphics.DrawString(ownername, smallFont, redBrush, new PointF(leftPos + margin, topPos));
+                topPos = topPos + textHeight;
+
+                string companymobile = ConfigUtilities.GetConfigurationValue(ConfigUtilities.COMPANYMOBILE, "").Result;
+                graphics.DrawString(companymobile, smallFont, redBrush, new PointF(leftPos + margin, topPos));
+                topPos = topPos + textHeight;
+
+                string address1 = ConfigUtilities.GetConfigurationValue(ConfigUtilities.COMPANYADDRESS1, "").Result;
+                graphics.DrawString(address1, smallFont, redBrush, new PointF(leftPos + margin, topPos));
+                topPos = topPos + textHeight;
+
+                string address2 = ConfigUtilities.GetConfigurationValue(ConfigUtilities.COMPANYADDRESS2, "").Result;
+                graphics.DrawString(address2, smallFont, redBrush, new PointF(leftPos + margin, topPos));
+                topPos = topPos + textHeight;
+
                 sqaureHeight = 280;
                 sqaureWidth = sqaureWidth * 2 + margin;
                 lineLeftPosStart = pageLeftPos + 100;
@@ -308,6 +332,13 @@ namespace TailorManagement1.Utilities
 
                 leftPos = pageLeftPos + margin;
                 topPos = topPos + margin;
+
+                imageWidth = 400;
+                imageHeight = 150;
+                image = Image.FromFile(@"C:\Rakesh\DummyProject\TailorManagementGithub\TailorManagement\TailorManagement1\CompanyLogo2.png");
+                graphics.DrawImage(image, new Rectangle(leftPos+400+margin, topPos, imageWidth, imageHeight));
+
+
                 graphics.DrawString(resourceManager.GetString("lblvigat", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
                 graphics.DrawString(resourceManager.GetString("lblqty", cultureInfo), headerFont, blackBrush, new PointF(leftPos + 100, topPos));
                 graphics.DrawString(resourceManager.GetString("lblrate", cultureInfo), headerFont, blackBrush, new PointF(leftPos + 200, topPos));
@@ -342,11 +373,14 @@ namespace TailorManagement1.Utilities
 
                 topPos = topPos + textHeight + 2 * margin;
                 leftPos = pageLeftPos;
-                imageWidth = 800 + 3 * margin;
-                imageHeight = 150;
+                
+                string footer1 = ConfigUtilities.GetConfigurationValue(ConfigUtilities.BILLFOOTER1, "").Result;
+                graphics.DrawString(footer1, smallFont, redBrush, new PointF(leftPos + margin, topPos));
+                topPos = topPos + textHeight;
 
-                image = Image.FromFile(@"C:\Rakesh\RajMenswearFooter.png");
-                graphics.DrawImage(image, new Rectangle(leftPos, topPos, imageWidth, imageHeight));
+                string footer2 = ConfigUtilities.GetConfigurationValue(ConfigUtilities.BILLFOOTER2, "").Result;
+                graphics.DrawString(footer2, smallFont, redBrush, new PointF(leftPos + margin, topPos));
+                topPos = topPos + textHeight;
 
                 //================================================================================
                 darkPen.Dispose();
