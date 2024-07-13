@@ -13,6 +13,8 @@ GO
 --InsertData.sql
 --BillPaymentDetail.sql
 --CompanyConfiguration.sql
+--Dashboard.sql
+
 
 DECLARE @BillNo AS INT = 4
 DECLARE @BillId AS INT
