@@ -261,7 +261,7 @@ namespace TailorManagement1.Utilities
                 graphics.DrawString(billHeader3, headerFont, redBrush, new PointF(leftPos + 650, topPos));
                 topPos = topPos + textHeight + margin;
 
-                Image image = Image.FromFile(@"C:\Rakesh\DummyProject\TailorManagementGithub\TailorManagement\TailorManagement1\CompanyLogo1.png");
+                Image image = Image.FromFile($"{ConfigUtilities.GetConfigurationValue(ConfigUtilities.COMPANYLOGO1, string.Empty).Result}");
                 graphics.DrawImage(image, new Rectangle(leftPos + 400, topPos, imageWidth, imageHeight));
 
                 string ownername = ConfigUtilities.GetConfigurationValue(ConfigUtilities.OWNERNAME, "").Result;
@@ -335,9 +335,8 @@ namespace TailorManagement1.Utilities
 
                 imageWidth = 400;
                 imageHeight = 150;
-                image = Image.FromFile(@"C:\Rakesh\DummyProject\TailorManagementGithub\TailorManagement\TailorManagement1\CompanyLogo2.png");
+                image = Image.FromFile($"{ConfigUtilities.GetConfigurationValue(ConfigUtilities.COMPANYLOGO2, string.Empty).Result}");
                 graphics.DrawImage(image, new Rectangle(leftPos+400+margin, topPos, imageWidth, imageHeight));
-
 
                 graphics.DrawString(resourceManager.GetString("lblvigat", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
                 graphics.DrawString(resourceManager.GetString("lblqty", cultureInfo), headerFont, blackBrush, new PointF(leftPos + 100, topPos));
