@@ -38,6 +38,7 @@ namespace TailorManagement1
         private void btnSave_Click(object sender, EventArgs e)
         {
             SavePantConfiguration();
+            LoadAllPantConfigurations();
         }
 
         private async void SavePantConfiguration()

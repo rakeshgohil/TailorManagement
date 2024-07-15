@@ -172,10 +172,10 @@
     <value>Company Name</value>
   </data>
   <data name="lblcuff" xml:space="preserve">
-    <value>Cuff 1111</value>
+    <value>Cuff</value>
   </data>
   <data name="lbldeliverydate" xml:space="preserve">
-    <value>Delivery Date</value>
+    <value>Del. Date</value>
   </data>
   <data name="lbldeliverydays" xml:space="preserve">
     <value>Delivery Days</value>

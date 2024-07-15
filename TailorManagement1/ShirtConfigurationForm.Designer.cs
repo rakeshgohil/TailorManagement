@@ -29,7 +29,6 @@ namespace TailorManagement1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShirtConfigurationForm));
             this.lbldescription = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtLocalDescription = new System.Windows.Forms.TextBox();
@@ -46,46 +45,51 @@ namespace TailorManagement1
             // 
             this.lbldescription.AutoSize = true;
             this.lbldescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldescription.Location = new System.Drawing.Point(18, 18);
+            this.lbldescription.Location = new System.Drawing.Point(14, 15);
+            this.lbldescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbldescription.Name = "lbldescription";
-            this.lbldescription.Size = new System.Drawing.Size(118, 20);
+            this.lbldescription.Size = new System.Drawing.Size(95, 17);
             this.lbldescription.TabIndex = 5;
             this.lbldescription.Text = "Description";
             // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(198, 15);
+            this.txtDescription.Location = new System.Drawing.Point(148, 12);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDescription.MaxLength = 500;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(292, 28);
+            this.txtDescription.Size = new System.Drawing.Size(220, 24);
             this.txtDescription.TabIndex = 11;
             // 
             // txtLocalDescription
             // 
             this.txtLocalDescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocalDescription.Location = new System.Drawing.Point(198, 61);
+            this.txtLocalDescription.Location = new System.Drawing.Point(148, 50);
+            this.txtLocalDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLocalDescription.MaxLength = 500;
             this.txtLocalDescription.Name = "txtLocalDescription";
-            this.txtLocalDescription.Size = new System.Drawing.Size(292, 28);
+            this.txtLocalDescription.Size = new System.Drawing.Size(220, 24);
             this.txtLocalDescription.TabIndex = 13;
             // 
             // lbllocaldescription
             // 
             this.lbllocaldescription.AutoSize = true;
             this.lbllocaldescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllocaldescription.Location = new System.Drawing.Point(18, 64);
+            this.lbllocaldescription.Location = new System.Drawing.Point(14, 52);
+            this.lbllocaldescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbllocaldescription.Name = "lbllocaldescription";
-            this.lbllocaldescription.Size = new System.Drawing.Size(174, 20);
+            this.lbllocaldescription.Size = new System.Drawing.Size(140, 17);
             this.lbllocaldescription.TabIndex = 12;
             this.lbllocaldescription.Text = "Local Description";
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(169, 109);
+            this.btnSave.Location = new System.Drawing.Point(127, 89);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(103, 39);
+            this.btnSave.Size = new System.Drawing.Size(77, 32);
             this.btnSave.TabIndex = 79;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -96,7 +100,8 @@ namespace TailorManagement1
             this.dgvShirtConfiguration.AllowUserToAddRows = false;
             this.dgvShirtConfiguration.AllowUserToDeleteRows = false;
             this.dgvShirtConfiguration.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShirtConfiguration.Location = new System.Drawing.Point(22, 164);
+            this.dgvShirtConfiguration.Location = new System.Drawing.Point(16, 133);
+            this.dgvShirtConfiguration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvShirtConfiguration.MultiSelect = false;
             this.dgvShirtConfiguration.Name = "dgvShirtConfiguration";
             this.dgvShirtConfiguration.ReadOnly = true;
@@ -104,16 +109,17 @@ namespace TailorManagement1
             this.dgvShirtConfiguration.RowHeadersWidth = 51;
             this.dgvShirtConfiguration.RowTemplate.Height = 24;
             this.dgvShirtConfiguration.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvShirtConfiguration.Size = new System.Drawing.Size(468, 263);
+            this.dgvShirtConfiguration.Size = new System.Drawing.Size(351, 214);
             this.dgvShirtConfiguration.TabIndex = 80;
             this.dgvShirtConfiguration.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShirtConfiguration_CellClick);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(278, 109);
+            this.btnCancel.Location = new System.Drawing.Point(208, 89);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(103, 39);
+            this.btnCancel.Size = new System.Drawing.Size(77, 32);
             this.btnCancel.TabIndex = 81;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -123,20 +129,22 @@ namespace TailorManagement1
             // 
             this.rtError.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtError.ForeColor = System.Drawing.Color.Red;
-            this.rtError.Location = new System.Drawing.Point(22, 433);
+            this.rtError.Location = new System.Drawing.Point(16, 352);
+            this.rtError.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtError.Name = "rtError";
             this.rtError.ReadOnly = true;
             this.rtError.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.rtError.Size = new System.Drawing.Size(468, 96);
+            this.rtError.Size = new System.Drawing.Size(352, 79);
             this.rtError.TabIndex = 91;
             this.rtError.Text = "";
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(387, 109);
+            this.btnDelete.Location = new System.Drawing.Point(290, 89);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(103, 39);
+            this.btnDelete.Size = new System.Drawing.Size(77, 32);
             this.btnDelete.TabIndex = 92;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -144,9 +152,9 @@ namespace TailorManagement1
             // 
             // ShirtConfigurationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 543);
+            this.ClientSize = new System.Drawing.Size(384, 441);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.rtError);
             this.Controls.Add(this.btnCancel);
@@ -156,10 +164,11 @@ namespace TailorManagement1
             this.Controls.Add(this.lbllocaldescription);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lbldescription);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ShirtConfigurationForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Shirt Configuration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
