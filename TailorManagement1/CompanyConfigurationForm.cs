@@ -75,6 +75,22 @@ namespace TailorManagement1
             companyConfigurations.Add(ConfigUtilities.SHIRTQTY, txtShirtQty.Text);
             companyConfigurations.Add(ConfigUtilities.TRIALDAYS, txtTrialDays.Text);
 
+            companyConfigurations.Add(ConfigUtilities.PANTLAMBAI, cmbPantLambai.Text);
+            companyConfigurations.Add(ConfigUtilities.PANTKAMAR, cmbPantKamar.Text);
+            companyConfigurations.Add(ConfigUtilities.PANTSEAT, cmbPantSeat.Text);
+            companyConfigurations.Add(ConfigUtilities.PANTJANGH, cmbPantJangh.Text);
+            companyConfigurations.Add(ConfigUtilities.PANTGOTHAN, cmbPantGothan.Text);
+            companyConfigurations.Add(ConfigUtilities.PANTJOLO, cmbPantJolo.Text);
+            companyConfigurations.Add(ConfigUtilities.PANTMOLI, cmbPantMoli.Text);
+
+            companyConfigurations.Add(ConfigUtilities.SHIRTLAMBAI, cmbShirtLambai.Text);
+            companyConfigurations.Add(ConfigUtilities.SHIRTCHATI, cmbShirtChati.Text);
+            companyConfigurations.Add(ConfigUtilities.SHIRTSOLDER, cmbShirtSolder.Text);
+            companyConfigurations.Add(ConfigUtilities.SHIRTBYE, cmbShirtBye.Text);
+            companyConfigurations.Add(ConfigUtilities.SHIRTFRONT, cmbShirtFront.Text);
+            companyConfigurations.Add(ConfigUtilities.SHIRTKOLOR, cmbShirtKolor.Text);
+            companyConfigurations.Add(ConfigUtilities.SHIRTCUFF, cmbShirtCuff.Text);
+
             foreach (var companyConfiguration in companyConfigurations)
             {
                 TailorManagementModels.CompanyConfiguration configuration = new TailorManagementModels.CompanyConfiguration()
@@ -112,6 +128,36 @@ namespace TailorManagement1
             txtShirtPrice.Text = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTPRICE, "0.00");
             txtShirtQty.Text = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTQTY, "1");
             txtTrialDays.Text = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.TRIALDAYS, "14");
+
+            string configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTLAMBAI, "1");
+            cmbPantLambai.SelectedIndex = Convert.ToInt32(configValue)-1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTGOTHAN, "1");
+            cmbPantGothan.SelectedIndex = Convert.ToInt32(configValue)-1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTJANGH, "1");
+            cmbPantJangh.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTJOLO, "1");
+            cmbPantJolo.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTSEAT, "1");
+            cmbPantSeat.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTKAMAR, "1");
+            cmbPantKamar.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTMOLI, "1");
+            cmbPantMoli.SelectedIndex = Convert.ToInt32(configValue) - 1;
+
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTLAMBAI, "1");
+            cmbShirtLambai.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTCHATI, "1");
+            cmbShirtChati.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTBYE, "1");
+            cmbShirtBye.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTCUFF, "1");
+            cmbShirtCuff.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTFRONT, "1");
+            cmbShirtFront.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTKOLOR, "1");
+            cmbShirtKolor.SelectedIndex = Convert.ToInt32(configValue) - 1;
+            configValue = await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTSOLDER, "1");
+            cmbShirtSolder.SelectedIndex = Convert.ToInt32(configValue) - 1;
         }
 
         private void txtDeliveryDays_Leave(object sender, EventArgs e)

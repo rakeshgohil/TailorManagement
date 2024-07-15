@@ -37,6 +37,7 @@ namespace TailorManagement1
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveShirtConfiguration();
+            LoadAllShirtConfigurations();
         }
 
         private async void SaveShirtConfiguration()

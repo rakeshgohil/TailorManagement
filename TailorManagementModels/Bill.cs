@@ -34,15 +34,25 @@ namespace TailorManagementModels
             StringBuilder customerError;
             Customer.isValid(out customerError);
             error.Append(customerError.ToString());
+            
+            if(string.IsNullOrWhiteSpace(Pant.Length1) && string.IsNullOrWhiteSpace(Shirt.Length1))
+            {
+                error.AppendLine("Pant Length and Shirt Length cannot be blank.");
+            }
 
-            StringBuilder pantError;
-            Pant.isValid(out pantError);
-            error.Append(pantError.ToString());
+            if (!string.IsNullOrWhiteSpace(Pant.Length1))
+            {
+                StringBuilder pantError;
+                Pant.isValid(out pantError);
+                error.Append(pantError.ToString());
+            }
 
-            StringBuilder shirtError;
-            Shirt.isValid(out shirtError);
-            error.Append(shirtError.ToString());
-
+            if (!string.IsNullOrWhiteSpace(Shirt.Length1))
+            {
+                StringBuilder shirtError;
+                Shirt.isValid(out shirtError);
+                error.Append(shirtError.ToString());
+            }
             //todo billdetails validation
             //todo bill validation
 

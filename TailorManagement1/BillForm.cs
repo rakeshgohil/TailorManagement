@@ -10,6 +10,8 @@ using System.Drawing.Printing;
 using System.Drawing;
 using TailorManagement1.Utilities;
 using System.Threading;
+using System.Text.RegularExpressions;
+using System.Drawing.Text;
 
 namespace TailorManagement1
 {
@@ -159,7 +161,7 @@ namespace TailorManagement1
                     Length3 = txtPantLambai3.Text.Trim(),
                     Length4 = txtPantLambai4.Text.Trim(),
                     Length5 = txtPantLambai5.Text.Trim(),
-                    Notes = rtPantNotes.Text.Trim(),
+                    Notes = Regex.Replace(rtPantNotes.Text.Trim(), @"\s+", " "),
                     Seat1 = txtSeat1.Text.Trim(),
                     Seat2 = txtSeat2.Text.Trim(),
                     Seat3 = txtSeat3.Text.Trim(),
@@ -229,7 +231,7 @@ namespace TailorManagement1
                     Length3 = txtShirtLambai3.Text.Trim(),
                     Length4 = txtShirtLambai4.Text.Trim(),
                     Length5 = txtShirtLambai5.Text.Trim(),
-                    Notes = rtShirtNotes.Text.Trim(),
+                    Notes = Regex.Replace(rtShirtNotes.Text.Trim(), @"\s+", " "),
                     Solder1 = txtSolder1.Text.Trim(),
                     Solder2 = txtSolder2.Text.Trim(),
                     Solder3 = txtSolder3.Text.Trim(),
@@ -308,6 +310,61 @@ namespace TailorManagement1
             configShirtPrice = Convert.ToDecimal(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTPRICE, "300.00"));
             configDeliveryDays = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.DELIVERYDAYS, "15"));
             configTrialDays = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.TRIALDAYS, "14"));
+
+            int configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTLAMBAI, "1"));
+            VisibleMeasureMents("txtPantLambai", configValue, panelPant);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTKAMAR, "1"));
+            VisibleMeasureMents("txtKamar", configValue, panelPant);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTSEAT, "1"));
+            VisibleMeasureMents("txtSeat", configValue, panelPant);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTJANGH, "1"));
+            VisibleMeasureMents("txtJangh", configValue, panelPant);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTGOTHAN, "1"));
+            VisibleMeasureMents("txtGothan", configValue, panelPant);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTJOLO, "1"));
+            VisibleMeasureMents("txtJolo", configValue, panelPant);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.PANTMOLI, "1"));
+            VisibleMeasureMents("txtMoli", configValue, panelPant);
+
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTLAMBAI, "1"));
+            VisibleMeasureMents("txtShirtLambai", configValue, panelShirt);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTCHATI, "1"));
+            VisibleMeasureMents("txtChati", configValue, panelShirt);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTSOLDER, "1"));
+            VisibleMeasureMents("txtSolder", configValue, panelShirt);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTBYE, "1"));
+            VisibleMeasureMents("txtBye", configValue, panelShirt);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTFRONT, "1"));
+            VisibleMeasureMents("txtFront", configValue, panelShirt);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTKOLOR, "1"));
+            VisibleMeasureMents("txtKolor", configValue, panelShirt);
+            configValue = Convert.ToInt32(await ConfigUtilities.GetConfigurationValue(ConfigUtilities.SHIRTCUFF, "1"));
+            VisibleMeasureMents("txtCuff", configValue, panelShirt);
+        }
+
+        private void VisibleMeasureMents(string controlName, int configValue, Control parent)
+        {
+            Control.ControlCollection controlCollection = null;
+            if (parent == null)
+            {
+                controlCollection = this.Controls;
+            }
+            else 
+            {
+                controlCollection = parent.Controls;
+            }
+
+            for(int i = 5; i > 1; i--) 
+            {
+                if(configValue < i)
+                {
+                    TextBox textBox = controlCollection[$"{controlName}{i}"] as TextBox;
+                    if(textBox != null)
+                    {
+                        textBox.Visible = false;
+                    }
+                }
+            }
         }
 
         private void NewBill()
@@ -573,13 +630,21 @@ namespace TailorManagement1
         {
             try
             {
+                string selectedItemText = chkListShirt.Items[e.Index].ToString();
                 if (e.NewValue == CheckState.Checked)
                 {
-                    string selectedItemText = chkListShirt.Items[e.Index].ToString();
                     if (!rtShirtNotes.Text.Contains(selectedItemText))
                     {
                         rtShirtNotes.Text = selectedItemText + Environment.NewLine + rtShirtNotes.Text;
                     }
+                }
+                else
+                {
+                    if (!rtShirtNotes.Text.Contains(selectedItemText))
+                    {
+                        rtShirtNotes.Text = rtShirtNotes.Text.Replace(selectedItemText, "");
+                    }
+
                 }
             }
             catch (Exception ex)

@@ -28,6 +28,22 @@ namespace TailorManagement1.Utilities
         public const string SHIRTQTY = "ShirtQty";
         public const string TRIALDAYS = "TrialDays";
 
+        public const string PANTLAMBAI = "PantLambai";
+        public const string PANTKAMAR = "PantKamar";
+        public const string PANTSEAT = "PantSeat";
+        public const string PANTJANGH = "PantJangh";
+        public const string PANTGOTHAN = "PantGothan";
+        public const string PANTJOLO = "PantJolo";
+        public const string PANTMOLI = "PantMoli";
+
+        public const string SHIRTLAMBAI = "ShirtLambai";
+        public const string SHIRTCHATI = "ShirtChati";
+        public const string SHIRTSOLDER = "ShirtSolder";
+        public const string SHIRTBYE = "ShirtBye";
+        public const string SHIRTFRONT = "ShirtFront";
+        public const string SHIRTKOLOR = "ShirtKolor";
+        public const string SHIRTCUFF = "ShirtCuff";
+
         public static string companyLanguageCode = "en-US";
         private static Dictionary<string, string> configurations;
 

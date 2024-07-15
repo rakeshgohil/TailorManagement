@@ -222,7 +222,7 @@ namespace TailorManagement1.Utilities
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
-                graphics.DrawString(resourceManager.GetString("lblcolor", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
+                graphics.DrawString(resourceManager.GetString("lblkolor", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
                 graphics.DrawString(bill.Shirt.Kolor1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
                 graphics.DrawString(bill.Shirt.Kolor2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
                 graphics.DrawString(bill.Shirt.Kolor3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));

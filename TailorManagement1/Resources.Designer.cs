@@ -223,7 +223,7 @@ namespace TailorManagement1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cuff 1111.
+        ///   Looks up a localized string similar to Cuff.
         /// </summary>
         public static string lblcuff {
             get {
@@ -232,7 +232,7 @@ namespace TailorManagement1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delivery Date.
+        ///   Looks up a localized string similar to Del. Date.
         /// </summary>
         public static string lbldeliverydate {
             get {
