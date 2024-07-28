@@ -70,76 +70,76 @@ namespace TailorManagement1.Utilities
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblpantlambai", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Pant.Length1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Pant.Length2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Pant.Length3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Pant.Length4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Pant.Length5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Pant?.Length1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Pant?.Length2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Pant?.Length3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Pant?.Length4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Pant?.Length5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblkamar", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Pant.Kamar1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Pant.Kamar2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Pant.Kamar3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Pant.Kamar4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Pant.Kamar5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Pant?.Kamar1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Pant?.Kamar2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Pant?.Kamar3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Pant?.Kamar4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Pant?.Kamar5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblseat", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Pant.Seat1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Pant.Seat2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Pant.Seat3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Pant.Seat4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Pant.Seat5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Pant?.Seat1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Pant?.Seat2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Pant?.Seat3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Pant?.Seat4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Pant?.Seat5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lbljangh", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Pant.Jangh1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Pant.Jangh2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Pant.Jangh3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Pant.Jangh4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Pant.Jangh5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Pant?.Jangh1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Pant?.Jangh2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Pant?.Jangh3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Pant?.Jangh4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Pant?.Jangh5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblgothan", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Pant.Gothan1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Pant.Gothan2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Pant.Gothan3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Pant.Gothan4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Pant.Gothan5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Pant?.Gothan1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Pant?.Gothan2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Pant?.Gothan3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Pant?.Gothan4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Pant?.Gothan5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lbljolo", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Pant.Jolo1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Pant.Jolo2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Pant.Jolo3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Pant.Jolo4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Pant.Jolo5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Pant?.Jolo1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Pant?.Jolo2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Pant?.Jolo3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Pant?.Jolo4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Pant?.Jolo5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblmoli", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Pant.Moli1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Pant.Moli2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Pant.Moli3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Pant.Moli4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Pant.Moli5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Pant?.Moli1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Pant?.Moli2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Pant?.Moli3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Pant?.Moli4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Pant?.Moli5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblpantnotes", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Pant.Notes, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Pant?.Notes, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
                 //==========================================================
 
@@ -173,76 +173,76 @@ namespace TailorManagement1.Utilities
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblshirtlambai", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Shirt.Length1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Shirt.Length2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Shirt.Length3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Shirt.Length4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Shirt.Length5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Shirt?.Length1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Shirt?.Length2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Shirt?.Length3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Shirt?.Length4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Shirt?.Length5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblchati", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Shirt.Chati1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Shirt.Chati2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Shirt.Chati3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Shirt.Chati4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Shirt.Chati5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Shirt?.Chati1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Shirt?.Chati2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Shirt?.Chati3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Shirt?.Chati4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Shirt?.Chati5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblsolder", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Shirt.Solder1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Shirt.Solder2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Shirt.Solder3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Shirt.Solder4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Shirt.Solder5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Shirt?.Solder1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Shirt?.Solder2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Shirt?.Solder3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Shirt?.Solder4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Shirt?.Solder5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblbye", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Shirt.Bye1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Shirt.Bye2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Shirt.Bye3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Shirt.Bye4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Shirt.Bye5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Shirt?.Bye1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Shirt?.Bye2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Shirt?.Bye3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Shirt?.Bye4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Shirt?.Bye5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblfront", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Shirt.Front1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Shirt.Front2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Shirt.Front3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Shirt.Front4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Shirt.Front5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Shirt?.Front1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Shirt?.Front2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Shirt?.Front3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Shirt?.Front4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Shirt?.Front5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblkolor", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Shirt.Kolor1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Shirt.Kolor2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Shirt.Kolor3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Shirt.Kolor4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Shirt.Kolor5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Shirt?.Kolor1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Shirt?.Kolor2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Shirt?.Kolor3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Shirt?.Kolor4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Shirt?.Kolor5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblcuff", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Shirt.Cuff1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
-                graphics.DrawString(bill.Shirt.Cuff2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
-                graphics.DrawString(bill.Shirt.Cuff3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
-                graphics.DrawString(bill.Shirt.Cuff4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
-                graphics.DrawString(bill.Shirt.Cuff5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
+                graphics.DrawString(bill?.Shirt?.Cuff1, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Shirt?.Cuff2, headerFont, blackBrush, new PointF(leftPos + 150, topPos));
+                graphics.DrawString(bill?.Shirt?.Cuff3, headerFont, blackBrush, new PointF(leftPos + 200, topPos));
+                graphics.DrawString(bill?.Shirt?.Cuff4, headerFont, blackBrush, new PointF(leftPos + 250, topPos));
+                graphics.DrawString(bill?.Shirt?.Cuff5, headerFont, blackBrush, new PointF(leftPos + 300, topPos));
                 topPos = topPos + textHeight;
 
                 topPos = topPos + margin;
                 graphics.DrawString(resourceManager.GetString("lblshirtnotes", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
-                graphics.DrawString(bill.Shirt.Notes, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
+                graphics.DrawString(bill?.Shirt?.Notes, headerFont, blackBrush, new PointF(leftPos + 100, topPos));
                 //graphics.DrawLine(blackPen, lineLeftPosStart, topPos, lineLeftPosEnd, topPos);
                 //================================================================================
 
@@ -336,8 +336,9 @@ namespace TailorManagement1.Utilities
                 imageWidth = 400;
                 imageHeight = 150;
                 image = Image.FromFile($"{ConfigUtilities.GetConfigurationValue(ConfigUtilities.COMPANYLOGO2, string.Empty).Result}");
-                graphics.DrawImage(image, new Rectangle(leftPos+400+margin, topPos, imageWidth, imageHeight));
+                graphics.DrawImage(image, new Rectangle(leftPos+margin, topPos, imageWidth, imageHeight));
 
+                leftPos = leftPos + 400;
                 graphics.DrawString(resourceManager.GetString("lblvigat", cultureInfo), headerFont, blackBrush, new PointF(leftPos, topPos));
                 graphics.DrawString(resourceManager.GetString("lblqty", cultureInfo), headerFont, blackBrush, new PointF(leftPos + 100, topPos));
                 graphics.DrawString(resourceManager.GetString("lblrate", cultureInfo), headerFont, blackBrush, new PointF(leftPos + 200, topPos));

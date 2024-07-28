@@ -182,3 +182,25 @@ BEGIN
 	WHERE BillId = @BillId
 END
 GO
+
+CREATE OR ALTER PROCEDURE spDeleteBillDetailsByBillId
+	@BillId INT
+AS
+BEGIN
+	DELETE FROM tbBillDetail
+	WHERE BillId = @BillId
+END
+GO
+
+CREATE OR ALTER PROCEDURE spDeleteBillById
+		@Id INT
+AS
+BEGIN
+	
+	DELETE FROM tbBillDetail
+	WHERE BillId = @Id
+	
+	DELETE FROM tbBill
+	WHERE Id = @Id
+END
+GO

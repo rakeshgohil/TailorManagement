@@ -70,7 +70,13 @@
             this.txtPaymentDues = new System.Windows.Forms.TextBox();
             this.lblpaymentdays = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblShirt = new System.Windows.Forms.Label();
+            this.cmbShirtCuff = new System.Windows.Forms.ComboBox();
+            this.cmbShirtKolor = new System.Windows.Forms.ComboBox();
+            this.cmbShirtFront = new System.Windows.Forms.ComboBox();
+            this.cmbShirtBye = new System.Windows.Forms.ComboBox();
+            this.cmbShirtSolder = new System.Windows.Forms.ComboBox();
+            this.cmbShirtChati = new System.Windows.Forms.ComboBox();
+            this.cmbShirtLambai = new System.Windows.Forms.ComboBox();
             this.lblcuff = new System.Windows.Forms.Label();
             this.lblKolor = new System.Windows.Forms.Label();
             this.lblfront = new System.Windows.Forms.Label();
@@ -78,14 +84,15 @@
             this.lblsolder = new System.Windows.Forms.Label();
             this.lblchati = new System.Windows.Forms.Label();
             this.lblshirtlambai = new System.Windows.Forms.Label();
-            this.cmbShirtLambai = new System.Windows.Forms.ComboBox();
-            this.cmbShirtChati = new System.Windows.Forms.ComboBox();
-            this.cmbShirtSolder = new System.Windows.Forms.ComboBox();
-            this.cmbShirtBye = new System.Windows.Forms.ComboBox();
-            this.cmbShirtFront = new System.Windows.Forms.ComboBox();
-            this.cmbShirtKolor = new System.Windows.Forms.ComboBox();
-            this.cmbShirtCuff = new System.Windows.Forms.ComboBox();
+            this.lblShirt = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblMoli = new System.Windows.Forms.Label();
+            this.lblJolo = new System.Windows.Forms.Label();
+            this.lblGothan = new System.Windows.Forms.Label();
+            this.lblJangh = new System.Windows.Forms.Label();
+            this.lblSeat = new System.Windows.Forms.Label();
+            this.lblKamar = new System.Windows.Forms.Label();
+            this.lblPantLambai = new System.Windows.Forms.Label();
             this.cmbPantMoli = new System.Windows.Forms.ComboBox();
             this.cmbPantJolo = new System.Windows.Forms.ComboBox();
             this.cmbPantGothan = new System.Windows.Forms.ComboBox();
@@ -94,13 +101,6 @@
             this.cmbPantKamar = new System.Windows.Forms.ComboBox();
             this.cmbPantLambai = new System.Windows.Forms.ComboBox();
             this.lblPant = new System.Windows.Forms.Label();
-            this.lblMoli = new System.Windows.Forms.Label();
-            this.lblJolo = new System.Windows.Forms.Label();
-            this.lblGothan = new System.Windows.Forms.Label();
-            this.lblJangh = new System.Windows.Forms.Label();
-            this.lblSeat = new System.Windows.Forms.Label();
-            this.lblKamar = new System.Windows.Forms.Label();
-            this.lblPantLambai = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -590,16 +590,124 @@
             this.panel1.Size = new System.Drawing.Size(117, 224);
             this.panel1.TabIndex = 138;
             // 
-            // lblShirt
+            // cmbShirtCuff
             // 
-            this.lblShirt.AutoSize = true;
-            this.lblShirt.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShirt.Location = new System.Drawing.Point(2, 3);
-            this.lblShirt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblShirt.Name = "lblShirt";
-            this.lblShirt.Size = new System.Drawing.Size(45, 17);
-            this.lblShirt.TabIndex = 101;
-            this.lblShirt.Text = "Shirt";
+            this.cmbShirtCuff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShirtCuff.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmbShirtCuff.FormattingEnabled = true;
+            this.cmbShirtCuff.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbShirtCuff.Location = new System.Drawing.Point(69, 193);
+            this.cmbShirtCuff.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbShirtCuff.Name = "cmbShirtCuff";
+            this.cmbShirtCuff.Size = new System.Drawing.Size(37, 25);
+            this.cmbShirtCuff.TabIndex = 33;
+            // 
+            // cmbShirtKolor
+            // 
+            this.cmbShirtKolor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShirtKolor.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmbShirtKolor.FormattingEnabled = true;
+            this.cmbShirtKolor.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbShirtKolor.Location = new System.Drawing.Point(69, 166);
+            this.cmbShirtKolor.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbShirtKolor.Name = "cmbShirtKolor";
+            this.cmbShirtKolor.Size = new System.Drawing.Size(37, 25);
+            this.cmbShirtKolor.TabIndex = 32;
+            // 
+            // cmbShirtFront
+            // 
+            this.cmbShirtFront.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShirtFront.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmbShirtFront.FormattingEnabled = true;
+            this.cmbShirtFront.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbShirtFront.Location = new System.Drawing.Point(69, 138);
+            this.cmbShirtFront.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbShirtFront.Name = "cmbShirtFront";
+            this.cmbShirtFront.Size = new System.Drawing.Size(37, 25);
+            this.cmbShirtFront.TabIndex = 31;
+            // 
+            // cmbShirtBye
+            // 
+            this.cmbShirtBye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShirtBye.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmbShirtBye.FormattingEnabled = true;
+            this.cmbShirtBye.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbShirtBye.Location = new System.Drawing.Point(69, 110);
+            this.cmbShirtBye.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbShirtBye.Name = "cmbShirtBye";
+            this.cmbShirtBye.Size = new System.Drawing.Size(37, 25);
+            this.cmbShirtBye.TabIndex = 30;
+            // 
+            // cmbShirtSolder
+            // 
+            this.cmbShirtSolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShirtSolder.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmbShirtSolder.FormattingEnabled = true;
+            this.cmbShirtSolder.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbShirtSolder.Location = new System.Drawing.Point(69, 82);
+            this.cmbShirtSolder.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbShirtSolder.Name = "cmbShirtSolder";
+            this.cmbShirtSolder.Size = new System.Drawing.Size(37, 25);
+            this.cmbShirtSolder.TabIndex = 29;
+            // 
+            // cmbShirtChati
+            // 
+            this.cmbShirtChati.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShirtChati.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmbShirtChati.FormattingEnabled = true;
+            this.cmbShirtChati.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbShirtChati.Location = new System.Drawing.Point(69, 54);
+            this.cmbShirtChati.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbShirtChati.Name = "cmbShirtChati";
+            this.cmbShirtChati.Size = new System.Drawing.Size(37, 25);
+            this.cmbShirtChati.TabIndex = 28;
+            // 
+            // cmbShirtLambai
+            // 
+            this.cmbShirtLambai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbShirtLambai.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
+            this.cmbShirtLambai.FormattingEnabled = true;
+            this.cmbShirtLambai.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbShirtLambai.Location = new System.Drawing.Point(69, 27);
+            this.cmbShirtLambai.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbShirtLambai.Name = "cmbShirtLambai";
+            this.cmbShirtLambai.Size = new System.Drawing.Size(37, 25);
+            this.cmbShirtLambai.TabIndex = 27;
             // 
             // lblcuff
             // 
@@ -678,124 +786,16 @@
             this.lblshirtlambai.TabIndex = 102;
             this.lblshirtlambai.Text = "Lambai";
             // 
-            // cmbShirtLambai
+            // lblShirt
             // 
-            this.cmbShirtLambai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbShirtLambai.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmbShirtLambai.FormattingEnabled = true;
-            this.cmbShirtLambai.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbShirtLambai.Location = new System.Drawing.Point(69, 27);
-            this.cmbShirtLambai.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbShirtLambai.Name = "cmbShirtLambai";
-            this.cmbShirtLambai.Size = new System.Drawing.Size(37, 25);
-            this.cmbShirtLambai.TabIndex = 27;
-            // 
-            // cmbShirtChati
-            // 
-            this.cmbShirtChati.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbShirtChati.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmbShirtChati.FormattingEnabled = true;
-            this.cmbShirtChati.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbShirtChati.Location = new System.Drawing.Point(69, 54);
-            this.cmbShirtChati.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbShirtChati.Name = "cmbShirtChati";
-            this.cmbShirtChati.Size = new System.Drawing.Size(37, 25);
-            this.cmbShirtChati.TabIndex = 28;
-            // 
-            // cmbShirtSolder
-            // 
-            this.cmbShirtSolder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbShirtSolder.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmbShirtSolder.FormattingEnabled = true;
-            this.cmbShirtSolder.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbShirtSolder.Location = new System.Drawing.Point(69, 82);
-            this.cmbShirtSolder.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbShirtSolder.Name = "cmbShirtSolder";
-            this.cmbShirtSolder.Size = new System.Drawing.Size(37, 25);
-            this.cmbShirtSolder.TabIndex = 29;
-            // 
-            // cmbShirtBye
-            // 
-            this.cmbShirtBye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbShirtBye.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmbShirtBye.FormattingEnabled = true;
-            this.cmbShirtBye.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbShirtBye.Location = new System.Drawing.Point(69, 110);
-            this.cmbShirtBye.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbShirtBye.Name = "cmbShirtBye";
-            this.cmbShirtBye.Size = new System.Drawing.Size(37, 25);
-            this.cmbShirtBye.TabIndex = 30;
-            // 
-            // cmbShirtFront
-            // 
-            this.cmbShirtFront.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbShirtFront.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmbShirtFront.FormattingEnabled = true;
-            this.cmbShirtFront.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbShirtFront.Location = new System.Drawing.Point(69, 138);
-            this.cmbShirtFront.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbShirtFront.Name = "cmbShirtFront";
-            this.cmbShirtFront.Size = new System.Drawing.Size(37, 25);
-            this.cmbShirtFront.TabIndex = 31;
-            // 
-            // cmbShirtKolor
-            // 
-            this.cmbShirtKolor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbShirtKolor.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmbShirtKolor.FormattingEnabled = true;
-            this.cmbShirtKolor.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbShirtKolor.Location = new System.Drawing.Point(69, 166);
-            this.cmbShirtKolor.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbShirtKolor.Name = "cmbShirtKolor";
-            this.cmbShirtKolor.Size = new System.Drawing.Size(37, 25);
-            this.cmbShirtKolor.TabIndex = 32;
-            // 
-            // cmbShirtCuff
-            // 
-            this.cmbShirtCuff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbShirtCuff.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold);
-            this.cmbShirtCuff.FormattingEnabled = true;
-            this.cmbShirtCuff.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbShirtCuff.Location = new System.Drawing.Point(69, 193);
-            this.cmbShirtCuff.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbShirtCuff.Name = "cmbShirtCuff";
-            this.cmbShirtCuff.Size = new System.Drawing.Size(37, 25);
-            this.cmbShirtCuff.TabIndex = 33;
+            this.lblShirt.AutoSize = true;
+            this.lblShirt.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShirt.Location = new System.Drawing.Point(2, 3);
+            this.lblShirt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblShirt.Name = "lblShirt";
+            this.lblShirt.Size = new System.Drawing.Size(45, 17);
+            this.lblShirt.TabIndex = 101;
+            this.lblShirt.Text = "Shirt";
             // 
             // panel2
             // 
@@ -819,6 +819,83 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(119, 224);
             this.panel2.TabIndex = 143;
+            // 
+            // lblMoli
+            // 
+            this.lblMoli.AutoSize = true;
+            this.lblMoli.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoli.Location = new System.Drawing.Point(2, 196);
+            this.lblMoli.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMoli.Name = "lblMoli";
+            this.lblMoli.Size = new System.Drawing.Size(39, 17);
+            this.lblMoli.TabIndex = 149;
+            this.lblMoli.Text = "Moli";
+            // 
+            // lblJolo
+            // 
+            this.lblJolo.AutoSize = true;
+            this.lblJolo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJolo.Location = new System.Drawing.Point(2, 169);
+            this.lblJolo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblJolo.Name = "lblJolo";
+            this.lblJolo.Size = new System.Drawing.Size(40, 17);
+            this.lblJolo.TabIndex = 148;
+            this.lblJolo.Text = "Jolo";
+            // 
+            // lblGothan
+            // 
+            this.lblGothan.AutoSize = true;
+            this.lblGothan.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGothan.Location = new System.Drawing.Point(2, 141);
+            this.lblGothan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGothan.Name = "lblGothan";
+            this.lblGothan.Size = new System.Drawing.Size(64, 17);
+            this.lblGothan.TabIndex = 147;
+            this.lblGothan.Text = "Gothan";
+            // 
+            // lblJangh
+            // 
+            this.lblJangh.AutoSize = true;
+            this.lblJangh.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJangh.Location = new System.Drawing.Point(2, 113);
+            this.lblJangh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblJangh.Name = "lblJangh";
+            this.lblJangh.Size = new System.Drawing.Size(55, 17);
+            this.lblJangh.TabIndex = 146;
+            this.lblJangh.Text = "Jangh";
+            // 
+            // lblSeat
+            // 
+            this.lblSeat.AutoSize = true;
+            this.lblSeat.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeat.Location = new System.Drawing.Point(2, 86);
+            this.lblSeat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSeat.Name = "lblSeat";
+            this.lblSeat.Size = new System.Drawing.Size(42, 17);
+            this.lblSeat.TabIndex = 145;
+            this.lblSeat.Text = "Seat";
+            // 
+            // lblKamar
+            // 
+            this.lblKamar.AutoSize = true;
+            this.lblKamar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKamar.Location = new System.Drawing.Point(2, 58);
+            this.lblKamar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKamar.Name = "lblKamar";
+            this.lblKamar.Size = new System.Drawing.Size(58, 17);
+            this.lblKamar.TabIndex = 144;
+            this.lblKamar.Text = "Kamar";
+            // 
+            // lblPantLambai
+            // 
+            this.lblPantLambai.AutoSize = true;
+            this.lblPantLambai.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPantLambai.Location = new System.Drawing.Point(2, 30);
+            this.lblPantLambai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPantLambai.Name = "lblPantLambai";
+            this.lblPantLambai.Size = new System.Drawing.Size(63, 17);
+            this.lblPantLambai.TabIndex = 143;
+            this.lblPantLambai.Text = "Lambai";
             // 
             // cmbPantMoli
             // 
@@ -950,83 +1027,6 @@
             this.lblPant.TabIndex = 101;
             this.lblPant.Text = "Pant";
             // 
-            // lblMoli
-            // 
-            this.lblMoli.AutoSize = true;
-            this.lblMoli.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMoli.Location = new System.Drawing.Point(2, 196);
-            this.lblMoli.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMoli.Name = "lblMoli";
-            this.lblMoli.Size = new System.Drawing.Size(39, 17);
-            this.lblMoli.TabIndex = 149;
-            this.lblMoli.Text = "Moli";
-            // 
-            // lblJolo
-            // 
-            this.lblJolo.AutoSize = true;
-            this.lblJolo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJolo.Location = new System.Drawing.Point(2, 169);
-            this.lblJolo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblJolo.Name = "lblJolo";
-            this.lblJolo.Size = new System.Drawing.Size(40, 17);
-            this.lblJolo.TabIndex = 148;
-            this.lblJolo.Text = "Jolo";
-            // 
-            // lblGothan
-            // 
-            this.lblGothan.AutoSize = true;
-            this.lblGothan.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGothan.Location = new System.Drawing.Point(2, 141);
-            this.lblGothan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblGothan.Name = "lblGothan";
-            this.lblGothan.Size = new System.Drawing.Size(64, 17);
-            this.lblGothan.TabIndex = 147;
-            this.lblGothan.Text = "Gothan";
-            // 
-            // lblJangh
-            // 
-            this.lblJangh.AutoSize = true;
-            this.lblJangh.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJangh.Location = new System.Drawing.Point(2, 113);
-            this.lblJangh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblJangh.Name = "lblJangh";
-            this.lblJangh.Size = new System.Drawing.Size(55, 17);
-            this.lblJangh.TabIndex = 146;
-            this.lblJangh.Text = "Jangh";
-            // 
-            // lblSeat
-            // 
-            this.lblSeat.AutoSize = true;
-            this.lblSeat.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeat.Location = new System.Drawing.Point(2, 86);
-            this.lblSeat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSeat.Name = "lblSeat";
-            this.lblSeat.Size = new System.Drawing.Size(42, 17);
-            this.lblSeat.TabIndex = 145;
-            this.lblSeat.Text = "Seat";
-            // 
-            // lblKamar
-            // 
-            this.lblKamar.AutoSize = true;
-            this.lblKamar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKamar.Location = new System.Drawing.Point(2, 58);
-            this.lblKamar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblKamar.Name = "lblKamar";
-            this.lblKamar.Size = new System.Drawing.Size(58, 17);
-            this.lblKamar.TabIndex = 144;
-            this.lblKamar.Text = "Kamar";
-            // 
-            // lblPantLambai
-            // 
-            this.lblPantLambai.AutoSize = true;
-            this.lblPantLambai.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPantLambai.Location = new System.Drawing.Point(2, 30);
-            this.lblPantLambai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPantLambai.Name = "lblPantLambai";
-            this.lblPantLambai.Size = new System.Drawing.Size(63, 17);
-            this.lblPantLambai.TabIndex = 143;
-            this.lblPantLambai.Text = "Lambai";
-            // 
             // CompanyConfigurationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1076,8 +1076,6 @@
             this.Controls.Add(this.txtCompanyName);
             this.Controls.Add(this.lblcompanyname);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "CompanyConfigurationForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -56,7 +56,7 @@ namespace TailorManagement1
             // 
             this.txtDescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.Location = new System.Drawing.Point(148, 12);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.MaxLength = 500;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(220, 24);
@@ -66,7 +66,7 @@ namespace TailorManagement1
             // 
             this.txtLocalDescription.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLocalDescription.Location = new System.Drawing.Point(148, 50);
-            this.txtLocalDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLocalDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtLocalDescription.MaxLength = 500;
             this.txtLocalDescription.Name = "txtLocalDescription";
             this.txtLocalDescription.Size = new System.Drawing.Size(220, 24);
@@ -87,7 +87,7 @@ namespace TailorManagement1
             // 
             this.btnSave.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(127, 89);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(77, 32);
             this.btnSave.TabIndex = 79;
@@ -101,7 +101,7 @@ namespace TailorManagement1
             this.dgvPantConfiguration.AllowUserToDeleteRows = false;
             this.dgvPantConfiguration.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPantConfiguration.Location = new System.Drawing.Point(16, 133);
-            this.dgvPantConfiguration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPantConfiguration.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPantConfiguration.MultiSelect = false;
             this.dgvPantConfiguration.Name = "dgvPantConfiguration";
             this.dgvPantConfiguration.ReadOnly = true;
@@ -117,7 +117,7 @@ namespace TailorManagement1
             // 
             this.btnCancel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(208, 89);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(77, 32);
             this.btnCancel.TabIndex = 81;
@@ -130,7 +130,7 @@ namespace TailorManagement1
             this.rtError.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtError.ForeColor = System.Drawing.Color.Red;
             this.rtError.Location = new System.Drawing.Point(16, 352);
-            this.rtError.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtError.Margin = new System.Windows.Forms.Padding(2);
             this.rtError.Name = "rtError";
             this.rtError.ReadOnly = true;
             this.rtError.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
@@ -142,7 +142,7 @@ namespace TailorManagement1
             // 
             this.btnDelete.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(290, 89);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(77, 32);
             this.btnDelete.TabIndex = 92;
@@ -164,9 +164,7 @@ namespace TailorManagement1
             this.Controls.Add(this.lbllocaldescription);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.lbldescription);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PantConfigurationForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -37,13 +37,17 @@ namespace TailorManagement1.Utilities
                         SendKeys.Send("{TAB}");
                     }
                 }
+                else if (char.IsLower(e.KeyChar))
+                {
+                    e.KeyChar = char.ToUpper(e.KeyChar);
+                }
             }
             catch (Exception ex)
             {
                 logger.Error($"{ex}");
             }
         }
-
+                
         public static void GetAllLabelsAndButtons(Control control)
         {
             foreach (Control subControl in control.Controls)

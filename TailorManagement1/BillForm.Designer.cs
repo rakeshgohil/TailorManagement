@@ -189,6 +189,7 @@ namespace TailorManagement1
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(227, 24);
             this.txtMobile.TabIndex = 1;
+            this.txtMobile.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMobile_KeyUp);
             this.txtMobile.Leave += new System.EventHandler(this.txtMobile_Leave);
             // 
             // lblmobile
@@ -1621,8 +1622,6 @@ namespace TailorManagement1
             this.Controls.Add(this.lblname);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "BillForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

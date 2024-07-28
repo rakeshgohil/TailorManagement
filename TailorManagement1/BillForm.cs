@@ -12,6 +12,7 @@ using TailorManagement1.Utilities;
 using System.Threading;
 using System.Text.RegularExpressions;
 using System.Drawing.Text;
+using System.Reflection;
 
 namespace TailorManagement1
 {
@@ -289,12 +290,35 @@ namespace TailorManagement1
             {
                 LanguageUtilities.ChangeLanguage(this, ConfigUtilities.companyLanguageCode);
                 LoadCompanyConfiguration();
+                GetCustomers();
                 NewBill();
                 GetAllProducts();
                 LoadAllShirtConfigurations();
                 LoadAllPantConfigurations();
                 Thread.Sleep(2000);
                 GetAmounts();
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"{ex}");
+            }
+        }
+
+        private async void GetCustomers()
+        {
+            try
+            {
+                IEnumerable<Customer> customers = await ApiClient.GetApiClient().GetAsync<IEnumerable<Customer>>($"api/customers");
+                if (customers != null)
+                {
+                    List<string> mobiles = customers.Select(x => x.Mobile).Distinct().ToList();
+                    AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+                    autoCompleteCollection.AddRange(mobiles.ToArray());
+
+                    txtMobile.AutoCompleteCustomSource = autoCompleteCollection;
+                    txtMobile.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    txtMobile.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
             }
             catch (Exception ex)
             {
@@ -906,6 +930,15 @@ namespace TailorManagement1
         {
             FormUtilities.NumericControlLeave(sender, e);
             GetAmounts();
+        }
+
+        private void txtMobile_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");
+                e.Handled = true;
+            }
         }
     }
 }

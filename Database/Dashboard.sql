@@ -13,7 +13,7 @@ BEGIN
 	FROM tbBill B
 	INNER JOIN tbCustomer C ON C.Id = B.CustomerId 
 	WHERE B.DeliveryDate > DATEADD(day, -10, GETDATE()) AND B.DeliveryDate <= DATEADD(day, @DelDueDays, GETDATE())
-	ORDER BY B.DeliveryDate
+	ORDER BY B.BillNo
 END
 GO
 
@@ -26,7 +26,7 @@ BEGIN
 	FROM tbBill B
 	INNER JOIN tbCustomer C ON C.Id = B.CustomerId 
 	WHERE  B.DeliveryDate <= DATEADD(day, -@PayDueDays, GETDATE()) AND B.TotalAmount > B.PaidAmount
-	ORDER BY B.DeliveryDate
+	ORDER BY B.BillNo
 END
 GO
 

@@ -44,7 +44,7 @@
             this.dgvDeliveryDue.AllowUserToDeleteRows = false;
             this.dgvDeliveryDue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeliveryDue.Location = new System.Drawing.Point(20, 26);
-            this.dgvDeliveryDue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDeliveryDue.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDeliveryDue.MultiSelect = false;
             this.dgvDeliveryDue.Name = "dgvDeliveryDue";
             this.dgvDeliveryDue.ReadOnly = true;
@@ -84,7 +84,7 @@
             this.dgvPaymentDue.AllowUserToDeleteRows = false;
             this.dgvPaymentDue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaymentDue.Location = new System.Drawing.Point(20, 269);
-            this.dgvPaymentDue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPaymentDue.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPaymentDue.MultiSelect = false;
             this.dgvPaymentDue.Name = "dgvPaymentDue";
             this.dgvPaymentDue.ReadOnly = true;
@@ -101,7 +101,7 @@
             // 
             this.btnReceiveAmount.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReceiveAmount.Location = new System.Drawing.Point(694, 487);
-            this.btnReceiveAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReceiveAmount.Margin = new System.Windows.Forms.Padding(2);
             this.btnReceiveAmount.Name = "btnReceiveAmount";
             this.btnReceiveAmount.Size = new System.Drawing.Size(130, 32);
             this.btnReceiveAmount.TabIndex = 85;
@@ -114,7 +114,7 @@
             this.rtError.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtError.ForeColor = System.Drawing.Color.Red;
             this.rtError.Location = new System.Drawing.Point(20, 523);
-            this.rtError.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtError.Margin = new System.Windows.Forms.Padding(2);
             this.rtError.Name = "rtError";
             this.rtError.ReadOnly = true;
             this.rtError.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
@@ -133,9 +133,7 @@
             this.Controls.Add(this.dgvPaymentDue);
             this.Controls.Add(this.lbldeliverydue);
             this.Controls.Add(this.dgvDeliveryDue);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DashboardForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
