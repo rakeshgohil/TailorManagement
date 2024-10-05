@@ -850,6 +850,7 @@ namespace TailorManagement1
             {
                 NewBill();
                 GetAmounts();
+                txtMobile.Focus();
             }
             catch (Exception ex)
             {
